@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.Driver.TransportInfo"></activity>
+        <activity android:name=".View.User.InsideOrOutsideTown"></activity>
+        <activity android:name=".View.Driver.AcceptedUserInfo" />
+        <activity android:name=".View.User.UserInfo" />
+        <activity android:name=".View.User.PickElement" />
+        <activity android:name=".View.Driver.TransportInfo_Notif" />
         <activity android:name=".View.User.DriversList" />
         <activity android:name=".View.User.PickTime" />
         <activity android:name=".View.User.PickPlace_OutSide" />
@@ -17,7 +21,7 @@
         <activity android:name=".View.Driver.CarInfo" />
         <activity android:name=".View.Driver.DriverInfo" />
         <activity android:name=".View.PaymentSystem" />
-        <activity android:name=".View.ChooseActions" />
+        <activity android:name=".View.ChooseDriverOrUser" />
         <activity android:name=".View.SignUp" />
         <activity android:name=".View.SignIn" />
         <activity android:name=".View.Splash">

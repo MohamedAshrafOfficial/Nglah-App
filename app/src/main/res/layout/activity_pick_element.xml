@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/burble_white"
     android:orientation="vertical"
-    tools:context=".View.User.PickPlace_Inside">
+    tools:context=".View.User.PickElement">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="top|center"
         android:layout_marginTop="50dp"
-        android:text=" نقله  "
+        android:text=" نوع الاغراض  "
         android:textColor="#fff"
         android:textSize="40dp"
         android:textStyle="bold" />
@@ -47,33 +47,33 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:orientation="horizontal"
-        android:weightSum="2">
+         >
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
+             android:layout_weight="1"
+            android:layout_marginRight="60dp"
+            android:layout_marginLeft="60dp"
             android:background="@color/yello"
-            android:text="  الدوله  "
+            android:text="  سياره  "
             android:textColor="#fff"
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="30dp"
-            android:layout_weight="1"
-            android:background="#fff"
-            android:text="  السعوديه  "
-            android:textColor="#000"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginRight="30dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="#fff"-->
+            <!--android:text="  السعوديه  "-->
+            <!--android:textColor="#000"-->
+            <!--android:textSize="20dp"-->
+            <!--android:textStyle="bold" />-->
 
 
     </LinearLayout>
@@ -84,33 +84,33 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:orientation="horizontal"
-        android:weightSum="2">
+         >
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|center"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginLeft="60dp"
             android:layout_weight="1"
             android:background="@color/yello"
-            android:text=" المنطقه  "
+            android:text=" اثاث  "
             android:textColor="#fff"
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top|center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="30dp"
-            android:layout_weight="1"
-            android:background="#fff"
-            android:text=" مكه  "
-            android:textColor="#000"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="top|center"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginRight="30dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="#fff"-->
+            <!--android:text=" مكه  "-->
+            <!--android:textColor="#000"-->
+            <!--android:textSize="20dp"-->
+            <!--android:textStyle="bold" />-->
 
 
     </LinearLayout>
@@ -121,33 +121,34 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:orientation="horizontal"
-        android:weightSum="2">
+        >
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|center"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="10dp"
+
             android:layout_weight="1"
+            android:layout_marginRight="60dp"
+            android:layout_marginLeft="60dp"
             android:background="@color/yello"
-            android:text="    المدينه  "
+            android:text="    مواد بناء   "
             android:textColor="#fff"
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top|center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="30dp"
-            android:layout_weight="1"
-            android:background="#fff"
-            android:text="    جده  "
-            android:textColor="#000"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="top|center"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginRight="30dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="#fff"-->
+            <!--android:text="    جده  "-->
+            <!--android:textColor="#000"-->
+            <!--android:textSize="20dp"-->
+            <!--android:textStyle="bold" />-->
 
 
     </LinearLayout>
@@ -159,61 +160,37 @@
 
         android:layout_marginTop="30dp"
         android:orientation="horizontal"
-        android:weightSum="2">
+        >
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|center"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginLeft="60dp"
             android:layout_weight="1"
             android:background="@color/yello"
-            android:text="  القطاع  "
+            android:text="  اخري  "
             android:textColor="#fff"
             android:textSize="20dp"
             android:textStyle="bold" />
 
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top|center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="30dp"
-            android:layout_weight="1"
-            android:background="#fff"
-            android:text="  الجنوبي  "
-            android:textColor="#000"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="top|center"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginRight="30dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="#fff"-->
+            <!--android:text="  الجنوبي  "-->
+            <!--android:textColor="#000"-->
+            <!--android:textSize="20dp"-->
+            <!--android:textStyle="bold" />-->
 
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="right"
-        android:orientation="horizontal">
-
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top|center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="30dp"
-            android:background="#fff"
-            android:text="  تم  "
-            android:textColor="#000"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-
-    </LinearLayout>
-
 
 
 </LinearLayout>

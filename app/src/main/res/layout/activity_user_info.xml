@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     tools:context=".View.Driver.CarInfo">
 
+    tools:context=".View.User.UserInfo">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -34,67 +34,6 @@
         android:background="@color/burble_white"
         android:orientation="vertical">
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="@color/yello"
-                android:text="  نوع السياره  "
-                android:textColor="#fff"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="30dp"
-                android:layout_weight="1"
-                android:background="#fff"
-                android:text="  Dyna  "
-                android:textColor="#000"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-
-        </LinearLayout>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:layout_marginRight="40dp"
-            android:background="@color/yello"
-            android:text="  اختار الصوره الرمزيه للسياره  "
-            android:textColor="#fff"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:src="@drawable/back"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="40dp"
-            />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -110,42 +49,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
-                android:text=" رقم اللوحه  "
-                android:textColor="#fff"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="30dp"
-                android:layout_weight="1"
-                android:background="#fff"
-                android:text=" ####  "
-                android:textColor="#000"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="@color/yello"
-                android:text="    اقصي وزن للحموله  "
+                android:text="    الاسم الاول  "
                 android:textColor="#fff"
                 android:textSize="17dp"
                 android:textStyle="bold" />
@@ -158,13 +62,15 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="    طن 4  "
+                android:text="    محمد  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
 
         </LinearLayout>
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -181,7 +87,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
-                android:text="  اسم الساءق   "
+                android:text="  اسم العائله  "
                 android:textColor="#fff"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -202,6 +108,8 @@
 
 
         </LinearLayout>
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -218,7 +126,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
-                android:text="  المدينه  "
+                android:text="  رقم الجوال  "
                 android:textColor="#fff"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -232,13 +140,14 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  مكه  "
+                android:text="  01111111  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -255,7 +164,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
-                android:text="  القطاع  "
+                android:text="  البريد الالكتروني  "
                 android:textColor="#fff"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -269,17 +178,93 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  الجنوبي  "
+                android:text="  @gmail  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
 
         </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@color/yello"
+                android:text="  اسم المستخدم  "
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:text="  محمد  "
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@color/yello"
+                android:text="  كلمه المرور  "
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:text="  0000  "
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
 
     </LinearLayout>
-
-
 
 
 </ScrollView>
