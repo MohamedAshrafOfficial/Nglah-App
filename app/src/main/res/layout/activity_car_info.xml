@@ -6,33 +6,34 @@
     android:layout_height="match_parent"
      tools:context=".View.Driver.CarInfo">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/burble_white">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/imgBackRecent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="20dp"
-                android:src="@drawable/ic_arrow_back_black_24dp"
-                android:tint="#fff" />
-
-        </RelativeLayout>
-    </android.support.v7.widget.Toolbar>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/burble_white"
         android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/burble_white">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgBackRecent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/ic_arrow_back_black_24dp"
+                    android:tint="#fff" />
+
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
 
 
         <LinearLayout
@@ -42,10 +43,10 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
@@ -55,15 +56,15 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  Dyna  "
+                android:hint="  Dyna  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -102,10 +103,10 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
@@ -115,15 +116,15 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text=" ####  "
+                android:hint=" ####  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -137,10 +138,10 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
@@ -150,15 +151,15 @@
                 android:textSize="17dp"
                 android:textStyle="bold" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="    طن 4  "
+                android:hint="    طن 4  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -173,10 +174,10 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
@@ -187,15 +188,15 @@
                 android:textStyle="bold" />
 
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  محمد  "
+                android:hint="  محمد  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -210,10 +211,10 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
@@ -224,15 +225,15 @@
                 android:textStyle="bold" />
 
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  مكه  "
+                android:hint="  مكه  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -247,10 +248,10 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
@@ -261,15 +262,15 @@
                 android:textStyle="bold" />
 
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  الجنوبي  "
+                android:hint="  الجنوبي  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
