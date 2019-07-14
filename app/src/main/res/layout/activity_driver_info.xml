@@ -44,28 +44,29 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
+                android:gravity="center"
                 android:text="  جنسيه السائق  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  سعودي  "
+                android:gravity="center"
+                android:hint="  سعودي  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -81,28 +82,28 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
+                android:gravity="center"
                 android:text="رقم رخصه السياقه  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="000000"
+                android:gravity="center"
+                android:hint="000000"
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -118,28 +119,27 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
+                android:gravity="center"
                 android:text="    الاسم الاول  "
                 android:textColor="#fff"
-                android:textSize="17dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="    محمد  "
+                android:hint="    محمد  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -156,29 +156,29 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
+                android:gravity="center"
                 android:text="  اسم الاب   "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  محمد  "
+                android:hint="  محمد  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -194,29 +194,29 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
+                android:gravity="center"
                 android:text="  اسم العائله  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  محمد  "
+                android:hint="  محمد  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -233,29 +233,29 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
+                android:gravity="center"
                 android:text="  رقم هويه السائق  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  544444  "
+                android:hint="  544444  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -271,29 +271,29 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
-                android:text="  رقم الجوال  "
+                android:gravity="center"
+                android:text="   رقم الجوال  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  01111111  "
+                android:hint="  01111111  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -309,29 +309,29 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
+                android:gravity="center"
                 android:text="  البريد الالكتروني  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  @gmail  "
+                android:hint="  @gmail  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -347,29 +347,29 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
+                android:gravity="center"
                 android:text="  المدينه الحاليه  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  جده  "
+                android:hint="  جده  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -385,29 +385,29 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
+                android:gravity="center"
                 android:text="  القطاع  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  الجنوبي  "
+                android:hint="  الجنوبي  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -423,29 +423,29 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
+                android:gravity="center"
                 android:text="  اسم المستخدم  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  محمد  "
+                android:hint="  محمد  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -461,29 +461,29 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
+                android:gravity="center"
                 android:text="  كلمه المرور  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  0000  "
+                android:hint="  0000  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />

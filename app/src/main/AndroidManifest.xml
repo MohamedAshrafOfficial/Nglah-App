@@ -21,10 +21,9 @@
         <activity android:name=".View.Driver.CarInfo" />
         <activity android:name=".View.Driver.DriverInfo" />
         <activity android:name=".View.PaymentSystem" />
-        <activity android:name=".View.ChooseDriverOrUser" />
         <activity android:name=".View.SignUp" />
-        <activity android:name=".View.SignIn" />
-        <activity android:name=".View.Splash">
+        <activity android:name=".View.Splash" />
+        <activity android:name=".View.SignIn">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

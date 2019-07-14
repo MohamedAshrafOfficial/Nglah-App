@@ -49,31 +49,26 @@
         android:orientation="horizontal"
         android:weightSum="2">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:background="@color/yello"
+            android:gravity="center"
             android:text="  الدوله  "
             android:textColor="#fff"
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="30dp"
-            android:layout_weight="1"
-            android:background="#fff"
-            android:text="  السعوديه  "
-            android:textColor="#000"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+        <Spinner
+             style="@style/Widget.AppCompat.Spinner"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:backgroundTint="@color/yello"
+            android:gravity="center" />
 
 
     </LinearLayout>
@@ -86,31 +81,26 @@
         android:orientation="horizontal"
         android:weightSum="2">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top|center"
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:background="@color/yello"
+            android:gravity="center"
             android:text=" المنطقه  "
             android:textColor="#fff"
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top|center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="30dp"
-            android:layout_weight="1"
-            android:background="#fff"
-            android:text=" مكه  "
-            android:textColor="#000"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+        <Spinner
+             style="@style/Widget.AppCompat.Spinner"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:backgroundTint="@color/yello"
+            android:gravity="center" />
 
 
     </LinearLayout>
@@ -123,31 +113,27 @@
         android:orientation="horizontal"
         android:weightSum="2">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top|center"
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:background="@color/yello"
+            android:gravity="center"
             android:text="    المدينه  "
             android:textColor="#fff"
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top|center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="30dp"
-            android:layout_weight="1"
-            android:background="#fff"
-            android:text="    جده  "
-            android:textColor="#000"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+        <Spinner
+            android:id="@+id/spinner"
+            style="@style/Widget.AppCompat.Spinner"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:backgroundTint="@color/yello"
+            android:gravity="center" />
 
 
     </LinearLayout>
@@ -161,32 +147,27 @@
         android:orientation="horizontal"
         android:weightSum="2">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top|center"
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:background="@color/yello"
+            android:gravity="center"
             android:text="  القطاع  "
             android:textColor="#fff"
             android:textSize="20dp"
             android:textStyle="bold" />
 
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top|center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="30dp"
-            android:layout_weight="1"
-            android:background="#fff"
-            android:text="  الجنوبي  "
-            android:textColor="#000"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+        <Spinner
+             style="@style/Widget.AppCompat.Spinner"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:backgroundTint="@color/yello"
+            android:gravity="center" />
 
 
     </LinearLayout>
@@ -213,7 +194,6 @@
 
 
     </LinearLayout>
-
 
 
 </LinearLayout>
