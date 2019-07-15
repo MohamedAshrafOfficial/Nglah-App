@@ -8,12 +8,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.nglah.AbdoCode.Model.Database.DB;
+import com.example.nglah.Database.DB;
 import com.example.nglah.R;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 

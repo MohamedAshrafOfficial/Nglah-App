@@ -1,13 +1,9 @@
-package com.example.nglah.AbdoCode.Model.DriverModel;
+package com.example.nglah.Model.NglahModel;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Driver {
-
-    @SerializedName("driver_national_id")
-    @Expose
-    private int driverId;
+public class Nglah {
 
     @SerializedName("first_name")
     @Expose
@@ -22,16 +18,12 @@ public class Driver {
     private String email;
 
 
-    public Driver(int driverId, String firstName, String lastName, String email) {
-        this.driverId = driverId;
+    public Nglah(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
     }
 
-    public int getDriverId() {
-        return driverId;
-    }
 
     public String getFirstName() {
         return firstName;

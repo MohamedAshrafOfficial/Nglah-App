@@ -1,7 +1,7 @@
-package com.example.nglah.AbdoCode;
+package com.example.nglah.Services;
 
-import com.example.nglah.AbdoCode.Model.DriverModel.LoginDriverService;
-import com.example.nglah.AbdoCode.Model.NglahModel.LoginNglahService;
+import com.example.nglah.Model.DriverModel.LoginDriverService;
+import com.example.nglah.Model.NglahModel.LoginNglahService;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

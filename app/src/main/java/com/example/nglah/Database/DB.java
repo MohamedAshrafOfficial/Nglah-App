@@ -1,4 +1,4 @@
-package com.example.nglah.AbdoCode.Model.Database;
+package com.example.nglah.Database;
 
 import android.content.Context;
 import android.database.Cursor;

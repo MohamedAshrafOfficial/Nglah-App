@@ -2,7 +2,7 @@ package com.example.nglah.View;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -10,12 +10,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.nglah.AbdoCode.ApiClient;
-import com.example.nglah.AbdoCode.JsonPlaceHolderApi;
-import com.example.nglah.AbdoCode.Model.DriverModel.LoginDriverService;
-import com.example.nglah.AbdoCode.Model.DriverModel.Driver;
-import com.example.nglah.AbdoCode.Model.NglahModel.LoginNglahService;
-import com.example.nglah.AbdoCode.Model.NglahModel.Nglah;
+import com.example.nglah.Services.ApiClient;
+import com.example.nglah.Services.JsonPlaceHolderApi;
+import com.example.nglah.Model.DriverModel.LoginDriverService;
+import com.example.nglah.Model.DriverModel.Driver;
+import com.example.nglah.Model.NglahModel.LoginNglahService;
+import com.example.nglah.Model.NglahModel.Nglah;
 import com.example.nglah.R;
 
 import java.util.ArrayList;
@@ -24,6 +24,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
 
 public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 

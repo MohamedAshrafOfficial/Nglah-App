@@ -1,4 +1,4 @@
-package com.example.nglah.AbdoCode.Model.NglahModel;
+package com.example.nglah.Model.NglahModel;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
