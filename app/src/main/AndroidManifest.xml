@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.nglah">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +19,9 @@
         <activity android:name=".View.User.DriversList" />
         <activity android:name=".View.User.PickTime" />
         <activity android:name=".View.User.PickPlace_OutSide" />
-        <activity android:name=".View.User.PickPlace_Inside" />
+        <activity android:name=".View.User.PickPlace_Inside" >
+
+        </activity>
         <activity android:name=".View.Driver.CarInfo" />
         <activity android:name=".View.Driver.DriverInfo" />
         <activity android:name=".View.PaymentSystem" />

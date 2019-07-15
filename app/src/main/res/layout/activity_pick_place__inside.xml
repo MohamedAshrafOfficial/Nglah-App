@@ -63,6 +63,7 @@
             android:textStyle="bold" />
 
         <Spinner
+            android:id="@+id/sp_country"
              style="@style/Widget.AppCompat.Spinner"
             android:layout_width="150dp"
             android:layout_height="50dp"
@@ -95,6 +96,7 @@
             android:textStyle="bold" />
 
         <Spinner
+            android:id="@+id/sp_region"
              style="@style/Widget.AppCompat.Spinner"
             android:layout_width="150dp"
             android:layout_height="50dp"
@@ -127,7 +129,7 @@
             android:textStyle="bold" />
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/sp_city"
             style="@style/Widget.AppCompat.Spinner"
             android:layout_width="150dp"
             android:layout_height="50dp"
@@ -162,6 +164,7 @@
 
 
         <Spinner
+            android:id="@+id/sp_sector"
              style="@style/Widget.AppCompat.Spinner"
             android:layout_width="150dp"
             android:layout_height="50dp"
