@@ -62,16 +62,15 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
         // action all widgets in this activity
         actionWidgets();
     }
-
+///////////////////////////////////////////////////////////////////////////////////////////////////
     private void initWidgets(){
         emailEditText = findViewById(R.id.et_user_name);
         passwordEditText = findViewById(R.id.et_password);
         loginButton = findViewById(R.id.bt_login);
-
         spinnerUser = findViewById(R.id.sp_user);
     }
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////
     private void actionWidgets(){
 
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -93,8 +92,7 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
             }
         });
     }
-
-
+//////////////////////////////////////////////////////////////////////////////////////////////////
     private void driverLogin(String email, String password){
 
         if (email.isEmpty() && password.isEmpty()){
@@ -131,7 +129,7 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
         });
 
     }
-
+///////////////////////////////////////////////////////////////////////////////////////////////////
     private void nglahLogin(String email, String password){
 
         if (email.isEmpty() && password.isEmpty()){
@@ -167,7 +165,7 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
             }
         });
     }
-
+///////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
         if (position == 0)
