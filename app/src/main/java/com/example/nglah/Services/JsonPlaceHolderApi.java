@@ -59,12 +59,15 @@ public interface JsonPlaceHolderApi {
     @POST("nglah/car_owner/car_owner_registration.php")
     Call<Driver_Model>CreateDriver(@FieldMap Map<String,String> fields);
 
-    @GET("nglah/car_owner/{user_email}/Verification.php")
-    Call<List<Verification_model>>getVerifiCode(@Path("user_email") String user_email);
-
     @FormUrlEncoded
     @POST("verification.php")
     Call<Verification_model>verifi(@Field("user_email") String email);
+
+    @FormUrlEncoded
+    @POST("nglah/check_email.php")
+    Call<Verification_model>GetEmail(@Field("table_name") String Table_Name,
+                                     @Field("email") String Email);
+
 
 }
 

@@ -13,6 +13,15 @@ public class Driver_Model {
     private String email;
     private String usernmae;
     private String password;
+    private boolean checkEmail;
+
+    public boolean isCheckEmail() {
+        return checkEmail;
+    }
+
+    public void setCheckEmail(boolean checkEmail) {
+        this.checkEmail = checkEmail;
+    }
 
     public Driver_Model(String driver_n_id, String nationality, String f_name, String se_name, String l_name, String driver_l_id, String phone, String d_city, String d_region, String email, String usernmae, String password) {
         this.driver_n_id = driver_n_id;

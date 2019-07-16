@@ -6,9 +6,22 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
+import com.example.nglah.Model.DriverModel.Driver;
+import com.example.nglah.Model.DriverModel.LoginDriverService;
+import com.example.nglah.Model.hassan_now.Driver_Model;
+import com.example.nglah.Services.JsonPlaceHolderApi;
+import com.example.nglah.View.SignIn;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class DB extends SQLiteOpenHelper {
     private static final String Dbname = "Nglah_database.db";
@@ -93,6 +106,8 @@ public class DB extends SQLiteOpenHelper {
         }
         return arrayList;
     }
+
+
 
 }
 
