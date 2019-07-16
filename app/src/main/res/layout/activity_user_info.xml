@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/burble_white"
+
     tools:context=".View.User.UserInfo">
 
     <LinearLayout
@@ -22,14 +23,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <ImageView
-                    android:id="@+id/imgBackRecent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="20dp"
-                    android:src="@drawable/ic_arrow_back_black_24dp"
-                    android:tint="#fff" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="User Data"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"/>
+
 
             </RelativeLayout>
         </android.support.v7.widget.Toolbar>
@@ -45,11 +46,11 @@
             <TextView
                 android:layout_width="40dp"
                 android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
-                android:gravity="center"
                 android:text="    الاسم الاول  "
                 android:textColor="#fff"
                 android:textSize="17dp"
@@ -57,13 +58,14 @@
 
 
             <EditText
+                android:id="@+id/u_f_name"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:gravity="center"
                 android:hint="    محمد  "
                 android:textColor="#000"
                 android:textSize="20dp"
@@ -84,11 +86,11 @@
             <TextView
                 android:layout_width="40dp"
                 android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
-                android:gravity="center"
                 android:text="  اسم العائله  "
                 android:textColor="#fff"
                 android:textSize="20dp"
@@ -96,13 +98,14 @@
 
 
             <EditText
+                android:id="@+id/u_l_name"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:gravity="center"
                 android:hint="  محمد  "
                 android:textColor="#000"
                 android:textSize="20dp"
@@ -123,25 +126,27 @@
             <TextView
                 android:layout_width="40dp"
                 android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
-                android:gravity="center"
                 android:text="  رقم الجوال  "
                 android:textColor="#fff"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
 
+
             <EditText
+                android:id="@+id/u_phone"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:gravity="center"
                 android:hint="  01111111  "
                 android:textColor="#000"
                 android:textSize="20dp"
@@ -161,25 +166,27 @@
             <TextView
                 android:layout_width="40dp"
                 android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
-                android:gravity="center"
                 android:text="  البريد الالكتروني  "
                 android:textColor="#fff"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
 
+
             <EditText
+                android:id="@+id/u_email"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:gravity="center"
                 android:hint="  @gmail  "
                 android:textColor="#000"
                 android:textSize="20dp"
@@ -200,25 +207,27 @@
             <TextView
                 android:layout_width="40dp"
                 android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
-                android:gravity="center"
                 android:text="  اسم المستخدم  "
                 android:textColor="#fff"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
 
+
             <EditText
+                android:id="@+id/u_username"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:gravity="center"
                 android:hint="  محمد  "
                 android:textColor="#000"
                 android:textSize="20dp"
@@ -238,25 +247,27 @@
             <TextView
                 android:layout_width="40dp"
                 android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
-                android:gravity="center"
                 android:text="  كلمه المرور  "
                 android:textColor="#fff"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
 
+
             <EditText
+                android:id="@+id/u_password"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:gravity="center"
                 android:hint="  0000  "
                 android:textColor="#000"
                 android:textSize="20dp"

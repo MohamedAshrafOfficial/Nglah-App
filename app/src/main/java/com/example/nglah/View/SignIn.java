@@ -1,5 +1,6 @@
 package com.example.nglah.View;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
  import android.view.View;
@@ -177,5 +178,9 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
+    public void goSignUp(View view) {
+        startActivity(new Intent(SignIn.this,SignUp.class));
     }
 }

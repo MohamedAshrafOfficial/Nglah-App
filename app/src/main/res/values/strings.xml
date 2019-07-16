@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Nglah</string>
+    <string-array name="detect_user">
+        <item> أختر</item>
+        <item>صاحب نقله</item>
+        <item>صاحب سياره</item>
+
+
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
