@@ -1,5 +1,7 @@
 package com.example.nglah.View.User;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +23,11 @@ public class PickPlace_Inside extends AppCompatActivity implements AdapterView.O
     private Spinner spinnerCountry, spinnerRegion, spinnerCity, spinnerSector;
     DB dbobject;
 
+
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +35,8 @@ public class PickPlace_Inside extends AppCompatActivity implements AdapterView.O
 
         // init all widgets in this activity
         initWidgets();
-
+        sharedPreferences=getSharedPreferences("nglah_file",MODE_PRIVATE);
+        editor=sharedPreferences.edit();
         ArrayList<String> arrayList = new ArrayList<>();
         arrayList.add("- اختار -");
         arrayList.add("السعوديه");
@@ -67,7 +75,10 @@ public class PickPlace_Inside extends AppCompatActivity implements AdapterView.O
 
             case R.id.sp_country:
                 String text = adapterView.getItemAtPosition(position).toString();
-                Toast.makeText(this, ""+text, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(this, ""+text, Toast.LENGTH_SHORT).show();
+                editor.putString("country",text);
+                editor.commit();
+
 
                 if (!"- اختار -".equals(text)){
 
@@ -93,8 +104,9 @@ public class PickPlace_Inside extends AppCompatActivity implements AdapterView.O
 
             case R.id.sp_region:
                 text = adapterView.getItemAtPosition(position).toString();
-                Toast.makeText(this, ""+text, Toast.LENGTH_SHORT).show();
-
+                //Toast.makeText(this, ""+text, Toast.LENGTH_SHORT).show();
+                editor.putString("region",text);
+                editor.commit();
                 ArrayAdapter<String> cityAdapter = new ArrayAdapter<String>(this,
                         android.R.layout.simple_spinner_item, dbobject.getCities(String.valueOf(position+1)));
 
@@ -108,12 +120,16 @@ public class PickPlace_Inside extends AppCompatActivity implements AdapterView.O
 
             case R.id.sp_city:
                 text = adapterView.getItemAtPosition(position).toString();
-                Toast.makeText(this, ""+text, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, ""+text, Toast.LENGTH_SHORT).show();
+                editor.putString("city",text);
+                editor.commit();
                 break;
 
             case R.id.sp_sector:
                 text = adapterView.getItemAtPosition(position).toString();
-                Toast.makeText(this, ""+text, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, ""+text, Toast.LENGTH_SHORT).show();
+                editor.putString("sector",text);
+                editor.commit();
                 break;
 
             default:
@@ -133,5 +149,11 @@ public class PickPlace_Inside extends AppCompatActivity implements AdapterView.O
         arrayList.addAll(set);
         return arrayList;
     }
+
+    public void GO(View view) {
+        startActivity(new Intent(PickPlace_Inside.this,PickElement.class));
+
+    }
+
 
 }

@@ -1,19 +1,45 @@
 package com.example.nglah.Model.hassan_now;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Driver_Model {
+    @SerializedName("driver_national_id")
     private String driver_n_id;
+    @SerializedName("nationality")
     private String nationality;
+    @SerializedName("owner_name")
+    private String owner_name;
+    @SerializedName("first_name")
     private String f_name;
+    @SerializedName("second_name")
     private String se_name;
+    @SerializedName("last_name")
     private String l_name;
+    @SerializedName("driver_license_id")
     private String driver_l_id;
+    @SerializedName("phone")
     private String phone;
+    @SerializedName("owner_city")
     private String d_city;
+    @SerializedName("owner_region")
     private String d_region;
+    @SerializedName("email")
     private String email;
+    @SerializedName("user_name")
     private String usernmae;
+    @SerializedName("password")
     private String password;
+
+
     private boolean checkEmail;
+
+    public String getOwner_name() {
+        return owner_name;
+    }
+
+    public void setOwner_name(String owner_name) {
+        this.owner_name = owner_name;
+    }
 
     public boolean isCheckEmail() {
         return checkEmail;

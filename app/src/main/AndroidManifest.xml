@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.nglah">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.User.InsideOrOutsideTown"></activity>
+        <activity android:name=".View.Driver.Driver_Profile"></activity>
+        <activity android:name=".View.User.User_Profile" />
+        <activity android:name=".View.User_Main" />
+        <activity android:name=".View.User.InsideOrOutsideTown" />
         <activity android:name=".View.Driver.AcceptedUserInfo" />
         <activity android:name=".View.User.UserInfo" />
         <activity android:name=".View.User.PickElement" />
@@ -19,9 +22,7 @@
         <activity android:name=".View.User.DriversList" />
         <activity android:name=".View.User.PickTime" />
         <activity android:name=".View.User.PickPlace_OutSide" />
-        <activity android:name=".View.User.PickPlace_Inside" >
-
-        </activity>
+        <activity android:name=".View.User.PickPlace_Inside" />
         <activity android:name=".View.Driver.CarInfo" />
         <activity android:name=".View.Driver.DriverInfo" />
         <activity android:name=".View.PaymentSystem" />

@@ -1,13 +1,21 @@
 package com.example.nglah.Model.hassan_now;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Car_Model {
 
+    @SerializedName("car_type")
     private String car_type;
+    @SerializedName("car_image")
     private String car_image;
+    @SerializedName("panel_id")
     private String panal_id;
+    @SerializedName("allowed_weight")
     private String allowed_weight;
     private String driver_car_name;
+    @SerializedName("driver_city")
     private String driver_car_city;
+    @SerializedName("driver_region")
     private String driver_car_region;
 
     public Car_Model(String car_type, String car_image, String panal_id, String allowed_weight, String driver_car_name, String driver_car_city, String driver_car_region) {

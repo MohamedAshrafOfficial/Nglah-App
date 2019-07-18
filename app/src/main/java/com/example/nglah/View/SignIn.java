@@ -116,8 +116,8 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
 
                     List<Driver> driver = driverResponse.getDriverInfo();
 
-                    Toast.makeText(SignIn.this, "Welcome Mr/Miss "
-                            + driver.get(0).getFirstName() + " " + driver.get(0).getLastName(), Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(SignIn.this, User_Main.class));
+
                 }else{
                     Toast.makeText(SignIn.this, "Invalid Password", Toast.LENGTH_SHORT).show();
                 }
@@ -153,8 +153,8 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
 
                     List<Nglah> nglah = nglahResponse.getNglahOwnerInfo();
 
-                    Toast.makeText(SignIn.this, "Welcome Mr/Miss "
-                            + nglah.get(0).getFirstName() + " " + nglah.get(0).getLastName(), Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(SignIn.this, User_Main.class));
+
                 }else{
                     Toast.makeText(SignIn.this, "Invalid Password", Toast.LENGTH_SHORT).show();
                 }

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/burble_white"
 
-    tools:context=".View.User.UserInfo">
+    tools:context=".View.User.User_Profile">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -57,7 +57,7 @@
                 android:textStyle="bold" />
 
 
-            <EditText
+            <TextView
                 android:id="@+id/u_f_name"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
@@ -66,7 +66,6 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:hint="    محمد  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -97,7 +96,7 @@
                 android:textStyle="bold" />
 
 
-            <EditText
+            <TextView
                 android:id="@+id/u_l_name"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
@@ -106,7 +105,6 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:hint="  محمد  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -138,7 +136,7 @@
 
 
 
-            <EditText
+            <TextView
                 android:id="@+id/u_phone"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
@@ -147,7 +145,6 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:hint="  01111111  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -178,7 +175,7 @@
 
 
 
-            <EditText
+            <TextView
                 android:id="@+id/u_email"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
@@ -187,7 +184,6 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:hint="  @gmail  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -219,7 +215,7 @@
 
 
 
-            <EditText
+            <TextView
                 android:id="@+id/u_username"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
@@ -228,7 +224,6 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:hint="  محمد  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -259,7 +254,7 @@
 
 
 
-            <EditText
+            <TextView
                 android:id="@+id/u_password"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
@@ -268,7 +263,6 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:hint="  0000  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -277,19 +271,30 @@
         </LinearLayout>
 
 
-        <Button
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="30dp"
-            android:background="#fff"
-            android:text="  موافق  "
-            android:textColor="#000"
-            android:onClick="Update"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:background="#fff"
+                android:text="  Back  "
+                android:onClick="back"
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+
 
     </LinearLayout>
 

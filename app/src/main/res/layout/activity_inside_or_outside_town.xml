@@ -63,7 +63,7 @@
         android:layout_gravity="center"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="60dp"
-
+        android:onClick="OutIside"
         android:layout_marginRight="60dp"
         android:background="@color/yello"
         android:text="  بين المدن  "
@@ -78,6 +78,7 @@
         android:layout_marginLeft="60dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="60dp"
+        android:onClick="Iside"
         android:background="@color/yello"
         android:text="  داخل المدينه  "
         android:textColor="#fff"

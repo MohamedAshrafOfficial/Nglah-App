@@ -1,11 +1,24 @@
 package com.example.nglah.Model.hassan_now;
 
+import com.google.gson.annotations.SerializedName;
+
 public class User_Model {
+    @SerializedName("first_name")
     private String f_name;
+    @SerializedName("last_name")
+
     private String l_name;
+    @SerializedName("phone")
+
     private String phone;
+    @SerializedName("email")
+
     private String email;
+    @SerializedName("username")
+
     private String username;
+    @SerializedName("password")
+
     private String password;
 
     public User_Model() {
