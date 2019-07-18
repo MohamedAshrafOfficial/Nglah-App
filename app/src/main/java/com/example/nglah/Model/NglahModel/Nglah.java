@@ -5,6 +5,10 @@ import com.google.gson.annotations.SerializedName;
 
 public class Nglah {
 
+    @SerializedName("nglah_id")
+    @Expose
+    private int nglahId;
+
     @SerializedName("first_name")
     @Expose
     private String firstName;
@@ -17,6 +21,18 @@ public class Nglah {
     @Expose
     private String email;
 
+    @SerializedName("nglah_type")
+    @Expose
+    private String nglahType;
+
+    @SerializedName("thing_type")
+    @Expose
+    private String thingType;
+
+    @SerializedName("details")
+    @Expose
+    private String details;
+
 
     public Nglah(String firstName, String lastName, String email) {
         this.firstName = firstName;
@@ -24,6 +40,10 @@ public class Nglah {
         this.email = email;
     }
 
+
+    public int getNglahId() {
+        return nglahId;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -35,6 +55,18 @@ public class Nglah {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getNglahType() {
+        return nglahType;
+    }
+
+    public String getThingType() {
+        return thingType;
+    }
+
+    public String getDetails() {
+        return details;
     }
 }
 

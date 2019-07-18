@@ -126,6 +126,7 @@ public class PickPlace_Inside extends AppCompatActivity implements AdapterView.O
 
     }
 
+
     private ArrayList removeRepeatedValues(ArrayList list){
         ArrayList arrayList = list;
         Set set = new HashSet(arrayList);
