@@ -1,5 +1,7 @@
 package com.example.nglah.View.User;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,6 +14,7 @@ import com.example.nglah.Model.DriverModel.Driver;
 import com.example.nglah.R;
 import com.example.nglah.Services.ApiClient;
 import com.example.nglah.Services.JsonPlaceHolderApi;
+import com.example.nglah.View.User_Main;
 
 import java.util.List;
 
@@ -19,18 +22,21 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class DriversList extends AppCompatActivity {
+public class DriversList extends AppCompatActivity implements NglahNotificationAdapter.ListItemClickListener{
 
     private NglahNotificationAdapter mAdapter;
     private RecyclerView mRecyclerView;
     private List<Driver> driverAcceptedList;
 
     private JsonPlaceHolderApi jsonPlaceHolderApi;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drivers_list);
+
+        sharedPreferences=getSharedPreferences("nglah_file",MODE_PRIVATE);
 
         // init all widgets in this activity
         initWidgets();
@@ -54,7 +60,7 @@ public class DriversList extends AppCompatActivity {
 
     private void loadDriversInRecyclerView(){
 
-        Call<AcceptDriverService> call = jsonPlaceHolderApi.getDriversAccepted(2);
+        Call<AcceptDriverService> call = jsonPlaceHolderApi.getDriversAccepted(sharedPreferences.getInt("Nglah_ID",0));
 
         call.enqueue(new Callback<AcceptDriverService>() {
             @Override
@@ -68,8 +74,7 @@ public class DriversList extends AppCompatActivity {
 
                 driverAcceptedList = acceptDriverService.getDriversAccepted();
 
-                mAdapter = new NglahNotificationAdapter(driverAcceptedList, getApplicationContext());
-                mRecyclerView.setAdapter(mAdapter);
+                refreshRecyclerView();
             }
 
             @Override
@@ -78,5 +83,22 @@ public class DriversList extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void refreshRecyclerView(){
+        mAdapter = new NglahNotificationAdapter(driverAcceptedList, this);
+        mRecyclerView.setAdapter(mAdapter);
+    }
+
+    @Override
+    public void onListItemClick(int clickedItemIndex) {
+        Toast.makeText(this, ""+clickedItemIndex, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        startActivity(new Intent(DriversList.this, User_Main.class));
     }
 }

@@ -122,6 +122,7 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
                     List<Driver> driver = driverResponse.getDriverInfo();
 
                     editor.putInt("user_type",2);
+                    editor.putString("Driver_ID",driver.get(0).getDriverId());
                     editor.commit();
                     startActivity(new Intent(SignIn.this, User_Main.class));
                     finish();
@@ -164,6 +165,7 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
 
                     startActivity(new Intent(SignIn.this, User_Main.class));
                     editor.putInt("user_type",1);
+                    editor.putInt("Nglah_ID",nglah.get(0).getNglahId());
                     editor.commit();
                     finish();
 

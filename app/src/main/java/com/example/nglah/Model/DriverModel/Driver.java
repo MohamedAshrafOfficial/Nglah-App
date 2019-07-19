@@ -7,7 +7,7 @@ public class Driver {
 
     @SerializedName("driver_national_id")
     @Expose
-    private int driverId;
+    private String driverId;
 
     @SerializedName("first_name")
     @Expose
@@ -34,14 +34,15 @@ public class Driver {
     private String price;
 
 
-    public Driver(int driverId, String firstName, String lastName, String email) {
+    public Driver(String driverId, String firstName, String lastName, String email) {
         this.driverId = driverId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
     }
 
-    public int getDriverId() {
+
+    public String getDriverId() {
         return driverId;
     }
 

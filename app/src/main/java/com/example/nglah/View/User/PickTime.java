@@ -150,6 +150,7 @@ public class PickTime extends AppCompatActivity {
 
         progressDialog.show();
         final Map<String, String> parameters = new HashMap<>();
+        parameters.put("nglah_id", String.valueOf(sharedPreferences.getInt("Nglah_ID",0)));
         parameters.put("country", sharedPreferences.getString("country","null"));
         parameters.put("region", sharedPreferences.getString("region","null"));
         parameters.put("city", sharedPreferences.getString("city","null"));
@@ -171,7 +172,7 @@ public class PickTime extends AppCompatActivity {
             public void onFailure(Call<User_Order_Model> call, Throwable t) {
 
                 progressDialog.dismiss();
-                startActivity(new Intent(PickTime.this,User_Main.class));
+                startActivity(new Intent(PickTime.this,DriversList.class));
                 finish();
 
             }
@@ -184,6 +185,7 @@ public class PickTime extends AppCompatActivity {
 
         progressDialog.show();
         final Map<String, String> parameters = new HashMap<>();
+        parameters.put("nglah_id", String.valueOf(sharedPreferences.getInt("Nglah_ID",0)));
         parameters.put("country", sharedPreferences.getString("country","null"));
         parameters.put("arrive_details", sharedPreferences.getString("city_recive","null"));
         parameters.put("departure_details", sharedPreferences.getString("location","null"));
@@ -209,7 +211,7 @@ public class PickTime extends AppCompatActivity {
             public void onFailure(Call<User_Order_Model> call, Throwable t) {
 
                 progressDialog.dismiss();
-                startActivity(new Intent(PickTime.this,User_Main.class));
+                startActivity(new Intent(PickTime.this,DriversList.class));
                 finish();
 
             }

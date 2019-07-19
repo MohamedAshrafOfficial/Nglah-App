@@ -1,6 +1,7 @@
 package com.example.nglah.View.Driver;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -27,11 +28,13 @@ public class DriverOrdersActivity extends AppCompatActivity implements DriverNot
     private List<Nglah> nglahOrdersList;
 
     private JsonPlaceHolderApi jsonPlaceHolderApi;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_orders);
+        sharedPreferences=getSharedPreferences("nglah_file",MODE_PRIVATE);
 
         // init all widgets in this activity
         initWidgets();
@@ -53,7 +56,7 @@ public class DriverOrdersActivity extends AppCompatActivity implements DriverNot
 
     private void loadNglahInRecyclerView(){
 
-        Call<NglahOrdersService> call = jsonPlaceHolderApi.getNglahOrders("55");
+        Call<NglahOrdersService> call = jsonPlaceHolderApi.getNglahOrders(sharedPreferences.getString("Driver_ID","null"));
 
         call.enqueue(new Callback<NglahOrdersService>() {
             @Override
@@ -94,6 +97,10 @@ public class DriverOrdersActivity extends AppCompatActivity implements DriverNot
         intent.putExtra("nglah_id", nglahOrdersList.get(clickedItemIndex).getNglahId());
         intent.putExtra("nglah_name", nglahName);
         intent.putExtra("thing_type", nglahOrdersList.get(clickedItemIndex).getThingType());
+        intent.putExtra("nglah_city", nglahOrdersList.get(clickedItemIndex).getCity());
+        intent.putExtra("nglah_sector", nglahOrdersList.get(clickedItemIndex).getSector());
+        intent.putExtra("nglah_date", nglahOrdersList.get(clickedItemIndex).getDate());
+        intent.putExtra("nglah_time", nglahOrdersList.get(clickedItemIndex).getTime());
         intent.putExtra("nglah_details", nglahOrdersList.get(clickedItemIndex).getDetails());
         startActivity(intent);
     }

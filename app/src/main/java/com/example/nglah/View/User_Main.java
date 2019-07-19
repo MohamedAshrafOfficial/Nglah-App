@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.nglah.R;
+import com.example.nglah.View.Driver.DriverOrdersActivity;
 import com.example.nglah.View.Driver.Driver_Profile;
+import com.example.nglah.View.User.DriversList;
 import com.example.nglah.View.User.InsideOrOutsideTown;
 import com.example.nglah.View.User.User_Profile;
 
@@ -29,6 +31,8 @@ public class User_Main extends AppCompatActivity {
 
 
         }else if (sharedPreferences.getInt("user_type",0)==2){
+
+            startActivity(new Intent(this, DriverOrdersActivity.class));
 
 
         }
@@ -57,6 +61,7 @@ public class User_Main extends AppCompatActivity {
 
     public void EXIT(View view) {
 
-        finish();
+        startActivity(new Intent(this, DriversList.class));
+        //finish();
     }
 }
