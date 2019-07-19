@@ -94,6 +94,10 @@ public class DriverOrdersActivity extends AppCompatActivity implements DriverNot
         intent.putExtra("nglah_id", nglahOrdersList.get(clickedItemIndex).getNglahId());
         intent.putExtra("nglah_name", nglahName);
         intent.putExtra("thing_type", nglahOrdersList.get(clickedItemIndex).getThingType());
+        intent.putExtra("nglah_city", nglahOrdersList.get(clickedItemIndex).getCity());
+        intent.putExtra("nglah_sector", nglahOrdersList.get(clickedItemIndex).getSector());
+        intent.putExtra("nglah_date", nglahOrdersList.get(clickedItemIndex).getDate());
+        intent.putExtra("nglah_time", nglahOrdersList.get(clickedItemIndex).getTime());
         intent.putExtra("nglah_details", nglahOrdersList.get(clickedItemIndex).getDetails());
         startActivity(intent);
     }

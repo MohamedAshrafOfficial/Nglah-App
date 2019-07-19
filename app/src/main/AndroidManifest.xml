@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".View.Driver.Driver_Profile"></activity>
+        <activity android:name=".View.User.User_Profile" />
+        <activity android:name=".View.User_Main" />
         <activity android:name=".View.Driver.DriverOrdersActivity">
+
         </activity>
         <activity android:name=".View.User.InsideOrOutsideTown" />
         <activity android:name=".View.Driver.AcceptedUserInfo" />
@@ -30,7 +34,6 @@
         <activity android:name=".View.User.PickPlace_Inside"></activity>
         <activity android:name=".View.Driver.CarInfo" />
         <activity android:name=".View.Driver.DriverInfo" >
-
         </activity>
         <activity android:name=".View.PaymentSystem" />
         <activity android:name=".View.SignUp" />

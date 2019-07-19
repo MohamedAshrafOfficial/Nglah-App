@@ -20,7 +20,9 @@ import retrofit2.Response;
 
 public class AcceptedUserInfo extends AppCompatActivity {
 
-    private TextView nglahNameTextView, thingTypeTextView, nglahDetailsTextView;
+    private TextView nglahNameTextView, thingTypeTextView, nglahDetailsTextView, nglahCityTextView,
+                    nglahSectorTextView, nglahDateTextView, nglahTimeTextView;
+
     private EditText nglahPriceEditText;
     private Button okButton;
 
@@ -40,6 +42,10 @@ public class AcceptedUserInfo extends AppCompatActivity {
         nglahId = intent.getIntExtra("nglah_id",0);
         nglahNameTextView.setText(intent.getStringExtra("nglah_name"));
         thingTypeTextView.setText(intent.getStringExtra("thing_type"));
+        nglahDateTextView.setText(intent.getStringExtra("nglah_date"));
+        nglahTimeTextView.setText(intent.getStringExtra("nglah_time"));
+        nglahCityTextView.setText(intent.getStringExtra("nglah_city"));
+        nglahSectorTextView.setText(intent.getStringExtra("nglah_sector"));
         nglahDetailsTextView.setText(intent.getStringExtra("nglah_details"));
 
         Toast.makeText(this, ""+nglahId, Toast.LENGTH_SHORT).show();
@@ -54,6 +60,10 @@ public class AcceptedUserInfo extends AppCompatActivity {
 
         nglahNameTextView = findViewById(R.id.tv_nglah_name);
         thingTypeTextView = findViewById(R.id.tv_thing_type);
+        nglahCityTextView = findViewById(R.id.tv_city);
+        nglahSectorTextView = findViewById(R.id.tv_sector);
+        nglahDateTextView = findViewById(R.id.tv_date);
+        nglahTimeTextView = findViewById(R.id.tv_time);
         nglahDetailsTextView = findViewById(R.id.tv_details);
 
         nglahPriceEditText = findViewById(R.id.et_price);

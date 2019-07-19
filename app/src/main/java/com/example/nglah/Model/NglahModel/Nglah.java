@@ -29,6 +29,22 @@ public class Nglah {
     @Expose
     private String thingType;
 
+    @SerializedName("city")
+    @Expose
+    private String city;
+
+    @SerializedName("sector")
+    @Expose
+    private String sector;
+
+    @SerializedName("date")
+    @Expose
+    private String date;
+
+    @SerializedName("time")
+    @Expose
+    private String time;
+
     @SerializedName("details")
     @Expose
     private String details;
@@ -63,6 +79,22 @@ public class Nglah {
 
     public String getThingType() {
         return thingType;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getSector() {
+        return sector;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getTime() {
+        return time;
     }
 
     public String getDetails() {

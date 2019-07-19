@@ -19,7 +19,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class DriversList extends AppCompatActivity {
+public class DriversList extends AppCompatActivity implements NglahNotificationAdapter.ListItemClickListener{
 
     private NglahNotificationAdapter mAdapter;
     private RecyclerView mRecyclerView;
@@ -68,8 +68,7 @@ public class DriversList extends AppCompatActivity {
 
                 driverAcceptedList = acceptDriverService.getDriversAccepted();
 
-                mAdapter = new NglahNotificationAdapter(driverAcceptedList, getApplicationContext());
-                mRecyclerView.setAdapter(mAdapter);
+                refreshRecyclerView();
             }
 
             @Override
@@ -78,5 +77,15 @@ public class DriversList extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void refreshRecyclerView(){
+        mAdapter = new NglahNotificationAdapter(driverAcceptedList, this);
+        mRecyclerView.setAdapter(mAdapter);
+    }
+
+    @Override
+    public void onListItemClick(int clickedItemIndex) {
+        Toast.makeText(this, ""+clickedItemIndex, Toast.LENGTH_SHORT).show();
     }
 }

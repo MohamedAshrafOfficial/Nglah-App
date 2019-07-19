@@ -17,13 +17,18 @@ public class NglahNotificationAdapter extends RecyclerView.Adapter<NglahNotifica
 
     private static final String TAG = NglahNotificationAdapter.class.getSimpleName();
 
-    private List<Driver> drivers;
-    private Context context;
+    final private ListItemClickListener mOnClickListener;
 
-    public NglahNotificationAdapter(List<Driver> drivers, Context context) {
+    private List<Driver> drivers;
+
+    public interface ListItemClickListener {
+        void onListItemClick(int clickedItemIndex);
+    }
+
+    public NglahNotificationAdapter(List<Driver> drivers, ListItemClickListener listener) {
 
         this.drivers = drivers;
-        this.context = context;
+        this.mOnClickListener = listener;
     }
 
     /**
@@ -82,7 +87,7 @@ public class NglahNotificationAdapter extends RecyclerView.Adapter<NglahNotifica
     /**
      * Cache of the children views for a list item.
      */
-    class NumberViewHolder extends RecyclerView.ViewHolder {
+    class NumberViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView listItemDriverName;
         TextView listItemDriverPhone;
@@ -95,6 +100,8 @@ public class NglahNotificationAdapter extends RecyclerView.Adapter<NglahNotifica
             listItemDriverPhone = itemView.findViewById(R.id.tv_phone);
             listItemDriverPrice = itemView.findViewById(R.id.tv_price);
             listItemDriverRate = itemView.findViewById(R.id.tv_rate);
+
+            itemView.setOnClickListener(this);
         }
 
 
@@ -105,6 +112,12 @@ public class NglahNotificationAdapter extends RecyclerView.Adapter<NglahNotifica
             listItemDriverPhone.setText("T: " + drivers.get(listIndex).getPhone());
             listItemDriverPrice.setText(". " + drivers.get(listIndex).getPrice() + " SR");
             listItemDriverRate.setText(drivers.get(listIndex).getRate());
+        }
+
+        @Override
+        public void onClick(View view) {
+            int clickedPosition = getAdapterPosition();
+            mOnClickListener.onListItemClick(clickedPosition);
         }
     }
 }
