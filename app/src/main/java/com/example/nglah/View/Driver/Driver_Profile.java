@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.nglah.Model.hassan_now.Car_Model;
@@ -17,6 +18,7 @@ import com.example.nglah.Services.JsonPlaceHolderApi;
 import com.example.nglah.View.SignIn;
 import com.example.nglah.View.User.UserInfo;
 import com.example.nglah.View.User.User_Profile;
+import com.example.nglah.View.User_Main;
 
 import java.util.List;
 
@@ -208,4 +210,8 @@ public class Driver_Profile extends AppCompatActivity {
     }
 
 
+    public void backmain(View view) {
+        startActivity(new Intent(Driver_Profile.this, User_Main.class));
+
+    }
 }

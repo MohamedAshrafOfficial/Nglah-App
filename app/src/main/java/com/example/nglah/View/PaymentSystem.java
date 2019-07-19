@@ -25,10 +25,12 @@ public class PaymentSystem extends AppCompatActivity {
         int user_type=sharedPreferences.getInt("user_type",0);
         if (user_type==1){
             startActivity(new Intent(this, UserInfo.class));
+            finish();
 
         }else if (user_type==2){
 
             startActivity(new Intent(this, DriverInfo.class));
+            finish();
 
         }
 

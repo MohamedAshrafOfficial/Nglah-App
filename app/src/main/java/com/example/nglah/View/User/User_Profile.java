@@ -125,6 +125,7 @@ public class User_Profile extends AppCompatActivity {
             editor.putString("setting","update");
             editor.commit();
             startActivity(new Intent(User_Profile.this, UserInfo.class));
+            finish();
 
 
         } else if (id == R.id.Logout) {
@@ -141,6 +142,7 @@ public class User_Profile extends AppCompatActivity {
 
     public void back(View view) {
         startActivity(new Intent(User_Profile.this, User_Main.class));
+        finish();
 
     }
 }

@@ -28,12 +28,15 @@ public class PickElement extends AppCompatActivity {
     private Spinner asas;
     private Spinner building;
     private Spinner other;
+    private ArrayAdapter<String> adapter;
+    private ArrayAdapter<String> adapterasas;
+    private ArrayAdapter<String> adapterbulding;
+    private ArrayAdapter<String> adapterother;
     ArrayList<String>carlist=new ArrayList<>();
     ArrayList<String>asaslist=new ArrayList<>();
     ArrayList<String>buldinglist=new ArrayList<>();
     ArrayList<String>otherlist=new ArrayList<>();
 
-    private ArrayAdapter<String> adapter;
 
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
@@ -42,22 +45,25 @@ public class PickElement extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pick_element);
-        initView();
-        action();
+
         sharedPreferences=getSharedPreferences("nglah_file",MODE_PRIVATE);
         editor=sharedPreferences.edit();
-        carlist.add("dyna");
+        carlist.add("سياره صغيره");
+        carlist.add("سياره كبيره");
         asaslist.add("كنبه");
-        buldinglist.add("حجاره");
+        asaslist.add("سرير");
+        buldinglist.add("مواد ناء");
         otherlist.add("شئ اخر");
+        initView();
+        action();
     }
 
     public void Submit(View view) {
 
-        editor.putString("car","car");
-//        editor.putString("asas",asas.getSelectedItem().toString());
-//        editor.putString("bulding",building.getSelectedItem().toString());
-//        editor.putString("other",other.getSelectedItem().toString());
+        editor.putString("car",car.getSelectedItem().toString());
+        editor.putString("asas",asas.getSelectedItem().toString());
+        editor.putString("bulding",building.getSelectedItem().toString());
+        editor.putString("other",other.getSelectedItem().toString());
         editor.commit();
         startActivity(new Intent(this,PickTime.class));
 
@@ -74,7 +80,6 @@ public class PickElement extends AppCompatActivity {
 
     private void action(){
 
-
         adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, carlist) {
 
@@ -88,50 +93,45 @@ public class PickElement extends AppCompatActivity {
             }
         };
         car.setAdapter(adapter);
+        adapterasas = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, asaslist) {
 
+            @NonNull
+            @Override
+            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView tv = view.findViewById(android.R.id.text1);
+                tv.setTextColor(Color.WHITE);
+                return view;
+            }
+        };
+        asas.setAdapter(adapterasas);
+        adapterbulding = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, buldinglist) {
 
-//        adapter = new ArrayAdapter<String>(this,
-//                android.R.layout.simple_list_item_1, asaslist) {
-//
-//            @NonNull
-//            @Override
-//            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-//                View view = super.getView(position, convertView, parent);
-//                TextView tv = view.findViewById(android.R.id.text1);
-//                tv.setTextColor(Color.WHITE);
-//                return view;
-//            }
-//        };
-      //  asas.setAdapter(adapter);
+            @NonNull
+            @Override
+            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView tv = view.findViewById(android.R.id.text1);
+                tv.setTextColor(Color.WHITE);
+                return view;
+            }
+        };
+        building.setAdapter(adapterbulding);
+        adapterother = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, otherlist) {
 
-//        adapter = new ArrayAdapter<String>(this,
-//                android.R.layout.simple_list_item_1, buldinglist) {
-//
-//            @NonNull
-//            @Override
-//            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-//                View view = super.getView(position, convertView, parent);
-//                TextView tv = view.findViewById(android.R.id.text1);
-//                tv.setTextColor(Color.WHITE);
-//                return view;
-//            }
-//        };
-      //  building.setAdapter(adapter);
-
-//        adapter = new ArrayAdapter<String>(this,
-//                android.R.layout.simple_list_item_1, otherlist) {
-//
-//            @NonNull
-//            @Override
-//            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-//                View view = super.getView(position, convertView, parent);
-//                TextView tv = view.findViewById(android.R.id.text1);
-//                tv.setTextColor(Color.WHITE);
-//                return view;
-//            }
-//        };
-       // other.setAdapter(adapter);
-
+            @NonNull
+            @Override
+            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView tv = view.findViewById(android.R.id.text1);
+                tv.setTextColor(Color.WHITE);
+                return view;
+            }
+        };
+        other.setAdapter(adapterother);
 
 
     }

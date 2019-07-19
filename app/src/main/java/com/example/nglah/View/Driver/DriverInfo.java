@@ -5,13 +5,23 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.nglah.Model.hassan_now.Car_Model;
@@ -53,8 +63,10 @@ public class DriverInfo extends AppCompatActivity {
     SharedPreferences.Editor editor;
     AlertDialog.Builder alertDialog;
     ArrayList<Car_Model>car_list=new ArrayList<>();
+    private ArrayAdapter<String> adapter;
     ProgressDialog progressDialog;
-    String txtCar_type,txtCar_Panal, txtCar_Weight, txtD_Car_Name, txtD_Car_City, txtD_Car_Region,old_n_id;
+    String txtCar_type,txtCar_Panal, txtCar_Weight, txtD_Car_Name, txtD_Car_City, txtD_Car_Region,old_n_id,car_image;
+    ArrayList<String>car_type_list=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +82,11 @@ public class DriverInfo extends AppCompatActivity {
         alertDialog=new AlertDialog.Builder(this);
         progressDialog=new ProgressDialog(this);
         progressDialog.setMessage("waiting...");
+
+        car_type_list.add("اختر  سياره");
+        car_type_list.add("ToyoTa");
+        car_type_list.add("Carry");
+
 
         initView();
         getData();
@@ -96,7 +113,6 @@ public class DriverInfo extends AppCompatActivity {
 
         if (sharedPreferences.getString("setting","null").equals("update")){
 
-        Toast.makeText(this, ""+sharedPreferences.getString("email", "null"), Toast.LENGTH_SHORT).show();
         Call<user_service> call = jsonPlaceHolderApi.GetCar_Owner_Data(sharedPreferences.getString("email", "null"));
         call.enqueue(new Callback<user_service>() {
             @Override
@@ -185,7 +201,6 @@ public class DriverInfo extends AppCompatActivity {
         parameters.put("driver_city", dCity.getText().toString());
         parameters.put("driver_region", dRegion.getText().toString());
 
-        Toast.makeText(this, ""+txtD_Car_City, Toast.LENGTH_SHORT).show();
 
 
 
@@ -258,7 +273,7 @@ public class DriverInfo extends AppCompatActivity {
         parameters.put("user_name", dUsername.getText().toString());
         parameters.put("password", dPassword.getText().toString());
         parameters.put("car_type", txtCar_type);
-        parameters.put("car_image", "https");
+        parameters.put("car_image", car_image);
         parameters.put("panel_id", txtCar_Panal);
         parameters.put("allowed_weight", txtCar_Weight);
         parameters.put("owner_city", txtD_Car_City);
@@ -267,7 +282,6 @@ public class DriverInfo extends AppCompatActivity {
         parameters.put("driver_region", dRegion.getText().toString());
         parameters.put("old_driver_national_id", old_n_id);
 
-        Toast.makeText(this, ""+old_n_id, Toast.LENGTH_SHORT).show();
 
 
 
@@ -384,14 +398,64 @@ public class DriverInfo extends AppCompatActivity {
          alertDialog.setView(user_Layout);
         alertDialog.setCancelable(false);
         car_list.clear();
-        final EditText Car_type = user_Layout.findViewById(R.id.car_type);
+        final Spinner Car_type = user_Layout.findViewById(R.id.car_type);
         final EditText Car_Panal = user_Layout.findViewById(R.id.panal_id);
         final EditText Car_Weight = user_Layout.findViewById(R.id.weight);
         final EditText D_Car_Name = user_Layout.findViewById(R.id.d_car_name);
         final EditText D_Car_City = user_Layout.findViewById(R.id.d_car_city);
         final EditText D_Car_Region = user_Layout.findViewById(R.id.d_car_region);
+        final ImageView Car_image = user_Layout.findViewById(R.id.car_image);
 
-        Car_type.setText(txtCar_type);
+
+
+        adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, car_type_list) {
+
+            @NonNull
+            @Override
+            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView tv = view.findViewById(android.R.id.text1);
+                tv.setTextColor(Color.WHITE);
+                return view;
+            }
+        };
+        Car_type.setAdapter(adapter);
+
+        Car_type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position==1){
+                    Car_image.setImageResource(R.drawable.toyota);
+                    car_image="toyota";
+                    Car_image.setVisibility(View.VISIBLE);
+
+                }else if (position==2){
+                    Car_image.setImageResource(R.drawable.carry);
+                    car_image="carry";
+                    Car_image.setVisibility(View.VISIBLE);
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+//        if (txtCar_type.equals("ToyoTa")){
+//
+//            Car_type.setSelection(1);
+//        }else if (txtCar_type.equals("Carry")){
+//
+//            Car_type.setSelection(2);
+//
+//        }else {
+//            Car_type.setSelection(0);
+//        }
+
+//        Car_type.setText(txtCar_type);
         Car_Panal.setText(txtCar_Panal);
         Car_Weight.setText(txtCar_Weight);
         D_Car_Name.setText(txtD_Car_Name);
@@ -420,8 +484,8 @@ public class DriverInfo extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
-                        if (Car_type.getText().toString().isEmpty()) {
-                            Car_type.setError("Car Type not entered");
+                        if (Car_type.getSelectedItemPosition()==0) {
+                            Toast.makeText(DriverInfo.this, "Car Type not entered", Toast.LENGTH_SHORT).show();
                             Car_type.requestFocus();
                         } else if (Car_Panal.getText().toString().isEmpty()) {
                             Car_Panal.setError("Car Panal not entered");
@@ -450,7 +514,7 @@ public class DriverInfo extends AppCompatActivity {
 //                            car_model.setDriver_car_region(D_Car_Region.getText().toString());
 //
 //                            car_list.add(car_model);
-                            txtCar_type=Car_type.getText().toString();
+                            txtCar_type=Car_type.getSelectedItem().toString();
                             txtCar_Panal=Car_Panal.getText().toString();
                             txtCar_Weight=Car_Weight.getText().toString();
                             txtD_Car_Name=D_Car_Name.getText().toString();

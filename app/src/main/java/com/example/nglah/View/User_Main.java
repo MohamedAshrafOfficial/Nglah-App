@@ -48,4 +48,15 @@ public class User_Main extends AppCompatActivity {
 
         }
     }
+
+    public void Mahfazty(View view) {
+
+        startActivity(new Intent(this, PaymentSystem.class));
+
+    }
+
+    public void EXIT(View view) {
+
+        finish();
+    }
 }

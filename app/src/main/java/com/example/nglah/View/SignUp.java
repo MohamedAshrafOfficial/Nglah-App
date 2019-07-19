@@ -276,6 +276,8 @@ public class SignUp extends AppCompatActivity {
                     editor.putString("password",edtpass.getText().toString());
                     editor.commit();
                     startActivity(new Intent(SignUp.this, PaymentSystem.class));
+                    finish();
+
 
 
 
@@ -365,5 +367,7 @@ public class SignUp extends AppCompatActivity {
     /////////////////////////////////////////////////////////////////////////////////////////////////
     public void Back(View view) {
         startActivity(new Intent(this, SignIn.class));
+        finish();
+
     }
 }

@@ -172,6 +172,8 @@ public class PickTime extends AppCompatActivity {
 
                 progressDialog.dismiss();
                 startActivity(new Intent(PickTime.this,User_Main.class));
+                finish();
+
             }
         });
 
@@ -208,6 +210,8 @@ public class PickTime extends AppCompatActivity {
 
                 progressDialog.dismiss();
                 startActivity(new Intent(PickTime.this,User_Main.class));
+                finish();
+
             }
         });
 

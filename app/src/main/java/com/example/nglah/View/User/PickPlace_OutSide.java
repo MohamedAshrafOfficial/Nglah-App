@@ -166,7 +166,7 @@ public class PickPlace_OutSide extends AppCompatActivity {
             editor.putString("location",location.getText().toString());
 
             editor.commit();
-            startActivity(new Intent(this,PickTime.class));
+            startActivity(new Intent(this,PickElement.class));
 
         }
 

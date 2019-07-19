@@ -1,6 +1,7 @@
 package com.example.nglah.View;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
  import android.view.View;
@@ -36,6 +37,8 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
     private boolean flagUserSelected;
 
     private JsonPlaceHolderApi jsonPlaceHolderApi;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +62,8 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerUser.setAdapter(adapter);
         spinnerUser.setOnItemSelectedListener(this);
+        sharedPreferences=getSharedPreferences("nglah_file",MODE_PRIVATE);
+        editor=sharedPreferences.edit();
 
         // action all widgets in this activity
         actionWidgets();
@@ -116,7 +121,11 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
 
                     List<Driver> driver = driverResponse.getDriverInfo();
 
+                    editor.putInt("user_type",2);
+                    editor.commit();
                     startActivity(new Intent(SignIn.this, User_Main.class));
+                    finish();
+
 
                 }else{
                     Toast.makeText(SignIn.this, "Invalid Password", Toast.LENGTH_SHORT).show();
@@ -154,6 +163,9 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
                     List<Nglah> nglah = nglahResponse.getNglahOwnerInfo();
 
                     startActivity(new Intent(SignIn.this, User_Main.class));
+                    editor.putInt("user_type",1);
+                    editor.commit();
+                    finish();
 
                 }else{
                     Toast.makeText(SignIn.this, "Invalid Password", Toast.LENGTH_SHORT).show();

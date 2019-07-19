@@ -71,7 +71,6 @@ public class UserInfo extends AppCompatActivity {
 
     private void getData (){
 
-        Toast.makeText(this, ""+sharedPreferences.getString("setting","null"), Toast.LENGTH_SHORT).show();
         if (sharedPreferences.getString("setting","null").equals("update")){
 
 
@@ -164,6 +163,7 @@ public class UserInfo extends AppCompatActivity {
             @Override
             public void onFailure(Call<User_Model> call, Throwable t) {
                 startActivity(new Intent(UserInfo.this, User_Main.class));
+                finish();
 
                 progressDialog.dismiss();
 
@@ -209,6 +209,7 @@ public class UserInfo extends AppCompatActivity {
             @Override
             public void onFailure(Call<User_Model> call, Throwable t) {
                 startActivity(new Intent(UserInfo.this,User_Main.class));
+                finish();
 
                 progressDialog.dismiss();
 
