@@ -17,9 +17,21 @@ public class Driver {
     @Expose
     private String lastName;
 
+    @SerializedName("phone")
+    @Expose
+    private String phone;
+
     @SerializedName("email")
     @Expose
     private String email;
+
+    @SerializedName("rate")
+    @Expose
+    private String rate;
+
+    @SerializedName("nglah_price")
+    @Expose
+    private String price;
 
 
     public Driver(int driverId, String firstName, String lastName, String email) {
@@ -41,8 +53,20 @@ public class Driver {
         return lastName;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
     public String getEmail() {
         return email;
+    }
+
+    public String getRate() {
+        return rate;
+    }
+
+    public String getPrice() {
+        return price;
     }
 }
 
