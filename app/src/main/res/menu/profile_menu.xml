@@ -1,12 +1,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/Setting"
-        android:title="Setting"
+        android:title="تعديل الملف"
         />
 
     <item
         android:id="@+id/Logout"
-        android:title="Logout"
+        android:title="تسجيل خروج"
         />
 
 

@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -38,8 +39,8 @@ public class PickTime extends AppCompatActivity {
     private ImageView imgBackRecent;
     private Button now;
     private Button later;
-    private EditText date;
-    private EditText time;
+    private TextView date;
+    private TextView time;
     private EditText details;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;

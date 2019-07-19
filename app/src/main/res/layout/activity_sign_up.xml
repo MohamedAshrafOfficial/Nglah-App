@@ -130,7 +130,7 @@
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="            الايميل"
+                android:hint="    البريد الالكتروني   "
                 android:inputType="textEmailAddress"
                 android:textColor="#fff"
                 android:textSize="20dp" />

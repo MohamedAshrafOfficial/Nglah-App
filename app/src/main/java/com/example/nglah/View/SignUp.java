@@ -246,7 +246,7 @@ public class SignUp extends AppCompatActivity {
     /////////////////////////////////////////////////////////////////////////////////////////////////
     private void checkCodeAliart(final int code) {
         final EditText txt = new EditText(SignUp.this);
-        txt.setHint("Virification Code");
+        txt.setHint("Virification Code in gmail");
         txt.setTextColor(Color.BLACK);
         alertDialog.setView(txt);
         alertDialog.setCancelable(false);
