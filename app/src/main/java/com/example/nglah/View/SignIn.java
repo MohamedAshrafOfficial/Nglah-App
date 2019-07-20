@@ -1,5 +1,6 @@
 package com.example.nglah.View;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -24,6 +25,7 @@ import com.example.nglah.Model.DriverModel.Driver;
 import com.example.nglah.Model.NglahModel.LoginNglahService;
 import com.example.nglah.Model.NglahModel.Nglah;
 import com.example.nglah.R;
+import com.example.nglah.View.User.DriversList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +44,9 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
     private boolean flagUserSelected;
 
     private JsonPlaceHolderApi jsonPlaceHolderApi;
+
+    ProgressDialog progressDialog;
+
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
 
@@ -87,6 +92,9 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
         passwordEditText = findViewById(R.id.et_password);
         loginButton = findViewById(R.id.bt_login);
         spinnerUser = findViewById(R.id.sp_user);
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Waiting...");
     }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -114,6 +122,8 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
 //////////////////////////////////////////////////////////////////////////////////////////////////
     private void driverLogin(String email, String password){
 
+        progressDialog.show();
+
         if (email.isEmpty() && password.isEmpty()){
             return;
         }
@@ -137,17 +147,20 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
                     editor.putInt("user_type",2);
                     editor.putString("Driver_ID",driver.get(0).getDriverId());
                     editor.commit();
+
+                    progressDialog.dismiss();
                     startActivity(new Intent(SignIn.this, User_Main.class));
                     finish();
 
-
                 }else{
+                    progressDialog.dismiss();
                     Toast.makeText(SignIn.this, "Invalid Password", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<LoginDriverService> call, Throwable t) {
+                progressDialog.dismiss();
                 Toast.makeText(SignIn.this, "User Name or Password is Invalid", Toast.LENGTH_SHORT).show();
             }
         });
@@ -155,6 +168,8 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
     }
 ///////////////////////////////////////////////////////////////////////////////////////////////////
     private void nglahLogin(String email, String password){
+
+        progressDialog.show();
 
         if (email.isEmpty() && password.isEmpty()){
             return;
@@ -175,20 +190,32 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
                 if (nglahResponse.isSuccess()) {
 
                     List<Nglah> nglah = nglahResponse.getNglahOwnerInfo();
-
-                    startActivity(new Intent(SignIn.this, User_Main.class));
                     editor.putInt("user_type",1);
                     editor.putInt("Nglah_ID",nglah.get(0).getNglahId());
                     editor.commit();
                     finish();
 
+                    if (sharedPreferences.getBoolean("flag_t",false)==true){
+                        progressDialog.dismiss();
+                        startActivity(new Intent(SignIn.this, DriversList.class));
+                        finish();
+                    }else {
+                        progressDialog.dismiss();
+                        startActivity(new Intent(SignIn.this, User_Main.class));
+                        finish();
+
+                    }
+
+
                 }else{
+                    progressDialog.dismiss();
                     Toast.makeText(SignIn.this, "Invalid Password", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<LoginNglahService> call, Throwable t) {
+                progressDialog.dismiss();
                 Toast.makeText(SignIn.this, "User Name or Password is Invalid", Toast.LENGTH_SHORT).show();
             }
         });

@@ -14,6 +14,7 @@ import com.example.nglah.Model.hassan_now.User_Model;
 import com.example.nglah.Model.hassan_now.user_service;
 import com.example.nglah.R;
 import com.example.nglah.Services.JsonPlaceHolderApi;
+import com.example.nglah.View.PaymentSystem;
 import com.example.nglah.View.User_Main;
 
 import java.util.HashMap;
@@ -75,7 +76,6 @@ public class UserInfo extends AppCompatActivity {
 
 
         Call<user_service>call=jsonPlaceHolderApi.GetData(sharedPreferences.getString("email","null"));
-        Toast.makeText(this, ""+sharedPreferences.getString("email","null"), Toast.LENGTH_SHORT).show();
         call.enqueue(new Callback<user_service>() {
             @Override
             public void onResponse(Call<user_service> call, Response<user_service> response) {
@@ -86,7 +86,6 @@ public class UserInfo extends AppCompatActivity {
                     List<User_Model> user_model=user_service.getUser_model();
 
                     for (User_Model user_model1 : user_model){
-                        Toast.makeText(UserInfo.this, ""+user_model1.getPhone(), Toast.LENGTH_SHORT).show();
 
                         uFName.setText(user_model1.getF_name());
                         uLName.setText(user_model1.getL_name());
@@ -229,6 +228,20 @@ public class UserInfo extends AppCompatActivity {
         }else {
 
             CreateUser();
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        if (sharedPreferences.getString("setting","null").equals("update")){
+            startActivity(new Intent(UserInfo.this, User_Main.class));
+            finish();
+
+        }else {
+            startActivity(new Intent(UserInfo.this, PaymentSystem.class));
+            finish();
         }
     }
 }

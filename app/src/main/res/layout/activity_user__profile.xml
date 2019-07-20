@@ -265,6 +265,7 @@
                 android:layout_weight="1"
                 android:background="#fff"
                 android:textColor="#000"
+                android:hint="****"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -285,7 +286,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top|center"
                 android:background="#fff"
-                android:text="  Back  "
+                android:text="  السابق  "
                 android:onClick="back"
                 android:textColor="#000"
                 android:textSize="20dp"

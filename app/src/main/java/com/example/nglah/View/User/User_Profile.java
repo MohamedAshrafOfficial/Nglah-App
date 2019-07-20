@@ -1,5 +1,6 @@
 package com.example.nglah.View.User;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import com.example.nglah.Model.hassan_now.User_Model;
 import com.example.nglah.Model.hassan_now.user_service;
 import com.example.nglah.R;
 import com.example.nglah.Services.JsonPlaceHolderApi;
+import com.example.nglah.View.Driver.Driver_Profile;
 import com.example.nglah.View.SignIn;
 import com.example.nglah.View.User_Main;
 
@@ -39,6 +41,7 @@ public class User_Profile extends AppCompatActivity {
     JsonPlaceHolderApi jsonPlaceHolderApi;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,8 @@ public class User_Profile extends AppCompatActivity {
         jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
         sharedPreferences=getSharedPreferences("nglah_file",MODE_PRIVATE);
         editor=sharedPreferences.edit();
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setMessage("Loading...");
 
         initView();
         getData();
@@ -74,6 +79,7 @@ public class User_Profile extends AppCompatActivity {
 
 
 
+        progressDialog.show();
         Call<user_service> call=jsonPlaceHolderApi.GetData(sharedPreferences.getString("email","null"));
 
 
@@ -94,18 +100,23 @@ public class User_Profile extends AppCompatActivity {
                         uPhone.setText(user_model1.getPhone());
                         uEmail.setText(user_model1.getEmail());
                         uUsername.setText(user_model1.getUsername());
-                        uPassword.setText(user_model1.getPassword());
+                        //uPassword.setText(user_model1.getPassword());
+                        progressDialog.dismiss();
 
 
                     }
 
+                }else {
+                    Toast.makeText(User_Profile.this, "Check Internet", Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
                 }
 
             }
 
             @Override
             public void onFailure(Call<user_service> call, Throwable t) {
-
+                Toast.makeText(User_Profile.this, "Check Internet", Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
             }
         });
 
@@ -144,5 +155,12 @@ public class User_Profile extends AppCompatActivity {
         startActivity(new Intent(User_Profile.this, User_Main.class));
         finish();
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(User_Profile.this, User_Main.class));
+        finish();
     }
 }

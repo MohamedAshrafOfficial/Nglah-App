@@ -182,11 +182,9 @@ public class SignUp extends AppCompatActivity {
                     checkEmailFound("nglah_owner_info", edtemail.getText().toString());
 
 
-
                     } else if (spinner.getSelectedItemPosition() == 2) {
 
                         checkEmailFound("car_owner_info", edtemail.getText().toString());
-
 
 
                     }
@@ -229,7 +227,7 @@ public class SignUp extends AppCompatActivity {
                 } else {
                     progressDialog.dismiss();
 
-                    Toast.makeText(SignUp.this, "faild", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUp.this, "faild2", Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -337,13 +335,11 @@ public class SignUp extends AppCompatActivity {
 
                     }
 
-
-
-                    return;
+//                    return;
                 } else {
                     progressDialog.dismiss();
 
-                    Toast.makeText(SignUp.this, "faild", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUp.this, "faild1", Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -369,5 +365,12 @@ public class SignUp extends AppCompatActivity {
         startActivity(new Intent(this, SignIn.class));
         finish();
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this, SignIn.class));
+        finish();
     }
 }

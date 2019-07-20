@@ -1,5 +1,6 @@
 package com.example.nglah.View.Driver;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import com.example.nglah.Model.NglahModel.NglahOrdersService;
 import com.example.nglah.R;
 import com.example.nglah.Services.ApiClient;
 import com.example.nglah.Services.JsonPlaceHolderApi;
+import com.example.nglah.View.User_Main;
 
 import java.util.List;
 
@@ -29,6 +31,8 @@ public class DriverOrdersActivity extends AppCompatActivity implements DriverNot
 
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     SharedPreferences sharedPreferences;
+
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,10 +55,15 @@ public class DriverOrdersActivity extends AppCompatActivity implements DriverNot
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setHasFixedSize(true);
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading Drivers...");
     }
 
 
     private void loadNglahInRecyclerView(){
+
+        progressDialog.show();
 
         Call<NglahOrdersService> call = jsonPlaceHolderApi.getNglahOrders(sharedPreferences.getString("Driver_ID","null"));
 
@@ -72,11 +81,14 @@ public class DriverOrdersActivity extends AppCompatActivity implements DriverNot
                 nglahOrdersList.addAll(nglahOrdersService.getNglahOrdersOutside());
 
                 refreshRecyclerView();
+
+                progressDialog.dismiss();
             }
 
             @Override
             public void onFailure(Call<NglahOrdersService> call, Throwable t) {
-                Toast.makeText(DriverOrdersActivity.this, "" + t.getMessage(), Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
+                Toast.makeText(DriverOrdersActivity.this, "Check Internet", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -103,5 +115,13 @@ public class DriverOrdersActivity extends AppCompatActivity implements DriverNot
         intent.putExtra("nglah_time", nglahOrdersList.get(clickedItemIndex).getTime());
         intent.putExtra("nglah_details", nglahOrdersList.get(clickedItemIndex).getDetails());
         startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        startActivity(new Intent(DriverOrdersActivity.this, User_Main.class));
+        finish();
     }
 }

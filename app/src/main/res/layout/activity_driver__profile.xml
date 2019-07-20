@@ -76,7 +76,7 @@
                 android:layout_weight="1"
                 android:background="#fff"
                 android:gravity="center"
-                android:text="  سعودي  "
+                android:hint="  سعودي  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -114,7 +114,7 @@
                 android:layout_weight="1"
                 android:background="#fff"
                 android:gravity="center"
-                android:text="000000"
+                android:hint="000000"
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -151,7 +151,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="    محمد  "
+                android:hint="    الاسم الاول  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -191,7 +191,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  محمد  "
+                android:hint="  اسم الاب  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -230,7 +230,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  محمد  "
+                android:hint="  اللقب  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -270,7 +270,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  544444  "
+                android:hint="  0000  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -309,7 +309,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  01111111  "
+                android:hint="  01111111  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -348,7 +348,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  @gmail  "
+                android:hint="  @gmail  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -387,7 +387,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  جده  "
+                android:hint="  جده  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -426,7 +426,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  الجنوبي  "
+                android:hint="  الجنوبي  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -465,7 +465,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  محمد  "
+                android:hint="  اسم المستخدم  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -504,7 +504,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:text="  0000  "
+                android:hint="  **** "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -557,7 +557,7 @@
                 android:layout_weight="1"
                 android:background="#fff"
                 android:gravity="center"
-                android:text="  Dyna  "
+                android:hint="  Dyna  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -595,7 +595,7 @@
                 android:layout_weight="1"
                 android:background="#fff"
                 android:gravity="center"
-                android:text=" ####  "
+                android:hint=" ####  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -632,7 +632,7 @@
                 android:layout_weight="1"
                 android:background="#fff"
                 android:gravity="center"
-                android:text="    طن 4  "
+                android:hint="    طن 4  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -671,7 +671,7 @@
                 android:layout_weight="1"
                 android:background="#fff"
                 android:gravity="center"
-                android:text="  محمد  "
+                android:hint="  اسم السائق  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -710,7 +710,7 @@
                 android:layout_weight="1"
                 android:background="#fff"
                 android:gravity="center"
-                android:text="  مكه  "
+                android:hint="  مكه  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -749,7 +749,7 @@
                 android:layout_weight="1"
                 android:background="#fff"
                 android:gravity="center"
-                android:text="  الجنوبي  "
+                android:hint="  الجنوبي  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />

@@ -1,7 +1,9 @@
 package com.example.nglah.Database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
@@ -12,6 +14,11 @@ import com.example.nglah.Model.hassan_now.Driver_Model;
 import com.example.nglah.Services.JsonPlaceHolderApi;
 import com.example.nglah.View.SignIn;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,18 +32,95 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class DB extends SQLiteOpenHelper {
     private static final String Dbname = "Nglah_database.db";
+    private static final String DB_PATH_SUFFIX = "/databases/";
     private static int version_code = 1;
 
     /* version number of the database (starting at 1); if the database is older,
            onUpgrade will be used to upgrade the database; if the database is
            newer, onDowngrade will be used to downgrade the database
      */
-    private Context context;
+    private static Context context;
 
     public DB(Context context) {
         super(context, Dbname, null, version_code);   // create the database
         this.context = context;
         Toast.makeText(context, "Constructor is Called Successfully .", Toast.LENGTH_SHORT).show();
+    }
+
+    public void CopyDataBaseFromAsset() throws IOException{
+
+        InputStream myInput = context.getAssets().open(Dbname);
+
+        // Path to the just created empty db
+        String outFileName = getDatabasePath();
+
+        // if the path doesn't exist first, create it
+
+        File f = new File(context.getApplicationInfo().dataDir + DB_PATH_SUFFIX);
+
+        if (!f.exists())
+
+        f.mkdir();
+
+        // Open the empty db as the output stream
+
+        OutputStream myOutput = new FileOutputStream(outFileName);
+
+        // transfer bytes from the inputfile to the outputfile
+        byte[] buffer = new byte[1024];
+
+        int length;
+
+        while ((length = myInput.read(buffer)) > 0) {
+
+            myOutput.write(buffer, 0, length);
+
+        }
+
+
+
+        // Close the streams
+
+        myOutput.flush();
+
+        myOutput.close();
+
+        myInput.close();
+
+    }
+
+    private static String getDatabasePath() {
+
+        return context.getApplicationInfo().dataDir + DB_PATH_SUFFIX
+
+                + Dbname;
+
+    }
+
+
+
+    public SQLiteDatabase openDataBase() throws SQLException {
+
+        File dbFile = context.getDatabasePath(Dbname);
+
+        if (!dbFile.exists()) {
+
+            try {
+
+                CopyDataBaseFromAsset();
+
+                System.out.println("Copying sucess from Assets folder");
+
+            } catch (IOException e) {
+
+                throw new RuntimeException("Error creating source database", e);
+
+            }
+
+        }
+
+        return SQLiteDatabase.openDatabase(dbFile.getPath(), null, SQLiteDatabase.NO_LOCALIZED_COLLATORS | SQLiteDatabase.CREATE_IF_NECESSARY);
+
     }
 
     @Override
@@ -76,6 +160,20 @@ public class DB extends SQLiteOpenHelper {
 //        }
     }
 
+//    public boolean insertDate(String name, String email) {
+//        SQLiteDatabase db = getWritableDatabase();
+//        ContentValues content = new ContentValues();
+//        content.put("name", name);
+//        content.put("email", email);
+//        long result = db.insert("countru", null, content);
+//        // result >> the row ID of the newly inserted row, or -1 if an error occurred
+//        if (result == -1) {
+//            return false;
+//        } else {
+//            return true;
+//        }
+//    }
+
     public Map<String, ArrayList> getRegionsWithSectors(String id) {
         Map<String, ArrayList> arrayListMap = new HashMap<>();
         ArrayList arrayList1 = new ArrayList();
@@ -108,6 +206,30 @@ public class DB extends SQLiteOpenHelper {
     }
 
 
+    public ArrayList getCitiesOutside() {
+        ArrayList arrayList = new ArrayList();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("select cities from nglah_city", null);
+        //Cursor object is positioned before the first entry.
+        while (cursor.moveToNext()) {
+            String city = cursor.getString(cursor.getColumnIndex("cities"));
+            arrayList.add(city);
+        }
+        return arrayList;
+    }
+
+
+    public ArrayList getSectorsOutside() {
+        ArrayList arrayList = new ArrayList();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("select sector from nglah_region", null);
+        //Cursor object is positioned before the first entry.
+        while (cursor.moveToNext()) {
+            String sector = cursor.getString(cursor.getColumnIndex("sector"));
+            arrayList.add(sector);
+        }
+        return arrayList;
+    }
 
 }
 

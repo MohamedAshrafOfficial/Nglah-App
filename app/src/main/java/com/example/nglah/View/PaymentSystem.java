@@ -35,4 +35,19 @@ public class PaymentSystem extends AppCompatActivity {
         }
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        if (sharedPreferences.getBoolean("mahfazty",false)==true){
+            startActivity(new Intent(PaymentSystem.this,User_Main.class));
+            finish();
+
+        }else {
+
+            startActivity(new Intent(PaymentSystem.this, SignUp.class));
+            finish();
+        }
+    }
 }

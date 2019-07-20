@@ -79,6 +79,16 @@ public interface JsonPlaceHolderApi {
             @Field("nglah_price") double nglah_price
     );
 
+
+    @FormUrlEncoded
+    @POST("notification_services/index.php")
+    Call<String> sendNotificationToNglah(
+            @Field("noti_code") String noti_code,
+            @Field("noti_message") String noti_message
+    );
+
+
+
     ///////////////////////////////////////////////////////////////////////////////
 
     // hassan

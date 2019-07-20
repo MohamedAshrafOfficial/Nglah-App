@@ -5,13 +5,16 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.example.nglah.R;
+import com.example.nglah.View.User_Main;
 
 public class InsideOrOutsideTown extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+    ImageView image_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +22,15 @@ public class InsideOrOutsideTown extends AppCompatActivity {
         setContentView(R.layout.activity_inside_or_outside_town);
         sharedPreferences=getSharedPreferences("nglah_file",MODE_PRIVATE);
         editor=sharedPreferences.edit();
+        image_back=findViewById(R.id.imgBackRecent);
+
+        image_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(InsideOrOutsideTown.this, User_Main.class));
+                finish();
+            }
+        });
     }
 
     public void Iside(View view) {
@@ -40,4 +52,5 @@ public class InsideOrOutsideTown extends AppCompatActivity {
 
 
     }
+
 }

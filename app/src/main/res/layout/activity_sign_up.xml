@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/burble_white"
     tools:context=".View.SignUp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -64,6 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:background="#A8FFFFFF"
+        android:layout_marginTop="40dp"
         android:backgroundTint="#6AD3D3D3"
         android:orientation="vertical"
         android:padding="30dp">
@@ -204,6 +212,6 @@
             android:textStyle="bold" />
 
     </LinearLayout>
+    </LinearLayout>
 
-
-</RelativeLayout>
+</ScrollView>

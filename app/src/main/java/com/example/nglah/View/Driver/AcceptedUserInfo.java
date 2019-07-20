@@ -1,6 +1,7 @@
 package com.example.nglah.View.Driver;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,10 +10,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.nglah.Model.NglahModel.NglahOrdersService;
 import com.example.nglah.R;
 import com.example.nglah.Services.ApiClient;
 import com.example.nglah.Services.JsonPlaceHolderApi;
+import com.example.nglah.View.User_Main;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -27,20 +28,25 @@ public class AcceptedUserInfo extends AppCompatActivity {
     private Button okButton;
 
     private JsonPlaceHolderApi jsonPlaceHolderApi;
+    SharedPreferences sharedPreferences;
 
     private int nglahId;
+    private String nglahName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accepted_user_info);
+        sharedPreferences=getSharedPreferences("nglah_file",MODE_PRIVATE);
 
         Intent intent = getIntent();
 
         initWidgets();
 
         nglahId = intent.getIntExtra("nglah_id",0);
-        nglahNameTextView.setText(intent.getStringExtra("nglah_name"));
+        nglahName = intent.getStringExtra("nglah_name");
+
+        nglahNameTextView.setText(nglahName);
         thingTypeTextView.setText(intent.getStringExtra("thing_type"));
         nglahDateTextView.setText(intent.getStringExtra("nglah_date"));
         nglahTimeTextView.setText(intent.getStringExtra("nglah_time"));
@@ -76,14 +82,39 @@ public class AcceptedUserInfo extends AppCompatActivity {
 
         Call<String> call = jsonPlaceHolderApi.sendNglahRequest(driverNationalId, nglahId, nglahPrice);
 
+
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
+
+                startActivity(new Intent(AcceptedUserInfo.this, User_Main.class));
+                finish();
             }
 
             @Override
             public void onFailure(Call<String> call, Throwable t) {
+                startActivity(new Intent(AcceptedUserInfo.this, User_Main.class));
+                finish();
                 Toast.makeText(AcceptedUserInfo.this, "Request Sent", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void sendNotificationToNglah(){
+
+        Call<String> call = jsonPlaceHolderApi.sendNotificationToNglah(
+                "1",
+                nglahName + " Accepted Your Request");
+
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+
             }
         });
     }
@@ -93,8 +124,17 @@ public class AcceptedUserInfo extends AppCompatActivity {
         okButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sendNglahRequest("55", nglahId, Double.parseDouble(nglahPriceEditText.getText().toString()));
+                sendNglahRequest(sharedPreferences.getString("Driver_ID","null"), nglahId, Double.parseDouble(nglahPriceEditText.getText().toString()));
+//                sendNotificationToNglah();
+
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(AcceptedUserInfo.this, User_Main.class));
+        finish();
     }
 }

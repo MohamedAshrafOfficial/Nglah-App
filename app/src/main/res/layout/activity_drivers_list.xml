@@ -31,27 +31,13 @@
     </android.support.v7.widget.Toolbar>
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_gravity="top|center"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="40dp"
-        android:background="#000"
-        android:gravity="center"
-        android:text=" انتظر لنبحث عن نوع الناقل المناسب ....  "
-        android:textColor="#fff"
-        android:textSize="20dp"
-        android:textStyle="bold" />
-
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="top|center"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="40dp"
         android:background="#4CAF50"
         android:gravity="center"
@@ -65,9 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#fff"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"></android.support.v7.widget.RecyclerView>
+         android:layout_marginTop="20dp"></android.support.v7.widget.RecyclerView>
 
 
 

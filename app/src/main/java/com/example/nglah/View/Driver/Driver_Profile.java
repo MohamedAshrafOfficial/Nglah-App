@@ -1,5 +1,6 @@
 package com.example.nglah.View.Driver;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.nglah.Model.hassan_now.Car_Model;
 import com.example.nglah.Model.hassan_now.Driver_Model;
@@ -53,6 +55,7 @@ public class Driver_Profile extends AppCompatActivity {
     JsonPlaceHolderApi jsonPlaceHolderApi;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,14 +95,14 @@ public class Driver_Profile extends AppCompatActivity {
         dCarName = (TextView) findViewById(R.id.d_car_name);
         dCarCity = (TextView) findViewById(R.id.d_car_city);
         dCarRegion = (TextView) findViewById(R.id.d_car_region);
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading...");
     }
 
     private void getData () {
 
-
-
-
-
+        progressDialog.show();
 
         Call<user_service> call = jsonPlaceHolderApi.GetCar_Owner_Data(sharedPreferences.getString("email", "null"));
         call.enqueue(new Callback<user_service>() {
@@ -124,12 +127,11 @@ public class Driver_Profile extends AppCompatActivity {
                         dCity.setText(driver_model.getD_city());
                         dRegion.setText(driver_model.getD_region());
                         dUsername.setText(driver_model.getUsernmae());
-                        dPassword.setText(driver_model.getPassword());
+                        //dPassword.setText(driver_model.getPassword());
 
                         getCarData(driver_model.getOwner_name());
 
-
-
+                        progressDialog.dismiss();
                     }
 
                 }
@@ -138,7 +140,8 @@ public class Driver_Profile extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<user_service> call, Throwable t) {
-
+                Toast.makeText(Driver_Profile.this, "Check Internet", Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
             }
         });
 
@@ -212,6 +215,7 @@ public class Driver_Profile extends AppCompatActivity {
 
     public void backmain(View view) {
         startActivity(new Intent(Driver_Profile.this, User_Main.class));
+        finish();
 
     }
 }

@@ -59,9 +59,18 @@ public class PickTime extends AppCompatActivity {
                 .build();
         jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
         sharedPreferences=getSharedPreferences("nglah_file",MODE_PRIVATE);
+        editor=sharedPreferences.edit();
         progressDialog=new ProgressDialog(this);
         progressDialog.setMessage("Waiting...");
         initView();
+
+        imgBackRecent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(PickTime.this,PickElement.class));
+                finish();
+            }
+        });
     }
 
 
@@ -94,6 +103,7 @@ public class PickTime extends AppCompatActivity {
 
     public void Cancle(View view) {
         startActivity(new Intent(PickTime.this, User_Main.class));
+        finish();
 
     }
 
@@ -155,7 +165,7 @@ public class PickTime extends AppCompatActivity {
         parameters.put("region", sharedPreferences.getString("region","null"));
         parameters.put("city", sharedPreferences.getString("city","null"));
         parameters.put("sector", sharedPreferences.getString("sector","null"));
-        parameters.put("thing_type", sharedPreferences.getString("car","null"));
+        parameters.put("thing_type", sharedPreferences.getString("thing_type_elment","null"));
         parameters.put("time", time.getText().toString());
         parameters.put("date", date.getText().toString());
         parameters.put("details", details.getText().toString());
@@ -172,6 +182,8 @@ public class PickTime extends AppCompatActivity {
             public void onFailure(Call<User_Order_Model> call, Throwable t) {
 
                 progressDialog.dismiss();
+                editor.putBoolean("flag_t",true);
+                editor.commit();
                 startActivity(new Intent(PickTime.this,DriversList.class));
                 finish();
 
@@ -211,6 +223,8 @@ public class PickTime extends AppCompatActivity {
             public void onFailure(Call<User_Order_Model> call, Throwable t) {
 
                 progressDialog.dismiss();
+                editor.putBoolean("flag_t",true);
+                editor.commit();
                 startActivity(new Intent(PickTime.this,DriversList.class));
                 finish();
 
@@ -220,5 +234,10 @@ public class PickTime extends AppCompatActivity {
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(PickTime.this,PickElement.class));
+        finish();
+    }
 }

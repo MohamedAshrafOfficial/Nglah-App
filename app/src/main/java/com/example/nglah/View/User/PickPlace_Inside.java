@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.nglah.Database.DB;
 import com.example.nglah.R;
+import com.example.nglah.View.User_Main;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -22,6 +24,7 @@ public class PickPlace_Inside extends AppCompatActivity implements AdapterView.O
 
     private Spinner spinnerCountry, spinnerRegion, spinnerCity, spinnerSector;
     DB dbobject;
+    private ImageView imageView;
 
 
     SharedPreferences sharedPreferences;
@@ -55,12 +58,22 @@ public class PickPlace_Inside extends AppCompatActivity implements AdapterView.O
         spinnerRegion.setEnabled(false);
         spinnerCity.setEnabled(false);
         spinnerSector.setEnabled(false);
+        imageView=findViewById(R.id.imgBackRecent);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(PickPlace_Inside.this, User_Main.class));
+                finish();
+            }
+        });
+
     }
 
 
     public void initWidgets(){
 
         dbobject = new DB(this);
+        dbobject.openDataBase();
 
         spinnerCountry = findViewById(R.id.sp_country);
         spinnerRegion = findViewById(R.id.sp_region);
@@ -151,10 +164,24 @@ public class PickPlace_Inside extends AppCompatActivity implements AdapterView.O
         return arrayList;
     }
 
+//    public void addData() {
+//        boolean status = dbobject.insertDate("ejvbvjkb", "jkbfkjcb");
+//        if (status == true) {
+//            Toast.makeText(this, "Adding data is Done Successfully .", Toast.LENGTH_SHORT).show();
+//        } else {
+//            Toast.makeText(this, "Adding data is failed ! ", Toast.LENGTH_SHORT).show();
+//        }
+//    }
+
     public void GO(View view) {
         startActivity(new Intent(PickPlace_Inside.this,PickElement.class));
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(PickPlace_Inside.this, User_Main.class));
+        finish();
+    }
 }
