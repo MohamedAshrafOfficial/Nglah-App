@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.debugspace.nglah.Model.NglahModel.LoginNglahService;
 import com.debugspace.nglah.Model.hassan_now.User_Order_Model;
 import com.debugspace.nglah.R;
 import com.debugspace.nglah.Services.JsonPlaceHolderApi;
@@ -170,26 +171,37 @@ public class PickTime extends AppCompatActivity {
         parameters.put("date", date.getText().toString());
         parameters.put("details", details.getText().toString());
 
-        Call<User_Order_Model> call=jsonPlaceHolderApi.CreateUser__Inside_Order(parameters);
+        Call<LoginNglahService> call=jsonPlaceHolderApi.CreateUser__Inside_Order(parameters);
 
-        call.enqueue(new Callback<User_Order_Model>() {
+        call.enqueue(new Callback<LoginNglahService>() {
             @Override
-            public void onResponse(Call<User_Order_Model> call, Response<User_Order_Model> response) {
+            public void onResponse(Call<LoginNglahService> call, Response<LoginNglahService> response) {
+                if (!response.isSuccessful()) {
+                    progressDialog.dismiss();
+                    Toast.makeText(PickTime.this, "Check Internet", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
+                LoginNglahService service = response.body();
+
+                if (service.isSuccess()){
+                    progressDialog.dismiss();
+                    editor.putBoolean("flag_t",true);
+                    editor.commit();
+                    startActivity(new Intent(PickTime.this,DriversList.class));
+                    finish();
+                }else{
+                    progressDialog.dismiss();
+                    Toast.makeText(PickTime.this, "خطأ فى التسجيل الطلب !", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
-            public void onFailure(Call<User_Order_Model> call, Throwable t) {
-
+            public void onFailure(Call<LoginNglahService> call, Throwable t) {
                 progressDialog.dismiss();
-                editor.putBoolean("flag_t",true);
-                editor.commit();
-                startActivity(new Intent(PickTime.this,DriversList.class));
-                finish();
-
+                Toast.makeText(PickTime.this, "Check Internet", Toast.LENGTH_SHORT).show();
             }
         });
-
 
     }
 
@@ -211,26 +223,37 @@ public class PickTime extends AppCompatActivity {
         parameters.put("date", date.getText().toString());
         parameters.put("details", details.getText().toString());
 
-        Call<User_Order_Model> call=jsonPlaceHolderApi.CreateUser__Outside_Order(parameters);
+        Call<LoginNglahService> call=jsonPlaceHolderApi.CreateUser__Outside_Order(parameters);
 
-        call.enqueue(new Callback<User_Order_Model>() {
+        call.enqueue(new Callback<LoginNglahService>() {
             @Override
-            public void onResponse(Call<User_Order_Model> call, Response<User_Order_Model> response) {
+            public void onResponse(Call<LoginNglahService> call, Response<LoginNglahService> response) {
+                if (!response.isSuccessful()) {
+                    progressDialog.dismiss();
+                    Toast.makeText(PickTime.this, "Check Internet", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
+                LoginNglahService service = response.body();
+
+                if (service.isSuccess()){
+                    progressDialog.dismiss();
+                    editor.putBoolean("flag_t",true);
+                    editor.commit();
+                    startActivity(new Intent(PickTime.this,DriversList.class));
+                    finish();
+                }else{
+                    progressDialog.dismiss();
+                    Toast.makeText(PickTime.this, "خطأ فى التسجيل الطلب !", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
-            public void onFailure(Call<User_Order_Model> call, Throwable t) {
-
+            public void onFailure(Call<LoginNglahService> call, Throwable t) {
                 progressDialog.dismiss();
-                editor.putBoolean("flag_t",true);
-                editor.commit();
-                startActivity(new Intent(PickTime.this,DriversList.class));
-                finish();
-
+                Toast.makeText(PickTime.this, "Check Internet", Toast.LENGTH_SHORT).show();
             }
         });
-
 
     }
 
