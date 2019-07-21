@@ -28,7 +28,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="معلومات الشاحنه"
-                    android:textSize="20sp"
+                    android:textSize="25dp"
                     android:textStyle="bold"
                     android:gravity="center"
                     android:textColor="@android:color/white"/>
@@ -108,13 +108,13 @@
                 android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:gravity="center"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
                 android:text=" رقم اللوحه  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
 
             <EditText
@@ -123,7 +123,7 @@
                 android:layout_height="50dp"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="#fff"
                 android:hint=" ####  "
@@ -144,13 +144,13 @@
                 android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:gravity="center"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
                 android:text="    اقصي وزن للحموله  "
                 android:textColor="#fff"
-                android:textSize="17dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
 
             <EditText
@@ -159,10 +159,10 @@
                 android:layout_height="50dp"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:hint="    طن 4  "
+                android:hint="    الحموله بالطن  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -181,13 +181,13 @@
                 android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:gravity="center"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
-                android:text="  اسم الساءق   "
+                android:text="  اسم السائق   "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
 
 
@@ -197,10 +197,10 @@
                 android:layout_height="50dp"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:hint="  محمد  "
+                android:hint="  الاسم  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -219,13 +219,13 @@
                 android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:gravity="center"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
                 android:text="  المدينه  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
 
 
@@ -235,10 +235,10 @@
                 android:layout_height="50dp"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:hint="  مكه  "
+                android:hint="  المدينه  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -258,13 +258,13 @@
                 android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:gravity="center"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
                 android:text="  القطاع  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
 
 
@@ -274,10 +274,10 @@
                 android:layout_height="50dp"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="#fff"
-                android:hint="  الجنوبي  "
+                android:hint="  القطاع  "
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />

@@ -52,7 +52,7 @@
         <TextView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:background="@color/yello"
@@ -85,7 +85,7 @@
         <TextView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:background="@color/yello"
@@ -118,7 +118,7 @@
         <TextView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:background="@color/yello"
@@ -152,7 +152,7 @@
         <TextView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:background="@color/yello"
@@ -190,9 +190,9 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="30dp"
             android:onClick="GO"
-            android:background="#fff"
+            android:background="@color/yello"
             android:text="  التالى  "
-            android:textColor="#000"
+            android:textColor="#fff"
             android:textSize="20dp"
             android:textStyle="bold" />
 

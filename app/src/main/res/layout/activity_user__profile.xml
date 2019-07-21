@@ -27,7 +27,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="معلومات المستخدم"
-                    android:textSize="20sp"
+                    android:textSize="25dp"
                     android:gravity="center"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"/>
@@ -48,13 +48,13 @@
                 android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:gravity="center"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
                 android:text="    الاسم الاول  "
                 android:textColor="#fff"
-                android:textSize="17dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
 
 
@@ -64,11 +64,12 @@
                 android:layout_height="50dp"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="#fff"
                 android:textColor="#000"
                 android:textSize="20dp"
+                android:hint="الاسم"
                 android:textStyle="bold" />
 
 
@@ -87,13 +88,13 @@
                 android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:gravity="center"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
                 android:text="  اسم العائله  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
 
 
@@ -103,9 +104,10 @@
                 android:layout_height="50dp"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="#fff"
+                android:hint="الاسم"
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -126,13 +128,13 @@
                 android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:gravity="center"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
                 android:text="  رقم الجوال  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
 
 
@@ -143,10 +145,11 @@
                 android:layout_height="50dp"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="#fff"
                 android:textColor="#000"
+                android:hint="الرقم"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -165,13 +168,13 @@
                 android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:gravity="center"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
                 android:text="  البريد الالكتروني  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
 
 
@@ -182,9 +185,10 @@
                 android:layout_height="50dp"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="#fff"
+                android:hint="البريد الالكتروني"
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -205,13 +209,13 @@
                 android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:gravity="center"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
                 android:text="  اسم المستخدم  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
 
 
@@ -222,10 +226,11 @@
                 android:layout_height="50dp"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="#fff"
                 android:textColor="#000"
+                android:hint="الاسم"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -244,13 +249,13 @@
                 android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:gravity="center"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@color/yello"
                 android:text="  كلمه المرور  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
 
 
@@ -261,7 +266,7 @@
                 android:layout_height="50dp"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="#fff"
                 android:textColor="#000"
@@ -285,10 +290,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top|center"
-                android:background="#fff"
+                android:background="@color/yello"
                 android:text="  السابق  "
                 android:onClick="back"
-                android:textColor="#000"
+                android:textColor="#fff"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
