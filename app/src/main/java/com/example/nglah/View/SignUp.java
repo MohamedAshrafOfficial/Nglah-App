@@ -227,7 +227,7 @@ public class SignUp extends AppCompatActivity {
                 } else {
                     progressDialog.dismiss();
 
-                    Toast.makeText(SignUp.this, "faild2", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUp.this, "faild", Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -339,7 +339,7 @@ public class SignUp extends AppCompatActivity {
                 } else {
                     progressDialog.dismiss();
 
-                    Toast.makeText(SignUp.this, "faild1", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUp.this, "faild", Toast.LENGTH_SHORT).show();
                 }
 
 

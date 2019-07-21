@@ -44,7 +44,6 @@ public class DB extends SQLiteOpenHelper {
     public DB(Context context) {
         super(context, Dbname, null, version_code);   // create the database
         this.context = context;
-        Toast.makeText(context, "Constructor is Called Successfully .", Toast.LENGTH_SHORT).show();
     }
 
     public void CopyDataBaseFromAsset() throws IOException{

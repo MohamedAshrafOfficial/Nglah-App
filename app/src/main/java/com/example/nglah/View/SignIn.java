@@ -146,6 +146,7 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
 
                     editor.putInt("user_type",2);
                     editor.putString("Driver_ID",driver.get(0).getDriverId());
+                    editor.putString("email",driver.get(0).getEmail());
                     editor.commit();
 
                     progressDialog.dismiss();
@@ -192,6 +193,7 @@ public class SignIn extends AppCompatActivity implements AdapterView.OnItemSelec
                     List<Nglah> nglah = nglahResponse.getNglahOwnerInfo();
                     editor.putInt("user_type",1);
                     editor.putInt("Nglah_ID",nglah.get(0).getNglahId());
+                    editor.putString("email",nglah.get(0).getEmail());
                     editor.commit();
                     finish();
 

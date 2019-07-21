@@ -61,6 +61,7 @@ public class PickElement extends AppCompatActivity {
         asaslist.add("سرير");
         buldinglist.add("اختر مواد بناء");
         buldinglist.add("مواد بناء");
+        otherlist.add("- المزيد -");
         otherlist.add("شئ اخر");
         initView();
         action();
@@ -78,7 +79,6 @@ public class PickElement extends AppCompatActivity {
             Toast.makeText(this, "اختر عنصر", Toast.LENGTH_SHORT).show();
         }else {
             startActivity(new Intent(this,PickTime.class));
-
         }
 
     }
@@ -128,11 +128,11 @@ public class PickElement extends AppCompatActivity {
 
                 }else {
                     editor.putString("thing_type_elment",car.getSelectedItem().toString());
+                    editor.commit();
                     asas.setVisibility(View.GONE);
                     building.setVisibility(View.GONE);
                     other.setVisibility(View.GONE);
                     flag=true;
-                    editor.commit();
                 }
             }
 
@@ -261,29 +261,35 @@ public class PickElement extends AppCompatActivity {
 //                    flag=true;
 //                    editor.commit();
 //                }
-                AlertDialog.Builder builder = new AlertDialog.Builder(PickElement.this);
-                final EditText editText = new EditText(PickElement.this);
-                builder.setView(editText);
-                builder.setPositiveButton("موافق", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
+                if (i == 1) {
 
-                        editor.putString("thing_type_elment",editText.getText().toString());
-                        editor.commit();
-                        flag=true;
-                        dialogInterface.dismiss();
-                    }
-                });
+                    AlertDialog.Builder builder = new AlertDialog.Builder(PickElement.this);
+                    final EditText editText = new EditText(PickElement.this);
+                    builder.setView(editText);
+                    builder.setPositiveButton("موافق", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
 
-                builder.setNegativeButton("الغاء", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
+                            editor.putString("thing_type_elment", editText.getText().toString());
+                            editor.commit();
+                            flag = true;
+                            dialogInterface.dismiss();
+                        }
+                    });
+
+                    builder.setNegativeButton("الغاء", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            flag = false;
+                            dialogInterface.dismiss();
+                        }
+                    });
+
+                    builder.show();
+                    if (editText.getText().toString().isEmpty()){
                         flag=false;
-                        dialogInterface.dismiss();
                     }
-                });
-
-                builder.show();
+                }
             }
 
             @Override

@@ -206,7 +206,7 @@ public class PickTime extends AppCompatActivity {
         parameters.put("departure_sector", sharedPreferences.getString("sector_send","null"));
         parameters.put("departure_city", sharedPreferences.getString("city_send","null"));
 
-        parameters.put("thing_type", sharedPreferences.getString("car","null"));
+        parameters.put("thing_type", sharedPreferences.getString("thing_type_elment","null"));
         parameters.put("time", time.getText().toString());
         parameters.put("date", date.getText().toString());
         parameters.put("details", details.getText().toString());
