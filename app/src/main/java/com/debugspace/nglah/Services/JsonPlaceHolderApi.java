@@ -167,7 +167,7 @@ public interface JsonPlaceHolderApi {
 
     @FormUrlEncoded
     @POST("nglah/nglah_owner/nglah_owner_registration.php")
-    Call<User_Model>CreateUser(@FieldMap Map<String,String> fields);
+    Call<LoginNglahService>CreateUser(@FieldMap Map<String,String> fields);
 
     @FormUrlEncoded
     @POST("nglah/nglah_owner/update_nglah_owner.php")
@@ -175,7 +175,7 @@ public interface JsonPlaceHolderApi {
 
     @FormUrlEncoded
     @POST("nglah/car_owner/car_owner_registration.php")
-    Call<Driver_Model>CreateDriver(@FieldMap Map<String,String> fields);
+    Call<LoginDriverService>CreateDriver(@FieldMap Map<String,String> fields);
 
     @FormUrlEncoded
     @POST("nglah/car_owner/update_car_owner.php")
@@ -188,16 +188,15 @@ public interface JsonPlaceHolderApi {
 
     @FormUrlEncoded
     @POST("nglah/check_email.php")
-    Call<Verification_model>GetEmail(@Field("table_name") String Table_Name,
-                                     @Field("email") String Email);
+    Call<Verification_model>GetEmail(@Field("email") String Email);
 
     @FormUrlEncoded
     @POST("nglah/nglah_owner/user_order_inside.php")
-    Call<User_Order_Model>CreateUser__Inside_Order(@FieldMap Map<String,String> fields);
+    Call<LoginNglahService>CreateUser__Inside_Order(@FieldMap Map<String,String> fields);
 
     @FormUrlEncoded
     @POST("nglah/nglah_owner/user_order_outside.php")
-    Call<User_Order_Model>CreateUser__Outside_Order(@FieldMap Map<String,String> fields);
+    Call<LoginNglahService>CreateUser__Outside_Order(@FieldMap Map<String,String> fields);
 
 //    @FormUrlEncoded
 //    @POST("nglah/nglah_owner/select_nglah_owner_info.php")

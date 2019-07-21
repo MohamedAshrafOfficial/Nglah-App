@@ -23,6 +23,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.debugspace.nglah.Model.DriverModel.LoginDriverService;
 import com.debugspace.nglah.Model.hassan_now.Car_Model;
 import com.debugspace.nglah.Model.hassan_now.Driver_Model;
 import com.debugspace.nglah.Model.hassan_now.user_service;
@@ -142,8 +143,6 @@ public class DriverInfo extends AppCompatActivity {
                         getCarData(driver_model.getOwner_name());
                         old_n_id=dNationalId.getText().toString();
 
-
-
                     }
 
                 }
@@ -155,9 +154,6 @@ public class DriverInfo extends AppCompatActivity {
 
             }
         });
-
-
-
 
 
         }else {
@@ -202,59 +198,37 @@ public class DriverInfo extends AppCompatActivity {
         parameters.put("driver_region", dRegion.getText().toString());
 
 
-
-
-//        parameters.put("driver_national_id", "ssd");
-//        parameters.put("driver_name", "ssd");
-//        parameters.put("nationality", "ssd");
-//        parameters.put("first_name", "ssd");
-//        parameters.put("second_name", "ssd");
-//        parameters.put("last_name", "ssd");
-//        parameters.put("driver_license_id", "ssd");
-//        parameters.put("phone", "ssd");
-//        parameters.put("email", "ssd");
-//        parameters.put("user_name", "ssd");
-//        parameters.put("password", "ssd");
-//        parameters.put("car_type", "ssd");
-//        parameters.put("car_image", "https");
-//        parameters.put("panel_id", "ssd");
-//        parameters.put("allowed_weight", "ssd");
-//        parameters.put("owner_city", "ssd");
-//        parameters.put("owner_region","ssd");
-//        parameters.put("driver_city", "ssd");
-//        parameters.put("driver_region", "ssd");
-
-        Call<Driver_Model> call = jsonPlaceHolderApi.CreateDriver(parameters);
-        call.enqueue(new Callback<Driver_Model>() {
+        Call<LoginDriverService> call = jsonPlaceHolderApi.CreateDriver(parameters);
+        call.enqueue(new Callback<LoginDriverService>() {
             @Override
-            public void onResponse(Call<Driver_Model> call, Response<Driver_Model> response) {
-
+            public void onResponse(Call<LoginDriverService> call, Response<LoginDriverService> response) {
                 if (!response.isSuccessful()) {
                     progressDialog.dismiss();
-
-                    Toast.makeText(DriverInfo.this, "faild", Toast.LENGTH_SHORT).show();
-                    return;
-                } else {
-                    progressDialog.dismiss();
-
-                    Toast.makeText(DriverInfo.this, "success", Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(DriverInfo.this, "Check Internet", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                LoginDriverService service = response.body();
+
+                if (service.isSuccess()){
+                    progressDialog.dismiss();
+                    startActivity(new Intent(DriverInfo.this, User_Main.class));
+                    finish();
+                }else{
+                    progressDialog.dismiss();
+                    Toast.makeText(DriverInfo.this, "خطأ فى التسجيل !", Toast.LENGTH_SHORT).show();
+                }
+
             }
 
             @Override
-            public void onFailure(Call<Driver_Model> call, Throwable t) {
-                startActivity(new Intent(DriverInfo.this, User_Main.class));
+            public void onFailure(Call<LoginDriverService> call, Throwable t) {
                 progressDialog.dismiss();
-
+                Toast.makeText(DriverInfo.this, "Check Internet", Toast.LENGTH_SHORT).show();
             }
         });
 
     }
-
-
-
 
     private void Update_Driver() {
 
@@ -282,29 +256,6 @@ public class DriverInfo extends AppCompatActivity {
         parameters.put("driver_region", dRegion.getText().toString());
         parameters.put("old_driver_national_id", old_n_id);
 
-
-
-
-
-//        parameters.put("driver_national_id", "ssd");
-//        parameters.put("driver_name", "ssd");
-//        parameters.put("nationality", "ssd");
-//        parameters.put("first_name", "ssd");
-//        parameters.put("second_name", "ssd");
-//        parameters.put("last_name", "ssd");
-//        parameters.put("driver_license_id", "ssd");
-//        parameters.put("phone", "ssd");
-//        parameters.put("email", "ssd");
-//        parameters.put("user_name", "ssd");
-//        parameters.put("password", "ssd");
-//        parameters.put("car_type", "ssd");
-//        parameters.put("car_image", "https");
-//        parameters.put("panel_id", "ssd");
-//        parameters.put("allowed_weight", "ssd");
-//        parameters.put("owner_city", "ssd");
-//        parameters.put("owner_region","ssd");
-//        parameters.put("driver_city", "ssd");
-//        parameters.put("driver_region", "ssd");
 
         Call<Driver_Model> call = jsonPlaceHolderApi.Update_Driver(parameters);
         call.enqueue(new Callback<Driver_Model>() {
@@ -380,10 +331,6 @@ public class DriverInfo extends AppCompatActivity {
     }
 
 
-
-
-
-
     public void NEXT(View view) {
 
      car_Info();
@@ -405,7 +352,6 @@ public class DriverInfo extends AppCompatActivity {
         final EditText D_Car_City = user_Layout.findViewById(R.id.d_car_city);
         final EditText D_Car_Region = user_Layout.findViewById(R.id.d_car_region);
         final ImageView Car_image = user_Layout.findViewById(R.id.car_image);
-
 
 
         adapter = new ArrayAdapter<String>(this,
@@ -444,27 +390,12 @@ public class DriverInfo extends AppCompatActivity {
             }
         });
 
-//        if (txtCar_type.equals("ToyoTa")){
-//
-//            Car_type.setSelection(1);
-//        }else if (txtCar_type.equals("Carry")){
-//
-//            Car_type.setSelection(2);
-//
-//        }else {
-//            Car_type.setSelection(0);
-//        }
-
 //        Car_type.setText(txtCar_type);
         Car_Panal.setText(txtCar_Panal);
         Car_Weight.setText(txtCar_Weight);
         D_Car_Name.setText(txtD_Car_Name);
         D_Car_City.setText(txtD_Car_City);
         D_Car_Region.setText(txtD_Car_Region);
-
-
-
-
 
 
         alertDialog.setPositiveButton("Submit", null);

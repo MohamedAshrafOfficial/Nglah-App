@@ -90,17 +90,6 @@ public class SignUp extends AppCompatActivity {
         sharedPreferences=getSharedPreferences("nglah_file",MODE_PRIVATE);
         editor=sharedPreferences.edit();
 
-
-        editor.putString("username","");
-        editor.putString("phone","");
-        editor.putString("email","");
-        editor.putString("password","");
-        editor.putString("setting","");
-        editor.putString("user_type","");
-        editor.commit();
-
-
-
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("waiting...");
         initView();
@@ -171,25 +160,8 @@ public class SignUp extends AppCompatActivity {
                 } else {
 
                     progressDialog.show();
-
-                    if (spinner.getSelectedItemPosition() == 1) {
-
-                    checkEmailFound("nglah_owner_info", edtemail.getText().toString());
-
-
-                    } else if (spinner.getSelectedItemPosition() == 2) {
-
-                        checkEmailFound("car_owner_info", edtemail.getText().toString());
-
-
-                    }
-
-
-
-
+                    checkEmailFound(edtemail.getText().toString());
                 }
-
-
             }
         });
     }
@@ -268,10 +240,9 @@ public class SignUp extends AppCompatActivity {
                     editor.putString("email",edtemail.getText().toString());
                     editor.putString("password",edtpass.getText().toString());
                     editor.commit();
+
                     startActivity(new Intent(SignUp.this, PaymentSystem.class));
                     finish();
-
-
 
 
                 } else {
@@ -283,7 +254,9 @@ public class SignUp extends AppCompatActivity {
         alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                startActivity(new Intent(SignUp.this, SignIn.class));
                 dialog.dismiss();
+                finish();
             }
         });
         alertDialog.show();
@@ -291,10 +264,10 @@ public class SignUp extends AppCompatActivity {
     }
 
 
-    public Integer checkEmailFound(String Table_Name, String Email) {
+    public Integer checkEmailFound(String Email) {
 
         final int[] code = new int[1];
-        Call<Verification_model> call = jsonPlaceHolderApi.GetEmail(Table_Name, Email);
+        Call<Verification_model> call = jsonPlaceHolderApi.GetEmail(Email);
         call.enqueue(new Callback<Verification_model>() {
             @Override
             public void onResponse(Call<Verification_model> call, Response<Verification_model> response) {
@@ -337,7 +310,6 @@ public class SignUp extends AppCompatActivity {
                     Toast.makeText(SignUp.this, "faild", Toast.LENGTH_SHORT).show();
                 }
 
-
             }
 
             @Override
@@ -349,17 +321,10 @@ public class SignUp extends AppCompatActivity {
 
     }
 
-
-
-
-
-
-
     /////////////////////////////////////////////////////////////////////////////////////////////////
     public void Back(View view) {
         startActivity(new Intent(this, SignIn.class));
         finish();
-
     }
 
     @Override
