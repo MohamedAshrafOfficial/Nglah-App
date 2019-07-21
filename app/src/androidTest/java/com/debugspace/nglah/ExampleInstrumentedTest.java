@@ -1,4 +1,4 @@
-package com.example.nglah;
+package com.debugspace.nglah;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

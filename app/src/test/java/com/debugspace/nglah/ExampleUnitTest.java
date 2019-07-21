@@ -1,4 +1,4 @@
-package com.example.nglah;
+package com.debugspace.nglah;
 
 import org.junit.Test;
 
