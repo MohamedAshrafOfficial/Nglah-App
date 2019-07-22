@@ -207,7 +207,7 @@ public class SignIn extends AppCompatActivity {
                 if (userResponse.isSuccess()){
 
                     List<User> user = userResponse.getUserInfo();
-                    int userType = user.get(0).getUserType();
+                    int userType = userResponse.getUserType();
                     switch (userType){
                         case 1:                       // Nglah user
 
@@ -240,6 +240,7 @@ public class SignIn extends AppCompatActivity {
                             finish();
                             break;
                         default:
+                            progressDialog.dismiss();
                             Toast.makeText(SignIn.this, "خطأ فى الايميل او كلمه السر", Toast.LENGTH_SHORT).show();
                     }
 

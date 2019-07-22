@@ -5,10 +5,6 @@ import com.google.gson.annotations.SerializedName;
 
 public class User {
 
-    @SerializedName("user_type")
-    @Expose
-    private int userType;
-
     /////////////////////// driver /////////////////////////
 
     @SerializedName("driver_national_id")
@@ -73,10 +69,6 @@ public class User {
     @Expose
     private String details;
 
-
-    public int getUserType() {
-        return userType;
-    }
 
     public String getDriverId() {
         return driverId;

@@ -10,6 +10,9 @@ public class LoginUserService {
     @SerializedName("success")
     private boolean success;
 
+    @SerializedName("user_type")
+    private int userType;
+
     @SerializedName("login")
     @Expose
     private List<User> userInfo;
@@ -17,6 +20,10 @@ public class LoginUserService {
 
     public boolean isSuccess() {
         return success;
+    }
+
+    public int getUserType() {
+        return userType;
     }
 
     public List<User> getUserInfo() {
