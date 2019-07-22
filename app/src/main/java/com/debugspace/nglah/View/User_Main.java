@@ -30,30 +30,33 @@ public class User_Main extends AppCompatActivity {
 
         button = findViewById(R.id.bt_order);
 
-        if (sharedPreferences.getBoolean("flag_t",false)==true){
-            button.setText("قائمة الطلبات");
+        if (sharedPreferences.getInt("user_type", 0) == 2){
+
+        }else {
+
+            if (sharedPreferences.getBoolean("flag_t",false)==true){
+                button.setText("قائمة الطلبات");
+            }
+
         }
     }
 
 
     public void Talab_Naglah(View view) {
 
-        if (sharedPreferences.getBoolean("flag_t", false) == true) {
-            startActivity(new Intent(User_Main.this, DriversList.class));
+        if (sharedPreferences.getInt("user_type", 0) == 2){
+            startActivity(new Intent(this, DriverOrdersActivity.class));
             finish();
-        } else {
+        }else {
 
 
-            if (sharedPreferences.getInt("user_type", 0) == 1) {
+            if (sharedPreferences.getBoolean("flag_t", false) == true) {
+                startActivity(new Intent(User_Main.this, DriversList.class));
+                finish();
+            } else {
 
                 startActivity(new Intent(this, InsideOrOutsideTown.class));
-
-
-            } else if (sharedPreferences.getInt("user_type", 0) == 2) {
-
-                startActivity(new Intent(this, DriverOrdersActivity.class));
-
-
+                finish();
             }
         }
     }

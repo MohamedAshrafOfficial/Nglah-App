@@ -206,7 +206,6 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onFailure(Call<Verification_model> call, Throwable t) {
                 progressDialog.dismiss();
-
             }
         });
     }
