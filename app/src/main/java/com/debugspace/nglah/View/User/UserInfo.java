@@ -154,6 +154,8 @@ public class UserInfo extends AppCompatActivity {
                 LoginNglahService service = response.body();
 
                 if (service.isSuccess()){
+                    editor.putBoolean("flag_t", false);
+                    editor.commit();
                     progressDialog.dismiss();
                     startActivity(new Intent(UserInfo.this, User_Main.class));
                     finish();
