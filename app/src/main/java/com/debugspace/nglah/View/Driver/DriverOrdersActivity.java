@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.debugspace.nglah.Adapters.DriverNotificationAdapter;
@@ -27,6 +29,7 @@ public class DriverOrdersActivity extends AppCompatActivity implements DriverNot
 
     private DriverNotificationAdapter mAdapter;
     private RecyclerView mRecyclerView;
+    private TextView emptyTextView;
     private List<Nglah> nglahOrdersList;
 
     private JsonPlaceHolderApi jsonPlaceHolderApi;
@@ -52,6 +55,8 @@ public class DriverOrdersActivity extends AppCompatActivity implements DriverNot
 
     private void initWidgets(){
         mRecyclerView = findViewById(R.id.recyclerView);
+        emptyTextView = findViewById(R.id.tv_empty_image);
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setHasFixedSize(true);
@@ -95,8 +100,13 @@ public class DriverOrdersActivity extends AppCompatActivity implements DriverNot
     }
 
     private void refreshRecyclerView(){
-        mAdapter = new DriverNotificationAdapter(nglahOrdersList, this);
-        mRecyclerView.setAdapter(mAdapter);
+        if (nglahOrdersList.isEmpty()){
+            emptyTextView.setVisibility(View.VISIBLE);
+        }else {
+            emptyTextView.setVisibility(View.GONE);
+            mAdapter = new DriverNotificationAdapter(nglahOrdersList, this);
+            mRecyclerView.setAdapter(mAdapter);
+        }
     }
 
     @Override

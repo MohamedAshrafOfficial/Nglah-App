@@ -33,7 +33,8 @@
         </activity>
         <activity android:name=".View.PaymentSystem" />
         <activity android:name=".View.SignUp" />
-        <activity android:name=".View.SignIn" />
+        <activity android:name=".View.SignIn"
+                    android:windowSoftInputMode="stateAlwaysHidden"/>
         <activity android:name=".View.Splash">
 
             <intent-filter>

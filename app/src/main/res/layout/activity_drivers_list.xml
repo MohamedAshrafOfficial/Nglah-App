@@ -46,12 +46,27 @@
         android:textSize="20dp"
         android:textStyle="bold" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#fff"
-         android:layout_marginTop="20dp"></android.support.v7.widget.RecyclerView>
+        android:layout_marginTop="20dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff" />
+
+        <TextView
+            android:id="@+id/tv_empty_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="فارغ"
+            android:gravity="center"
+            android:textSize="50sp"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
 
 
 

@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.debugspace.nglah.Adapters.NglahNotificationAdapter;
@@ -34,6 +35,7 @@ public class DriversList extends AppCompatActivity implements NglahNotificationA
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     SharedPreferences sharedPreferences;
     private ImageView imageView;
+    private TextView emptyTextView;
     ProgressDialog progressDialog;
 
     @Override
@@ -58,6 +60,7 @@ public class DriversList extends AppCompatActivity implements NglahNotificationA
 
     private void initWidgets(){
         mRecyclerView = findViewById(R.id.recyclerView);
+        emptyTextView = findViewById(R.id.tv_empty_image);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setHasFixedSize(true);
@@ -105,8 +108,14 @@ public class DriversList extends AppCompatActivity implements NglahNotificationA
     }
 
     private void refreshRecyclerView(){
-        mAdapter = new NglahNotificationAdapter(driverAcceptedList, this);
-        mRecyclerView.setAdapter(mAdapter);
+        if (driverAcceptedList.isEmpty()){
+            emptyTextView.setVisibility(View.VISIBLE);
+        }else {
+            emptyTextView.setVisibility(View.GONE);
+            mAdapter = new NglahNotificationAdapter(driverAcceptedList, this);
+            mRecyclerView.setAdapter(mAdapter);
+        }
+
     }
 
     @Override
