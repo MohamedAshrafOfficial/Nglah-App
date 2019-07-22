@@ -13,25 +13,37 @@ import com.debugspace.nglah.View.User.UserInfo;
 public class PaymentSystem extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_system);
         sharedPreferences=getSharedPreferences("nglah_file",MODE_PRIVATE);
-
+        editor = sharedPreferences.edit();
     }
 
     public void SKIP(View view) {
-        int user_type=sharedPreferences.getInt("user_type",0);
-        if (user_type==1){
-            startActivity(new Intent(this, UserInfo.class));
+
+        if (sharedPreferences.getBoolean("mahfazty", false) == true) {
+            editor.putBoolean("mahfazty", false);
+            editor.commit();
+            startActivity(new Intent(PaymentSystem.this, User_Main.class));
             finish();
 
-        }else if (user_type==2){
+        } else {
 
-            startActivity(new Intent(this, DriverInfo.class));
-            finish();
 
+            int user_type = sharedPreferences.getInt("user_type", 0);
+            if (user_type == 1) {
+                startActivity(new Intent(this, UserInfo.class));
+                finish();
+
+            } else if (user_type == 2) {
+
+                startActivity(new Intent(this, DriverInfo.class));
+                finish();
+
+            }
         }
 
     }

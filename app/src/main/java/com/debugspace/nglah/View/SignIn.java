@@ -174,9 +174,7 @@ public class SignIn extends AppCompatActivity {
                         progressDialog.dismiss();
                         startActivity(new Intent(SignIn.this, User_Main.class));
                         finish();
-
                     }
-
 
                 }else{
                     progressDialog.dismiss();

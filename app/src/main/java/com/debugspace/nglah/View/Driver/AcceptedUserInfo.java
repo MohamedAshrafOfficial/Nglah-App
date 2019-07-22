@@ -36,7 +36,7 @@ public class AcceptedUserInfo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_accepted_user_info);
+        setContentView(R.layout.activity_accepted_info);
         sharedPreferences=getSharedPreferences("nglah_file",MODE_PRIVATE);
 
         Intent intent = getIntent();
