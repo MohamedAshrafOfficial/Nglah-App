@@ -171,7 +171,7 @@ public interface JsonPlaceHolderApi {
 
     @FormUrlEncoded
     @POST("nglah/nglah_owner/update_nglah_owner.php")
-    Call<User_Model>Update_User(@FieldMap Map<String,String> fields);
+    Call<LoginNglahService>Update_User(@FieldMap Map<String,String> fields);
 
     @FormUrlEncoded
     @POST("nglah/car_owner/car_owner_registration.php")
@@ -179,7 +179,7 @@ public interface JsonPlaceHolderApi {
 
     @FormUrlEncoded
     @POST("nglah/car_owner/update_car_owner.php")
-    Call<Driver_Model>Update_Driver(@FieldMap Map<String,String> fields);
+    Call<LoginDriverService>Update_Driver(@FieldMap Map<String,String> fields);
 
 
     @FormUrlEncoded

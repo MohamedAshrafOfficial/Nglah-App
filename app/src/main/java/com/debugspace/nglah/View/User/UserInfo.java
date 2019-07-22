@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.debugspace.nglah.Model.DriverModel.LoginDriverService;
 import com.debugspace.nglah.Model.NglahModel.LoginNglahService;
+import com.debugspace.nglah.Model.NglahModel.Nglah;
 import com.debugspace.nglah.Model.hassan_now.User_Model;
 import com.debugspace.nglah.Model.hassan_now.user_service;
 import com.debugspace.nglah.R;
@@ -154,7 +155,9 @@ public class UserInfo extends AppCompatActivity {
                 LoginNglahService service = response.body();
 
                 if (service.isSuccess()){
+                    List<Nglah> nglah = service.getNglahOwnerInfo();
                     editor.putBoolean("flag_t", false);
+                    editor.putInt("Nglah_ID", nglah.get(0).getNglahId());
                     editor.commit();
                     progressDialog.dismiss();
                     startActivity(new Intent(UserInfo.this, User_Main.class));
@@ -186,37 +189,36 @@ public class UserInfo extends AppCompatActivity {
         parameters.put("password", uPassword.getText().toString());
         parameters.put("old_email", sharedPreferences.getString("email","null"));
 
-        Call<User_Model> call = jsonPlaceHolderApi.Update_User(parameters);
-        call.enqueue(new Callback<User_Model>() {
+        Call<LoginNglahService> call = jsonPlaceHolderApi.Update_User(parameters);
+        call.enqueue(new Callback<LoginNglahService>() {
             @Override
-            public void onResponse(Call<User_Model> call, Response<User_Model> response) {
-
+            public void onResponse(Call<LoginNglahService> call, Response<LoginNglahService> response) {
                 if (!response.isSuccessful()) {
                     progressDialog.dismiss();
-
-                    Toast.makeText(UserInfo.this, "faild", Toast.LENGTH_SHORT).show();
-                    return;
-                } else {
-                    progressDialog.dismiss();
-
-
-                    Toast.makeText(UserInfo.this, "success", Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(UserInfo.this, "Check Internet", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
+                LoginNglahService service = response.body();
 
+                if (service.isSuccess()){
+                    progressDialog.dismiss();
+                    startActivity(new Intent(UserInfo.this,User_Main.class));
+                    finish();
+                }else{
+                    progressDialog.dismiss();
+                    Toast.makeText(UserInfo.this, "خطأ فى التعديل !", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
-            public void onFailure(Call<User_Model> call, Throwable t) {
-                startActivity(new Intent(UserInfo.this,User_Main.class));
-                finish();
-
+            public void onFailure(Call<LoginNglahService> call, Throwable t) {
                 progressDialog.dismiss();
-
+                Toast.makeText(UserInfo.this, "Check Internet", Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
     }
 

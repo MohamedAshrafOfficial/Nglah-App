@@ -258,8 +258,8 @@ public class SignUp extends AppCompatActivity {
 
 
                         } else {
-                            Toast.makeText(SignUp.this, "Invalid code", Toast.LENGTH_SHORT).show();
-
+                            txt.setError("الرقم غير صحيح !");
+                            txt.requestFocus();
                         }
                     }
                 });

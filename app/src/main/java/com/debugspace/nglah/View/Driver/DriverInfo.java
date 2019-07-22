@@ -212,6 +212,8 @@ public class DriverInfo extends AppCompatActivity {
 
                 if (service.isSuccess()){
                     progressDialog.dismiss();
+                    editor.putString("Driver_ID",dNationalId.getText().toString());
+                    editor.commit();
                     startActivity(new Intent(DriverInfo.this, User_Main.class));
                     finish();
                 }else{
@@ -257,35 +259,38 @@ public class DriverInfo extends AppCompatActivity {
         parameters.put("old_driver_national_id", old_n_id);
 
 
-        Call<Driver_Model> call = jsonPlaceHolderApi.Update_Driver(parameters);
-        call.enqueue(new Callback<Driver_Model>() {
+        Call<LoginDriverService> call = jsonPlaceHolderApi.Update_Driver(parameters);
+        call.enqueue(new Callback<LoginDriverService>() {
             @Override
-            public void onResponse(Call<Driver_Model> call, Response<Driver_Model> response) {
-
+            public void onResponse(Call<LoginDriverService> call, Response<LoginDriverService> response) {
                 if (!response.isSuccessful()) {
                     progressDialog.dismiss();
-
-                    Toast.makeText(DriverInfo.this, "faild", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DriverInfo.this, "Check Internet", Toast.LENGTH_SHORT).show();
                     return;
-                } else {
+                }
+
+                LoginDriverService service = response.body();
+
+                if (service.isSuccess()){
+                    editor.putString("setting","");
+                    editor.putString("Driver_ID",dNationalId.getText().toString());
+                    editor.commit();
+                    startActivity(new Intent(DriverInfo.this, User_Main.class));
                     progressDialog.dismiss();
-
-                    Toast.makeText(DriverInfo.this, "success", Toast.LENGTH_SHORT).show();
-
-                    return;
+                }else{
+                    progressDialog.dismiss();
+                    Toast.makeText(DriverInfo.this, "خطأ فى التعديل !", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<Driver_Model> call, Throwable t) {
-
-                editor.putString("setting","");
-                editor.commit();
-                startActivity(new Intent(DriverInfo.this, User_Main.class));
+            public void onFailure(Call<LoginDriverService> call, Throwable t) {
                 progressDialog.dismiss();
-
+                Toast.makeText(DriverInfo.this, "Check Internet", Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
     }
 
