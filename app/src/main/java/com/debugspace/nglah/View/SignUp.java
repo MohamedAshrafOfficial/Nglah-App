@@ -95,6 +95,7 @@ public class SignUp extends AppCompatActivity {
         initView();
         Action();
         editor.putString("setting", "");
+        editor.putBoolean("mahfazty", false);
         editor.commit();
     }
 
@@ -217,52 +218,64 @@ public class SignUp extends AppCompatActivity {
         txt.setTextColor(Color.BLACK);
         alertDialog.setView(txt);
         alertDialog.setCancelable(false);
-        alertDialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+        alertDialog.setPositiveButton("OK", null);
+        alertDialog.setNegativeButton("Cancel", null);
+        final AlertDialog mAlertDialog = alertDialog.create();
+        mAlertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                int numberCode = Integer.parseInt(txt.getText().toString());
-                if (numberCode == code) {
-                    if (spinner.getSelectedItemPosition() == 1) {
+            public void onShow(final DialogInterface dialogInterface) {
+                Button Positive = mAlertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+                Button Cancel = mAlertDialog.getButton(AlertDialog.BUTTON_NEGATIVE);
 
-                       // CreateUser();
+                Positive.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        int numberCode = Integer.parseInt(txt.getText().toString());
+                        if (numberCode == code) {
+                            if (spinner.getSelectedItemPosition() == 1) {
+
+                                // CreateUser();
 
 
-                        editor.putInt("user_type",1);
+                                editor.putInt("user_type",1);
 
 
-                    } else if (spinner.getSelectedItemPosition() == 2) {
-                        editor.putInt("user_type",2);
+                            } else if (spinner.getSelectedItemPosition() == 2) {
+                                editor.putInt("user_type",2);
 
-                      //  CreateDriver();
+                                //  CreateDriver();
 
+                            }
+
+                            editor.putString("username",edtname.getText().toString());
+                            editor.putString("phone",edtphone.getText().toString());
+                            editor.putString("email",edtemail.getText().toString());
+                            editor.putString("password",edtpass.getText().toString());
+                            editor.commit();
+
+                            startActivity(new Intent(SignUp.this, PaymentSystem.class));
+                            finish();
+
+
+                        } else {
+                            Toast.makeText(SignUp.this, "Invalid code", Toast.LENGTH_SHORT).show();
+
+                        }
                     }
+                });
 
-                    editor.putString("username",edtname.getText().toString());
-                    editor.putString("phone",edtphone.getText().toString());
-                    editor.putString("email",edtemail.getText().toString());
-                    editor.putString("password",edtpass.getText().toString());
-                    editor.commit();
-
-                    startActivity(new Intent(SignUp.this, PaymentSystem.class));
-                    finish();
-
-
-                } else {
-                    Toast.makeText(SignUp.this, "Invalid code", Toast.LENGTH_SHORT).show();
-
-                }
+                Cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(new Intent(SignUp.this, SignIn.class));
+                        dialogInterface.dismiss();
+                        finish();
+                    }
+                });
             }
         });
-        alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                startActivity(new Intent(SignUp.this, SignIn.class));
-                dialog.dismiss();
-                finish();
-            }
-        });
-        alertDialog.show();
 
+        mAlertDialog.show();
     }
 
 

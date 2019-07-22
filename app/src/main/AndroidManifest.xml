@@ -32,7 +32,8 @@
         <activity android:name=".View.Driver.DriverInfo" >
         </activity>
         <activity android:name=".View.PaymentSystem" />
-        <activity android:name=".View.SignUp" />
+        <activity android:name=".View.SignUp"
+                    android:windowSoftInputMode="stateAlwaysHidden"/>
         <activity android:name=".View.SignIn"
                     android:windowSoftInputMode="stateAlwaysHidden"/>
         <activity android:name=".View.Splash">
