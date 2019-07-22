@@ -94,6 +94,8 @@ public class SignUp extends AppCompatActivity {
         progressDialog.setMessage("waiting...");
         initView();
         Action();
+        editor.putString("setting", "");
+        editor.commit();
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////
