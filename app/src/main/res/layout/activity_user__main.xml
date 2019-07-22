@@ -1,180 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/burble_white"
-    android:orientation="vertical"
-    tools:context=".View.User_Main">
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:gravity="center"
-        android:text="نقله"
-        android:textColor="#fff"
-        android:textSize="40dp"
-        android:textStyle="bold" />
+     tools:context=".View.User_Main">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:orientation="vertical">
-
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/naglah"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
 
-            <Button
-                android:layout_width="wrap_content"
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="60dp"
-                android:layout_marginRight="60dp"
-                android:layout_weight="1"
-                android:background="@color/yello"
-                android:onClick="Talab_Naglah"
-                android:text="  طلب نقله  "
-                android:textColor="#fff"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
 
-            <!--<Button-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="center"-->
-            <!--android:layout_marginLeft="10dp"-->
-            <!--android:layout_marginRight="30dp"-->
-            <!--android:layout_weight="1"-->
-            <!--android:background="#fff"-->
-            <!--android:text="  السعوديه  "-->
-            <!--android:textColor="#000"-->
-            <!--android:textSize="20dp"-->
-            <!--android:textStyle="bold" />-->
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_weight="1"
+                    android:background="@color/yello"
+                    android:onClick="Talab_Naglah"
+                    android:text="  طلب نقله  "
+                    android:textColor="#fff"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <!--<Button-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginRight="30dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="#fff"-->
+                <!--android:text="  السعوديه  "-->
+                <!--android:textColor="#000"-->
+                <!--android:textSize="20dp"-->
+                <!--android:textStyle="bold" />-->
 
 
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|center"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_weight="1"
+                    android:background="@color/yello"
+                    android:onClick="Profile"
+                    android:text=" المعلومات الشخصيه   "
+                    android:textColor="#fff"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <!--<Button-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="top|center"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginRight="30dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="#fff"-->
+                <!--android:text=" مكه  "-->
+                <!--android:textColor="#000"-->
+                <!--android:textSize="20dp"-->
+                <!--android:textStyle="bold" />-->
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|center"
+                    android:onClick="Mahfazty"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_weight="1"
+                    android:background="@color/yello"
+                    android:text="    محفظتى   "
+                    android:textColor="#fff"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <!--<Button-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="top|center"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginRight="30dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="#fff"-->
+                <!--android:text="    جده  "-->
+                <!--android:textColor="#000"-->
+                <!--android:textSize="20dp"-->
+                <!--android:textStyle="bold" />-->
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|center"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_weight="1"
+                    android:background="@color/yello"
+                    android:text="  تسجيل خروج  "
+                    android:textColor="#fff"
+                    android:onClick="EXIT"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+
+                <!--<Button-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="top|center"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginRight="30dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="#fff"-->
+                <!--android:text="  الجنوبي  "-->
+                <!--android:textColor="#000"-->
+                <!--android:textSize="20dp"-->
+                <!--android:textStyle="bold" />-->
+
+
+            </LinearLayout>
         </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
-                android:layout_marginLeft="60dp"
-                android:layout_marginRight="60dp"
-                android:layout_weight="1"
-                android:background="@color/yello"
-                android:onClick="Profile"
-                android:text=" المعلومات الشخصيه   "
-                android:textColor="#fff"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <!--<Button-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="top|center"-->
-            <!--android:layout_marginLeft="10dp"-->
-            <!--android:layout_marginRight="30dp"-->
-            <!--android:layout_weight="1"-->
-            <!--android:background="#fff"-->
-            <!--android:text=" مكه  "-->
-            <!--android:textColor="#000"-->
-            <!--android:textSize="20dp"-->
-            <!--android:textStyle="bold" />-->
-
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
-                android:onClick="Mahfazty"
-                android:layout_marginLeft="60dp"
-                android:layout_marginRight="60dp"
-                android:layout_weight="1"
-                android:background="@color/yello"
-                android:text="    محفظتى   "
-                android:textColor="#fff"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <!--<Button-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="top|center"-->
-            <!--android:layout_marginLeft="10dp"-->
-            <!--android:layout_marginRight="30dp"-->
-            <!--android:layout_weight="1"-->
-            <!--android:background="#fff"-->
-            <!--android:text="    جده  "-->
-            <!--android:textColor="#000"-->
-            <!--android:textSize="20dp"-->
-            <!--android:textStyle="bold" />-->
-
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|center"
-                android:layout_marginLeft="60dp"
-                android:layout_marginRight="60dp"
-                android:layout_weight="1"
-                android:background="@color/yello"
-                android:text="  تسجيل خروج  "
-                android:textColor="#fff"
-                android:onClick="EXIT"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-
-            <!--<Button-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="top|center"-->
-            <!--android:layout_marginLeft="10dp"-->
-            <!--android:layout_marginRight="30dp"-->
-            <!--android:layout_weight="1"-->
-            <!--android:background="#fff"-->
-            <!--android:text="  الجنوبي  "-->
-            <!--android:textColor="#000"-->
-            <!--android:textSize="20dp"-->
-            <!--android:textStyle="bold" />-->
-
-
-        </LinearLayout>
     </LinearLayout>
 
 
-</LinearLayout>
+
+
+</ScrollView>
