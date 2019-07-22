@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.debugspace.nglah.Model.LoginUserService;
+import com.debugspace.nglah.Model.User;
 import com.debugspace.nglah.Services.ApiClient;
 import com.debugspace.nglah.Services.JsonPlaceHolderApi;
 import com.debugspace.nglah.Model.DriverModel.LoginDriverService;
@@ -76,20 +78,113 @@ public class SignIn extends AppCompatActivity {
                 String email = emailEditText.getText().toString().trim();
                 String password = passwordEditText.getText().toString().trim();
 
-                if (sharedPreferences.getInt("user_type", 0) == 1){
-
-                    nglahLogin(email, password);
-
-                }else{
-
-                    driverLogin(email, password);
-                }
-
+                Login(email, password);
             }
         });
     }
 //////////////////////////////////////////////////////////////////////////////////////////////////
-    private void driverLogin(String email, String password){
+//    private void driverLogin(String email, String password){
+//
+//        progressDialog.show();
+//
+//        if (email.isEmpty() && password.isEmpty()){
+//            return;
+//        }
+//
+//        Call<LoginDriverService> call = jsonPlaceHolderApi.getDriverInfo(email, password);
+//
+//        call.enqueue(new Callback<LoginDriverService>() {
+//            @Override
+//            public void onResponse(Call<LoginDriverService> call, Response<LoginDriverService> response) {
+//                if(!response.isSuccessful()){
+//                    Toast.makeText(SignIn.this, "Code: " + response.code(), Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//
+//                LoginDriverService driverResponse = response.body();
+//
+//                if (driverResponse.isSuccess()) {
+//
+//                    List<Driver> driver = driverResponse.getDriverInfo();
+//
+//                    editor.putInt("user_type",2);
+//                    editor.putString("Driver_ID",driver.get(0).getDriverId());
+//                    editor.putString("email",driver.get(0).getEmail());
+//                    editor.commit();
+//
+//                    progressDialog.dismiss();
+//                    startActivity(new Intent(SignIn.this, User_Main.class));
+//                    finish();
+//
+//                }else{
+//                    progressDialog.dismiss();
+//                    Toast.makeText(SignIn.this, "Invalid Password", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<LoginDriverService> call, Throwable t) {
+//                progressDialog.dismiss();
+//                Toast.makeText(SignIn.this, "User Name or Password is Invalid", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//    }
+
+//    private void nglahLogin(String email, String password){
+//
+//        progressDialog.show();
+//
+//        if (email.isEmpty() && password.isEmpty()){
+//            return;
+//        }
+//
+//        Call<LoginNglahService> call = jsonPlaceHolderApi.getNglahInfo(email, password);
+//
+//        call.enqueue(new Callback<LoginNglahService>() {
+//            @Override
+//            public void onResponse(Call<LoginNglahService> call, Response<LoginNglahService> response) {
+//                if(!response.isSuccessful()){
+//                    Toast.makeText(SignIn.this, "Code: " + response.code(), Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//
+//                LoginNglahService nglahResponse = response.body();
+//
+//                if (nglahResponse.isSuccess()) {
+//
+//                    List<Nglah> nglah = nglahResponse.getNglahOwnerInfo();
+//                    editor.putInt("user_type",1);
+//                    editor.putInt("Nglah_ID",nglah.get(0).getNglahId());
+//                    editor.putString("email",nglah.get(0).getEmail());
+//                    editor.commit();
+//                    finish();
+//
+//                    if (sharedPreferences.getBoolean("flag_t",false)==true){
+//                        progressDialog.dismiss();
+//                        startActivity(new Intent(SignIn.this, DriversList.class));
+//                        finish();
+//                    }else {
+//                        progressDialog.dismiss();
+//                        startActivity(new Intent(SignIn.this, User_Main.class));
+//                        finish();
+//                    }
+//
+//                }else{
+//                    progressDialog.dismiss();
+//                    Toast.makeText(SignIn.this, "Invalid Password", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<LoginNglahService> call, Throwable t) {
+//                progressDialog.dismiss();
+//                Toast.makeText(SignIn.this, "User Name or Password is Invalid", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
+
+    private void Login(String email, String password){
 
         progressDialog.show();
 
@@ -97,95 +192,68 @@ public class SignIn extends AppCompatActivity {
             return;
         }
 
-        Call<LoginDriverService> call = jsonPlaceHolderApi.getDriverInfo(email, password);
-
-        call.enqueue(new Callback<LoginDriverService>() {
+        Call<LoginUserService> call = jsonPlaceHolderApi.getUserInfo(email, password);
+        call.enqueue(new Callback<LoginUserService>() {
             @Override
-            public void onResponse(Call<LoginDriverService> call, Response<LoginDriverService> response) {
+            public void onResponse(Call<LoginUserService> call, Response<LoginUserService> response) {
+
                 if(!response.isSuccessful()){
                     Toast.makeText(SignIn.this, "Code: " + response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                LoginDriverService driverResponse = response.body();
+                LoginUserService userResponse = response.body();
 
-                if (driverResponse.isSuccess()) {
+                if (userResponse.isSuccess()){
 
-                    List<Driver> driver = driverResponse.getDriverInfo();
+                    List<User> user = userResponse.getUserInfo();
+                    int userType = user.get(0).getUserType();
+                    switch (userType){
+                        case 1:                       // Nglah user
 
-                    editor.putInt("user_type",2);
-                    editor.putString("Driver_ID",driver.get(0).getDriverId());
-                    editor.putString("email",driver.get(0).getEmail());
-                    editor.commit();
+                            editor.putInt("user_type",userType);
+                            editor.putInt("Nglah_ID",user.get(0).getNglahId());
+                            editor.putString("email",user.get(0).getEmail());
+                            editor.commit();
+//                            finish();
 
-                    progressDialog.dismiss();
-                    startActivity(new Intent(SignIn.this, User_Main.class));
-                    finish();
+                            if (sharedPreferences.getBoolean("flag_t",false)==true){
+                                progressDialog.dismiss();
+                                startActivity(new Intent(SignIn.this, DriversList.class));
+                                finish();
+                            }else {
+                                progressDialog.dismiss();
+                                startActivity(new Intent(SignIn.this, User_Main.class));
+                                finish();
+                            }
 
-                }else{
-                    progressDialog.dismiss();
-                    Toast.makeText(SignIn.this, "Invalid Password", Toast.LENGTH_SHORT).show();
-                }
-            }
+                            break;
+                        case 2:                       // Driver user
 
-            @Override
-            public void onFailure(Call<LoginDriverService> call, Throwable t) {
-                progressDialog.dismiss();
-                Toast.makeText(SignIn.this, "User Name or Password is Invalid", Toast.LENGTH_SHORT).show();
-            }
-        });
+                            editor.putInt("user_type",userType);
+                            editor.putString("Driver_ID",user.get(0).getDriverId());
+                            editor.putString("email",user.get(0).getEmail());
+                            editor.commit();
 
-    }
-///////////////////////////////////////////////////////////////////////////////////////////////////
-    private void nglahLogin(String email, String password){
-
-        progressDialog.show();
-
-        if (email.isEmpty() && password.isEmpty()){
-            return;
-        }
-
-        Call<LoginNglahService> call = jsonPlaceHolderApi.getNglahInfo(email, password);
-
-        call.enqueue(new Callback<LoginNglahService>() {
-            @Override
-            public void onResponse(Call<LoginNglahService> call, Response<LoginNglahService> response) {
-                if(!response.isSuccessful()){
-                    Toast.makeText(SignIn.this, "Code: " + response.code(), Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                LoginNglahService nglahResponse = response.body();
-
-                if (nglahResponse.isSuccess()) {
-
-                    List<Nglah> nglah = nglahResponse.getNglahOwnerInfo();
-                    editor.putInt("user_type",1);
-                    editor.putInt("Nglah_ID",nglah.get(0).getNglahId());
-                    editor.putString("email",nglah.get(0).getEmail());
-                    editor.commit();
-                    finish();
-
-                    if (sharedPreferences.getBoolean("flag_t",false)==true){
-                        progressDialog.dismiss();
-                        startActivity(new Intent(SignIn.this, DriversList.class));
-                        finish();
-                    }else {
-                        progressDialog.dismiss();
-                        startActivity(new Intent(SignIn.this, User_Main.class));
-                        finish();
+                            progressDialog.dismiss();
+                            startActivity(new Intent(SignIn.this, User_Main.class));
+                            finish();
+                            break;
+                        default:
+                            Toast.makeText(SignIn.this, "خطأ فى الايميل او كلمه السر", Toast.LENGTH_SHORT).show();
                     }
 
                 }else{
                     progressDialog.dismiss();
-                    Toast.makeText(SignIn.this, "Invalid Password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignIn.this, "كلمه السر غير صحيحه !", Toast.LENGTH_SHORT).show();
                 }
+
             }
 
             @Override
-            public void onFailure(Call<LoginNglahService> call, Throwable t) {
+            public void onFailure(Call<LoginUserService> call, Throwable t) {
                 progressDialog.dismiss();
-                Toast.makeText(SignIn.this, "User Name or Password is Invalid", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignIn.this, "خطأ فى الايميل او كلمه السر", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -2,6 +2,7 @@ package com.debugspace.nglah.Services;
 
 import com.debugspace.nglah.Model.DriverModel.AcceptDriverService;
 import com.debugspace.nglah.Model.DriverModel.LoginDriverService;
+import com.debugspace.nglah.Model.LoginUserService;
 import com.debugspace.nglah.Model.NglahModel.LoginNglahService;
 import com.debugspace.nglah.Model.NglahModel.NglahOrdersService;
 import com.debugspace.nglah.Model.hassan_now.Driver_Model;
@@ -47,6 +48,13 @@ public interface JsonPlaceHolderApi {
 
     @GET("nglah_owner/nglah_owner_login.php")
     Call<LoginNglahService> getNglahInfo(
+            @Query("email") String email,
+            @Query("password") String password
+    );
+
+
+    @GET("login.php")
+    Call<LoginUserService> getUserInfo(
             @Query("email") String email,
             @Query("password") String password
     );
