@@ -17,7 +17,6 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.debugspace.nglah.Model.NglahModel.LoginNglahService;
-import com.debugspace.nglah.Model.hassan_now.User_Order_Model;
 import com.debugspace.nglah.R;
 import com.debugspace.nglah.Services.JsonPlaceHolderApi;
 import com.debugspace.nglah.View.User_Main;
@@ -141,8 +140,6 @@ public class PickTime extends AppCompatActivity {
                         timePicker.getCurrentHour(),
                         timePicker.getCurrentMinute());
 
-//                timetxt = calendar.getTimeInMillis();
-
                 SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
                 SimpleDateFormat tf = new SimpleDateFormat("HH:mm:ss");
                 String formattedDate = df.format(calendar.getTime());
@@ -165,7 +162,6 @@ public class PickTime extends AppCompatActivity {
         parameters.put("country", sharedPreferences.getString("country","null"));
         parameters.put("region", sharedPreferences.getString("region","null"));
         parameters.put("city", sharedPreferences.getString("city","null"));
-        parameters.put("sector", sharedPreferences.getString("sector","null"));
         parameters.put("thing_type", sharedPreferences.getString("thing_type_elment","null"));
         parameters.put("time", time.getText().toString());
         parameters.put("date", date.getText().toString());
@@ -213,11 +209,8 @@ public class PickTime extends AppCompatActivity {
         parameters.put("country", sharedPreferences.getString("country","null"));
         parameters.put("arrive_details", sharedPreferences.getString("city_recive","null"));
         parameters.put("departure_details", sharedPreferences.getString("location","null"));
-        parameters.put("arrive_sector", sharedPreferences.getString("secttor_recive","null"));
         parameters.put("arrive_city", sharedPreferences.getString("city_recive","null"));
-        parameters.put("departure_sector", sharedPreferences.getString("sector_send","null"));
         parameters.put("departure_city", sharedPreferences.getString("city_send","null"));
-
         parameters.put("thing_type", sharedPreferences.getString("thing_type_elment","null"));
         parameters.put("time", time.getText().toString());
         parameters.put("date", date.getText().toString());

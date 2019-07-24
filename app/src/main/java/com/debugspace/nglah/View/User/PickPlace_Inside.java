@@ -22,7 +22,7 @@ import java.util.Set;
 
 public class PickPlace_Inside extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
-    private Spinner spinnerCountry, spinnerRegion, spinnerCity, spinnerSector;
+    private Spinner spinnerCountry, spinnerRegion, spinnerCity;
     DB dbobject;
     private ImageView imageView;
 
@@ -53,11 +53,10 @@ public class PickPlace_Inside extends AppCompatActivity implements AdapterView.O
         spinnerCountry.setOnItemSelectedListener(this);
         spinnerRegion.setOnItemSelectedListener(this);
         spinnerCity.setOnItemSelectedListener(this);
-        spinnerSector.setOnItemSelectedListener(this);
 
         spinnerRegion.setEnabled(false);
         spinnerCity.setEnabled(false);
-        spinnerSector.setEnabled(false);
+
         imageView=findViewById(R.id.imgBackRecent);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +77,6 @@ public class PickPlace_Inside extends AppCompatActivity implements AdapterView.O
         spinnerCountry = findViewById(R.id.sp_country);
         spinnerRegion = findViewById(R.id.sp_region);
         spinnerCity = findViewById(R.id.sp_city);
-        spinnerSector = findViewById(R.id.sp_sector);
     }
 
     @Override
@@ -89,28 +87,22 @@ public class PickPlace_Inside extends AppCompatActivity implements AdapterView.O
             case R.id.sp_country:
                 String text = adapterView.getItemAtPosition(position).toString();
                // Toast.makeText(this, ""+text, Toast.LENGTH_SHORT).show();
-                editor.putString("country",text);
-                editor.commit();
-
 
                 if (!"- اختار -".equals(text)){
+
+                    editor.putString("country",text);
+                    editor.commit();
 
                     Map<String, ArrayList> data = dbobject.getRegionsWithSectors(String.valueOf(position));
 
                     ArrayAdapter<String> regionAdapter = new ArrayAdapter<String>(this,
                             android.R.layout.simple_spinner_item, data.get("regionList"));
 
-                    ArrayAdapter<String> sectorAdapter = new ArrayAdapter<String>(this,
-                            android.R.layout.simple_spinner_item, removeRepeatedValues(data.get("sectorList")));
-
                     regionAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    sectorAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
                     spinnerRegion.setAdapter(regionAdapter);
-                    spinnerSector.setAdapter(sectorAdapter);
 
                     spinnerRegion.setEnabled(true);
-                    spinnerSector.setEnabled(true);
                 }
 
                 break;
@@ -118,31 +110,32 @@ public class PickPlace_Inside extends AppCompatActivity implements AdapterView.O
             case R.id.sp_region:
                 text = adapterView.getItemAtPosition(position).toString();
                 //Toast.makeText(this, ""+text, Toast.LENGTH_SHORT).show();
-                editor.putString("region",text);
-                editor.commit();
-                ArrayAdapter<String> cityAdapter = new ArrayAdapter<String>(this,
-                        android.R.layout.simple_spinner_item, dbobject.getCities(String.valueOf(position+1)));
+                if (!"- اختار -".equals(text)) {
 
-                cityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    editor.putString("region", text);
+                    editor.commit();
 
-                spinnerCity.setAdapter(cityAdapter);
+                    ArrayAdapter<String> cityAdapter = new ArrayAdapter<String>(this,
+                            android.R.layout.simple_spinner_item, dbobject.getCities(String.valueOf(position + 1)));
 
-                spinnerCity.setEnabled(true);
+                    cityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+                    spinnerCity.setAdapter(cityAdapter);
+
+                    spinnerCity.setEnabled(true);
+
+                }
 
                 break;
 
             case R.id.sp_city:
                 text = adapterView.getItemAtPosition(position).toString();
                 //Toast.makeText(this, ""+text, Toast.LENGTH_SHORT).show();
-                editor.putString("city",text);
-                editor.commit();
-                break;
 
-            case R.id.sp_sector:
-                text = adapterView.getItemAtPosition(position).toString();
-                //Toast.makeText(this, ""+text, Toast.LENGTH_SHORT).show();
-                editor.putString("sector",text);
-                editor.commit();
+                if (!"- اختار -".equals(text)) {
+                    editor.putString("city", text);
+                    editor.commit();
+                }
                 break;
 
             default:
@@ -155,27 +148,8 @@ public class PickPlace_Inside extends AppCompatActivity implements AdapterView.O
 
     }
 
-
-    private ArrayList removeRepeatedValues(ArrayList list){
-        ArrayList arrayList = list;
-        Set set = new HashSet(arrayList);
-        arrayList.clear();
-        arrayList.addAll(set);
-        return arrayList;
-    }
-
-//    public void addData() {
-//        boolean status = dbobject.insertDate("ejvbvjkb", "jkbfkjcb");
-//        if (status == true) {
-//            Toast.makeText(this, "Adding data is Done Successfully .", Toast.LENGTH_SHORT).show();
-//        } else {
-//            Toast.makeText(this, "Adding data is failed ! ", Toast.LENGTH_SHORT).show();
-//        }
-//    }
-
     public void GO(View view) {
         startActivity(new Intent(PickPlace_Inside.this,PickElement.class));
-
     }
 
     @Override

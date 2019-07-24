@@ -14,10 +14,6 @@ import com.debugspace.nglah.Model.LoginUserService;
 import com.debugspace.nglah.Model.User;
 import com.debugspace.nglah.Services.ApiClient;
 import com.debugspace.nglah.Services.JsonPlaceHolderApi;
-import com.debugspace.nglah.Model.DriverModel.LoginDriverService;
-import com.debugspace.nglah.Model.DriverModel.Driver;
-import com.debugspace.nglah.Model.NglahModel.LoginNglahService;
-import com.debugspace.nglah.Model.NglahModel.Nglah;
 import com.debugspace.nglah.R;
 import com.debugspace.nglah.View.User.DriversList;
 
@@ -254,7 +250,7 @@ public class SignIn extends AppCompatActivity {
             @Override
             public void onFailure(Call<LoginUserService> call, Throwable t) {
                 progressDialog.dismiss();
-                Toast.makeText(SignIn.this, "خطأ فى الايميل او كلمه السر", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignIn.this, "خطأ فى اتصال بالانترنت !", Toast.LENGTH_SHORT).show();
             }
         });
     }

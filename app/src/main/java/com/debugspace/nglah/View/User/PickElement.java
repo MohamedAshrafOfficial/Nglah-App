@@ -56,13 +56,16 @@ public class PickElement extends AppCompatActivity {
         carlist.add("اختر سياره");
         carlist.add("سياره صغيره");
         carlist.add("سياره كبيره");
+        carlist.add("المزيد");
         asaslist.add("اختر اثاث");
         asaslist.add("كنبه");
         asaslist.add("سرير");
+        asaslist.add("المزيد");
         buldinglist.add("اختر مواد بناء");
         buldinglist.add("مواد بناء");
-        otherlist.add("- المزيد -");
-        otherlist.add("شئ اخر");
+        buldinglist.add("المزيد");
+        otherlist.add("- شئ اخر -");
+        otherlist.add("ادخال الشئ");
         initView();
         action();
     }
@@ -126,7 +129,9 @@ public class PickElement extends AppCompatActivity {
                     other.setVisibility(View.VISIBLE);
                     flag=false;
 
-                }else {
+                }else if(i==carlist.size()-1){
+                    showAlertDialog();
+                } else {
                     editor.putString("thing_type_elment",car.getSelectedItem().toString());
                     editor.commit();
                     asas.setVisibility(View.GONE);
@@ -167,6 +172,8 @@ public class PickElement extends AppCompatActivity {
                     other.setVisibility(View.VISIBLE);
                     flag=false;
 
+                }else if(i==asaslist.size()-1){
+                    showAlertDialog();
                 }else {
                     editor.putString("thing_type_elment",asas.getSelectedItem().toString());
                     car.setVisibility(View.GONE);
@@ -209,6 +216,8 @@ public class PickElement extends AppCompatActivity {
                     other.setVisibility(View.VISIBLE);
                     flag=false;
 
+                }else if(i==buldinglist.size()-1){
+                    showAlertDialog();
                 }else {
                     editor.putString("thing_type_elment",building.getSelectedItem().toString());
                     car.setVisibility(View.GONE);
@@ -245,50 +254,9 @@ public class PickElement extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-//                if (i==0){
-//                    editor.putString("thing_type_elment",other.getSelectedItem().toString());
-//                    editor.commit();
-//                    car.setVisibility(View.VISIBLE);
-//                    building.setVisibility(View.VISIBLE);
-//                    asas.setVisibility(View.VISIBLE);
-//                    flag=false;
-//
-//                }else {
-//                    editor.putString("thing_type_elment",other.getSelectedItem().toString());
-//                    car.setVisibility(View.GONE);
-//                    building.setVisibility(View.GONE);
-//                    asas.setVisibility(View.GONE);
-//                    flag=true;
-//                    editor.commit();
-//                }
                 if (i == 1) {
 
-                    AlertDialog.Builder builder = new AlertDialog.Builder(PickElement.this);
-                    final EditText editText = new EditText(PickElement.this);
-                    builder.setView(editText);
-                    builder.setPositiveButton("موافق", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-
-                            editor.putString("thing_type_elment", editText.getText().toString());
-                            editor.commit();
-                            flag = true;
-                            dialogInterface.dismiss();
-                        }
-                    });
-
-                    builder.setNegativeButton("الغاء", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            flag = false;
-                            dialogInterface.dismiss();
-                        }
-                    });
-
-                    builder.show();
-                    if (editText.getText().toString().isEmpty()){
-                        flag=false;
-                    }
+                    showAlertDialog();
                 }
             }
 
@@ -298,6 +266,38 @@ public class PickElement extends AppCompatActivity {
             }
         });
 
+
+    }
+
+
+    private void showAlertDialog(){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(PickElement.this);
+        final EditText editText = new EditText(PickElement.this);
+        builder.setView(editText);
+        builder.setPositiveButton("موافق", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                editor.putString("thing_type_elment", editText.getText().toString());
+                editor.commit();
+                flag = true;
+                dialogInterface.dismiss();
+            }
+        });
+
+        builder.setNegativeButton("الغاء", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                flag = false;
+                dialogInterface.dismiss();
+            }
+        });
+
+        builder.show();
+        if (editText.getText().toString().isEmpty()){
+            flag=false;
+        }
 
     }
 

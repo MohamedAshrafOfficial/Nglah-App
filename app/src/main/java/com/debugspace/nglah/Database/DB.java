@@ -165,6 +165,7 @@ public class DB extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("select region, sector from nglah_region where region_id=? ", new String[]{id});
         //Cursor object is positioned before the first entry.
+        arrayList1.add("- اختار -");
         while (cursor.moveToNext()) {
             String region = cursor.getString(cursor.getColumnIndex("region"));
             String sector = cursor.getString(cursor.getColumnIndex("sector"));
@@ -182,6 +183,7 @@ public class DB extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("select cities from nglah_city where city_id=? ", new String[]{id});
         //Cursor object is positioned before the first entry.
+        arrayList.add("- اختار -");
         while (cursor.moveToNext()) {
             String city = cursor.getString(cursor.getColumnIndex("cities"));
             arrayList.add(city);
@@ -195,6 +197,7 @@ public class DB extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("select cities from nglah_city", null);
         //Cursor object is positioned before the first entry.
+        arrayList.add("- اختار -");
         while (cursor.moveToNext()) {
             String city = cursor.getString(cursor.getColumnIndex("cities"));
             arrayList.add(city);
@@ -208,6 +211,7 @@ public class DB extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("select sector from nglah_region", null);
         //Cursor object is positioned before the first entry.
+        arrayList.add("- اختار -");
         while (cursor.moveToNext()) {
             String sector = cursor.getString(cursor.getColumnIndex("sector"));
             arrayList.add(sector);
