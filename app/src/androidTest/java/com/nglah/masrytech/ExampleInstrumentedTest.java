@@ -1,4 +1,4 @@
-package com.debugspace.nglah;
+package com.nglah.masrytech;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

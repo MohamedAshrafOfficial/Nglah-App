@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.debugspace.nglah">
+    package="com.nglah.masrytech">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,31 +11,31 @@
         android:roundIcon="@mipmap/logo_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.Driver.Driver_Profile"></activity>
-        <activity android:name=".View.User.User_Profile" />
-        <activity android:name=".View.User_Main" />
-        <activity android:name=".View.Driver.DriverOrdersActivity">
+        <activity android:name="com.nglah.masrytech.View.Driver.Driver_Profile"></activity>
+        <activity android:name="com.nglah.masrytech.View.User.User_Profile" />
+        <activity android:name="com.nglah.masrytech.View.User_Main" />
+        <activity android:name="com.nglah.masrytech.View.Driver.DriverOrdersActivity">
 
         </activity>
-        <activity android:name=".View.User.InsideOrOutsideTown" />
-        <activity android:name=".View.Driver.AcceptedUserInfo" />
-        <activity android:name=".View.User.UserInfo" />
-        <activity android:name=".View.User.PickElement" />
-        <activity android:name=".View.User.DriversList">
+        <activity android:name="com.nglah.masrytech.View.User.InsideOrOutsideTown" />
+        <activity android:name="com.nglah.masrytech.View.Driver.AcceptedUserInfo" />
+        <activity android:name="com.nglah.masrytech.View.User.UserInfo" />
+        <activity android:name="com.nglah.masrytech.View.User.PickElement" />
+        <activity android:name="com.nglah.masrytech.View.User.DriversList">
 
         </activity>
-        <activity android:name=".View.User.PickTime" />
-        <activity android:name=".View.User.PickPlace_OutSide" />
-        <activity android:name=".View.User.PickPlace_Inside"></activity>
-        <activity android:name=".View.Driver.CarInfo" />
-        <activity android:name=".View.Driver.DriverInfo" >
+        <activity android:name="com.nglah.masrytech.View.User.PickTime" />
+        <activity android:name="com.nglah.masrytech.View.User.PickPlace_OutSide" />
+        <activity android:name="com.nglah.masrytech.View.User.PickPlace_Inside"></activity>
+        <activity android:name="com.nglah.masrytech.View.Driver.CarInfo" />
+        <activity android:name="com.nglah.masrytech.View.Driver.DriverInfo" >
         </activity>
-        <activity android:name=".View.PaymentSystem" />
-        <activity android:name=".View.SignUp"
+        <activity android:name="com.nglah.masrytech.View.PaymentSystem" />
+        <activity android:name="com.nglah.masrytech.View.SignUp"
                     android:windowSoftInputMode="stateAlwaysHidden"/>
-        <activity android:name=".View.SignIn"
+        <activity android:name="com.nglah.masrytech.View.SignIn"
                     android:windowSoftInputMode="stateAlwaysHidden"/>
-        <activity android:name=".View.Splash">
+        <activity android:name="com.nglah.masrytech.View.Splash">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,7 +43,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".Model.DriverModel.MyFirebaseMessagingService">
+        <service android:name="com.nglah.masrytech.Model.DriverModel.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
