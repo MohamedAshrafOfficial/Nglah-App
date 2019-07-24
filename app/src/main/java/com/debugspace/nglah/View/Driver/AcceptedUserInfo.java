@@ -54,7 +54,7 @@ public class AcceptedUserInfo extends AppCompatActivity {
 //        nglahSectorTextView.setText(intent.getStringExtra("nglah_sector"));
         nglahDetailsTextView.setText(intent.getStringExtra("nglah_details"));
 
-        Toast.makeText(this, ""+nglahId, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, ""+nglahId, Toast.LENGTH_SHORT).show();
 
         // get api client to connect server
         jsonPlaceHolderApi = ApiClient.getApiClient().create(JsonPlaceHolderApi.class);

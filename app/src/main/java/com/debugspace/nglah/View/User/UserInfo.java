@@ -19,6 +19,7 @@ import com.debugspace.nglah.R;
 import com.debugspace.nglah.Services.JsonPlaceHolderApi;
 import com.debugspace.nglah.View.Driver.DriverInfo;
 import com.debugspace.nglah.View.PaymentSystem;
+import com.debugspace.nglah.View.SignUp;
 import com.debugspace.nglah.View.User_Main;
 
 import java.util.HashMap;
@@ -245,7 +246,7 @@ public class UserInfo extends AppCompatActivity {
             finish();
 
         }else {
-            startActivity(new Intent(UserInfo.this, PaymentSystem.class));
+            startActivity(new Intent(UserInfo.this, SignUp.class));
             finish();
         }
     }

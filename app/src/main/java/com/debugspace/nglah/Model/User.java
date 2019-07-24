@@ -53,10 +53,6 @@ public class User {
     @Expose
     private String city;
 
-    @SerializedName("sector")
-    @Expose
-    private String sector;
-
     @SerializedName("date")
     @Expose
     private String date;
@@ -112,10 +108,6 @@ public class User {
 
     public String getCity() {
         return city;
-    }
-
-    public String getSector() {
-        return sector;
     }
 
     public String getDate() {

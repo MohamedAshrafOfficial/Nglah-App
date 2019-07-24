@@ -21,8 +21,6 @@ public class Driver_Model {
     private String phone;
     @SerializedName("owner_city")
     private String d_city;
-    @SerializedName("owner_region")
-    private String d_region;
     @SerializedName("email")
     private String email;
     @SerializedName("user_name")
@@ -49,7 +47,7 @@ public class Driver_Model {
         this.checkEmail = checkEmail;
     }
 
-    public Driver_Model(String driver_n_id, String nationality, String f_name, String se_name, String l_name, String driver_l_id, String phone, String d_city, String d_region, String email, String usernmae, String password) {
+    public Driver_Model(String driver_n_id, String nationality, String f_name, String se_name, String l_name, String driver_l_id, String phone, String d_city, String email, String usernmae, String password) {
         this.driver_n_id = driver_n_id;
         this.nationality = nationality;
         this.f_name = f_name;
@@ -58,7 +56,6 @@ public class Driver_Model {
         this.driver_l_id = driver_l_id;
         this.phone = phone;
         this.d_city = d_city;
-        this.d_region = d_region;
         this.email = email;
         this.usernmae = usernmae;
         this.password = password;
@@ -129,14 +126,6 @@ public class Driver_Model {
 
     public void setD_city(String d_city) {
         this.d_city = d_city;
-    }
-
-    public String getD_region() {
-        return d_region;
-    }
-
-    public void setD_region(String d_region) {
-        this.d_region = d_region;
     }
 
     public String getEmail() {

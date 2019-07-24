@@ -244,45 +244,32 @@
 
 
         </LinearLayout>
-        <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
 
-            <!--android:layout_marginTop="30dp"-->
-            <!--android:layout_marginBottom="30dp"-->
-            <!--android:orientation="horizontal"-->
-            <!--android:weightSum="2">-->
-
-            <!--<TextView-->
-                <!--android:layout_width="40dp"-->
-                <!--android:layout_height="50dp"-->
-                <!--android:gravity="center"-->
-                <!--android:layout_marginLeft="10dp"-->
-                <!--android:layout_marginRight="10dp"-->
-                <!--android:layout_weight="1"-->
-                <!--android:background="@color/yello"-->
-                <!--android:text="  القطاع  "-->
-                <!--android:textColor="#fff"-->
-                <!--android:textSize="15dp"-->
-                <!--android:textStyle="bold" />-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal"
+            android:layout_gravity="end"
+            android:weightSum="2">
 
 
-            <!--<EditText-->
-                <!--android:id="@+id/d_car_region"-->
-                <!--android:layout_width="80dp"-->
-                <!--android:layout_height="50dp"-->
-                <!--android:gravity="center"-->
-                <!--android:layout_marginLeft="10dp"-->
-                <!--android:layout_marginRight="10dp"-->
-                <!--android:layout_weight="1"-->
-                <!--android:background="#fff"-->
-                <!--android:hint="  القطاع  "-->
-                <!--android:textColor="#000"-->
-                <!--android:textSize="18dp"-->
-                <!--android:textStyle="bold" />-->
+            <Button
+                android:id="@+id/bt_mowaf2"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_gravity="end"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/yello"
+                android:text="موافق"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
 
-        <!--</LinearLayout>-->
+        </LinearLayout>
 
     </LinearLayout>
 

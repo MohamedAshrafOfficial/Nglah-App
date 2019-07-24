@@ -507,7 +507,8 @@
                 android:hint="  *****  "
                 android:textColor="#000"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:inputType="textPassword"/>
 
 
         </LinearLayout>

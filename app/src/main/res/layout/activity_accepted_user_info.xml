@@ -295,12 +295,11 @@
                 android:gravity="center"
                 android:ems="10"
                 android:hint=" سعر النقلة"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:minLines="1"
                 android:textColor="#fff"
                 android:textColorHint="#fff"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
 
 
         </LinearLayout>

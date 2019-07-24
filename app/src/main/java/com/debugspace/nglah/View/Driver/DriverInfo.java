@@ -30,6 +30,7 @@ import com.debugspace.nglah.Model.hassan_now.user_service;
 import com.debugspace.nglah.R;
 import com.debugspace.nglah.Services.JsonPlaceHolderApi;
 import com.debugspace.nglah.View.PaymentSystem;
+import com.debugspace.nglah.View.SignUp;
 import com.debugspace.nglah.View.User_Main;
 
 import java.util.ArrayList;
@@ -66,7 +67,7 @@ public class DriverInfo extends AppCompatActivity {
     ArrayList<Car_Model>car_list=new ArrayList<>();
     private ArrayAdapter<String> adapter;
     ProgressDialog progressDialog;
-    String txtCar_type,txtCar_Panal, txtCar_Weight, txtD_Car_Name, txtD_Car_City, txtD_Car_Region,old_n_id,car_image;
+    String txtCar_type,txtCar_Panal, txtCar_Weight, txtD_Car_Name, txtD_Car_City,old_n_id,car_image;
     ArrayList<String>car_type_list=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -193,7 +194,7 @@ public class DriverInfo extends AppCompatActivity {
         parameters.put("panel_id", txtCar_Panal);
         parameters.put("allowed_weight", txtCar_Weight);
         parameters.put("owner_city", txtD_Car_City);
-        parameters.put("owner_region", txtD_Car_Region);
+//        parameters.put("owner_region", txtD_Car_Region);
         parameters.put("driver_city", dCity.getText().toString());
 //        parameters.put("driver_region", dRegion.getText().toString());
 
@@ -253,7 +254,7 @@ public class DriverInfo extends AppCompatActivity {
         parameters.put("panel_id", txtCar_Panal);
         parameters.put("allowed_weight", txtCar_Weight);
         parameters.put("owner_city", txtD_Car_City);
-        parameters.put("owner_region", txtD_Car_Region);
+//        parameters.put("owner_region", txtD_Car_Region);
         parameters.put("driver_city", dCity.getText().toString());
 //        parameters.put("driver_region", dRegion.getText().toString());
         parameters.put("old_driver_national_id", old_n_id);
@@ -318,7 +319,6 @@ public class DriverInfo extends AppCompatActivity {
                         txtCar_Panal=car_model.getPanal_id();
                         txtCar_Weight=car_model.getAllowed_weight();
                         txtD_Car_City=car_model.getDriver_car_city();
-                        txtD_Car_Region=car_model.getDriver_car_region();
                         txtD_Car_Name=name;
 
 
@@ -355,7 +355,7 @@ public class DriverInfo extends AppCompatActivity {
         final EditText Car_Weight = user_Layout.findViewById(R.id.weight);
         final EditText D_Car_Name = user_Layout.findViewById(R.id.d_car_name);
         final EditText D_Car_City = user_Layout.findViewById(R.id.d_car_city);
-//        final EditText D_Car_Region = user_Layout.findViewById(R.id.d_car_region);
+        final Button mowaf2Button = user_Layout.findViewById(R.id.bt_mowaf2);
         final ImageView Car_image = user_Layout.findViewById(R.id.car_image);
 
 
@@ -395,102 +395,51 @@ public class DriverInfo extends AppCompatActivity {
             }
         });
 
-//        Car_type.setText(txtCar_type);
         Car_Panal.setText(txtCar_Panal);
         Car_Weight.setText(txtCar_Weight);
         D_Car_Name.setText(txtD_Car_Name);
         D_Car_City.setText(txtD_Car_City);
-//        D_Car_Region.setText(txtD_Car_Region);
 
-
-        alertDialog.setPositiveButton("Submit", null);
-        alertDialog.setNegativeButton("Cancel", null);
-
-
-        final AlertDialog mAlertDialog = alertDialog.create();
-        mAlertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
+        mowaf2Button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onShow(final DialogInterface dialog) {
+            public void onClick(View view) {
 
-                Button Positive = mAlertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
-                Button Cancel = mAlertDialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+                if (Car_type.getSelectedItemPosition() == 0) {
+                    Toast.makeText(DriverInfo.this, "Car Type not entered", Toast.LENGTH_SHORT).show();
+                    Car_type.requestFocus();
+                } else if (Car_Panal.getText().toString().isEmpty()) {
+                    Car_Panal.setError("Car Panal not entered");
+                    Car_Panal.requestFocus();
+                } else if (Car_Weight.getText().toString().isEmpty()) {
+                    Car_Weight.setError("Car_Weight not entered");
+                    Car_Weight.requestFocus();
+                } else if (D_Car_Name.getText().toString().isEmpty()) {
+                    D_Car_Name.setError("Name not entered");
+                    D_Car_Name.requestFocus();
+                } else if (D_Car_City.getText().toString().isEmpty()) {
+                    D_Car_City.setError("Citr not entered");
+                    D_Car_City.requestFocus();
+                } else {
 
+                    txtCar_type = Car_type.getSelectedItem().toString();
+                    txtCar_Panal = Car_Panal.getText().toString();
+                    txtCar_Weight = Car_Weight.getText().toString();
+                    txtD_Car_Name = D_Car_Name.getText().toString();
+                    txtD_Car_City = D_Car_City.getText().toString();
 
-                Positive.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                    if (sharedPreferences.getString("setting", "null").equals("update")) {
 
-                        if (Car_type.getSelectedItemPosition()==0) {
-                            Toast.makeText(DriverInfo.this, "Car Type not entered", Toast.LENGTH_SHORT).show();
-                            Car_type.requestFocus();
-                        } else if (Car_Panal.getText().toString().isEmpty()) {
-                            Car_Panal.setError("Car Panal not entered");
-                            Car_Panal.requestFocus();
-                        } else if (Car_Weight.getText().toString().isEmpty()) {
-                            Car_Weight.setError("Car_Weight not entered");
-                            Car_Weight.requestFocus();
-                        } else if (D_Car_Name.getText().toString().isEmpty()) {
-                            D_Car_Name.setError("Name not entered");
-                            D_Car_Name.requestFocus();
-                        } else if (D_Car_City.getText().toString().isEmpty()) {
-                            D_Car_City.setError("Citr not entered");
-                            D_Car_City.requestFocus();
-                        }
+                        Update_Driver();
 
-//                        else if (D_Car_Region.getText().toString().isEmpty()) {
-//                            D_Car_Region.setError("Region not entered");
-//                            D_Car_Region.requestFocus();
-//                        }
+                    } else {
 
-                        else {
-//
-//                            Car_Model car_model = new Car_Model();
-//                            car_model.setCar_type(Car_type.getText().toString());
-//                            car_model.setCar_image("https:");
-//                            car_model.setPanal_id(Car_Panal.getText().toString());
-//                            car_model.setAllowed_weight(Car_Weight.getText().toString());
-//                            car_model.setDriver_car_name(D_Car_Name.getText().toString());
-//                            car_model.setDriver_car_city(D_Car_City.getText().toString());
-//                            car_model.setDriver_car_region(D_Car_Region.getText().toString());
-//
-//                            car_list.add(car_model);
-                            txtCar_type=Car_type.getSelectedItem().toString();
-                            txtCar_Panal=Car_Panal.getText().toString();
-                            txtCar_Weight=Car_Weight.getText().toString();
-                            txtD_Car_Name=D_Car_Name.getText().toString();
-                            txtD_Car_City=D_Car_City.getText().toString();
-//                            txtD_Car_Region=D_Car_Region.getText().toString();
-
-
-                            if (sharedPreferences.getString("setting","null").equals("update")){
-
-                                Update_Driver();
-
-                            }else {
-
-                                CreateDriver();
-
-                            }
-
-                            dialog.dismiss();
-                        }
-
+                        CreateDriver();
                     }
-                });
-
-                Cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog.dismiss();
-                    }
-                });
-
+                }
             }
         });
 
-
-        mAlertDialog.show();
-
+        alertDialog.show();
     }
 
     @Override
@@ -503,7 +452,7 @@ public class DriverInfo extends AppCompatActivity {
             finish();
 
         }else {
-            startActivity(new Intent(DriverInfo.this, PaymentSystem.class));
+            startActivity(new Intent(DriverInfo.this, SignUp.class));
             finish();
         }
 

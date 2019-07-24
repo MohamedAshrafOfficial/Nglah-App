@@ -72,11 +72,6 @@ public class PickElement extends AppCompatActivity {
 
     public void Submit(View view) {
 
-//        editor.putString("car",car.getSelectedItem().toString());
-//        editor.putString("asas",asas.getSelectedItem().toString());
-//        editor.putString("bulding",building.getSelectedItem().toString());
-//        editor.putString("other",other.getSelectedItem().toString());
-//        editor.commit();
         if (flag==false){
 
             Toast.makeText(this, "اختر عنصر", Toast.LENGTH_SHORT).show();
