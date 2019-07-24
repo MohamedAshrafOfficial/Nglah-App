@@ -36,7 +36,7 @@ public class AcceptedUserInfo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_accepted_info);
+        setContentView(R.layout.activity_accepted_user_info);
         sharedPreferences=getSharedPreferences("nglah_file",MODE_PRIVATE);
 
         Intent intent = getIntent();
@@ -51,7 +51,6 @@ public class AcceptedUserInfo extends AppCompatActivity {
         nglahDateTextView.setText(intent.getStringExtra("nglah_date"));
         nglahTimeTextView.setText(intent.getStringExtra("nglah_time"));
         nglahCityTextView.setText(intent.getStringExtra("nglah_city"));
-//        nglahSectorTextView.setText(intent.getStringExtra("nglah_sector"));
         nglahDetailsTextView.setText(intent.getStringExtra("nglah_details"));
 
 //        Toast.makeText(this, ""+nglahId, Toast.LENGTH_SHORT).show();

@@ -213,15 +213,9 @@ public class SignIn extends AppCompatActivity {
                             editor.commit();
 //                            finish();
 
-                            if (sharedPreferences.getBoolean("flag_t",false)==true){
-                                progressDialog.dismiss();
-                                startActivity(new Intent(SignIn.this, DriversList.class));
-                                finish();
-                            }else {
-                                progressDialog.dismiss();
-                                startActivity(new Intent(SignIn.this, User_Main.class));
-                                finish();
-                            }
+                            progressDialog.dismiss();
+                            startActivity(new Intent(SignIn.this, User_Main.class));
+                            finish();
 
                             break;
                         case 2:                       // Driver user
@@ -237,12 +231,11 @@ public class SignIn extends AppCompatActivity {
                             break;
                         default:
                             progressDialog.dismiss();
-                            Toast.makeText(SignIn.this, "خطأ فى الايميل او كلمه السر", Toast.LENGTH_SHORT).show();
                     }
 
                 }else{
                     progressDialog.dismiss();
-                    Toast.makeText(SignIn.this, "كلمه السر غير صحيحه !", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignIn.this, "خطأ فى الايميل او كلمه السر!", Toast.LENGTH_SHORT).show();
                 }
 
             }

@@ -114,7 +114,7 @@ public class PickPlace_Inside extends AppCompatActivity implements AdapterView.O
                     editor.commit();
 
                     ArrayAdapter<String> cityAdapter = new ArrayAdapter<String>(this,
-                            android.R.layout.simple_spinner_item, dbobject.getCities(String.valueOf(position + 1)));
+                            android.R.layout.simple_spinner_item, dbobject.getCities(String.valueOf(position)));
 
                     cityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 

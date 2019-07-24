@@ -218,6 +218,7 @@
 
 
         </LinearLayout>
+
         <!--<LinearLayout-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="wrap_content"-->
@@ -253,17 +254,17 @@
         <!--</LinearLayout>-->
 
         <TextView
-             android:layout_width="match_parent"
-            android:layout_height="2dp"
-              android:textColor="#000"
+            android:id="@+id/tv_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#C2C1C1"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:textStyle="bold"
-
             android:textSize="20sp"
-            android:text="سعرك"
-            />
+            android:text="التفاصيل"
+            android:gravity="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -295,7 +296,7 @@
                 android:gravity="center"
                 android:ems="10"
                 android:hint=" سعر النقلة"
-                android:inputType="numberDecimal"
+                android:inputType="phone"
                 android:minLines="1"
                 android:textColor="#fff"
                 android:textColorHint="#fff"
