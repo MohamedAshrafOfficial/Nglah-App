@@ -218,40 +218,39 @@
 
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:weightSum="2">
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="30dp"-->
+            <!--android:gravity="center"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:weightSum="2">-->
 
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-               android:gravity="center"
-                android:layout_weight="1"
-                android:text="القطاع"
-                android:textColor="@color/yello"
-                android:textStyle="bold"
+            <!--<TextView-->
+                <!--android:id="@+id/textView9"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+               <!--android:gravity="center"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="القطاع"-->
+                <!--android:textColor="@color/yello"-->
+                <!--android:textStyle="bold"-->
+                <!--android:textSize="20sp"-->
+                <!--/>-->
 
-                android:textSize="20sp"
-                />
-
-            <TextView
-                android:id="@+id/tv_sector"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                 android:layout_weight="1"
-                android:gravity="center"
-                android:textColor="#fff"
-                android:textSize="20sp"
-                android:text="الجنوبى"
-               />
+            <!--<TextView-->
+                <!--android:id="@+id/tv_sector"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                 <!--android:layout_weight="1"-->
+                <!--android:gravity="center"-->
+                <!--android:textColor="#fff"-->
+                <!--android:textSize="20sp"-->
+                <!--android:text="الجنوبى"-->
+               <!--/>-->
 
 
-        </LinearLayout>
+        <!--</LinearLayout>-->
 
         <TextView
              android:layout_width="match_parent"

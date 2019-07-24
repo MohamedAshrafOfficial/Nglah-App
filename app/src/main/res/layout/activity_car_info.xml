@@ -94,8 +94,7 @@
             android:layout_marginLeft="40dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="40dp"
-            android:src="@drawable/back"
-            android:visibility="gone"/>
+             android:visibility="gone"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -128,7 +127,7 @@
                 android:background="#fff"
                 android:hint=" ####  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -164,7 +163,7 @@
                 android:background="#fff"
                 android:hint="    الحموله بالطن  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -202,7 +201,7 @@
                 android:background="#fff"
                 android:hint="  الاسم  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -240,50 +239,50 @@
                 android:background="#fff"
                 android:hint="  المدينه  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
 
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:orientation="horizontal"
-            android:weightSum="2">
+            <!--android:layout_marginTop="30dp"-->
+            <!--android:layout_marginBottom="30dp"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:weightSum="2">-->
 
-            <TextView
-                android:layout_width="40dp"
-                android:layout_height="50dp"
-                android:gravity="center"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="@color/yello"
-                android:text="  القطاع  "
-                android:textColor="#fff"
-                android:textSize="15dp"
-                android:textStyle="bold" />
-
-
-            <EditText
-                android:id="@+id/d_car_region"
-                android:layout_width="80dp"
-                android:layout_height="50dp"
-                android:gravity="center"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="#fff"
-                android:hint="  القطاع  "
-                android:textColor="#000"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+            <!--<TextView-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:gravity="center"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@color/yello"-->
+                <!--android:text="  القطاع  "-->
+                <!--android:textColor="#fff"-->
+                <!--android:textSize="15dp"-->
+                <!--android:textStyle="bold" />-->
 
 
-        </LinearLayout>
+            <!--<EditText-->
+                <!--android:id="@+id/d_car_region"-->
+                <!--android:layout_width="80dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:gravity="center"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="#fff"-->
+                <!--android:hint="  القطاع  "-->
+                <!--android:textColor="#000"-->
+                <!--android:textSize="18dp"-->
+                <!--android:textStyle="bold" />-->
+
+
+        <!--</LinearLayout>-->
 
     </LinearLayout>
 

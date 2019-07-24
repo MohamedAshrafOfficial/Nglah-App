@@ -55,7 +55,7 @@ public class DriverInfo extends AppCompatActivity {
     private EditText dPhone;
     private EditText dEmail;
     private EditText dCity;
-    private EditText dRegion;
+//    private EditText dRegion;
     private EditText dUsername;
     private EditText dPassword;
     Retrofit retrofit;
@@ -104,7 +104,7 @@ public class DriverInfo extends AppCompatActivity {
         dPhone = (EditText) findViewById(R.id.d_phone);
         dEmail = (EditText) findViewById(R.id.d_email);
         dCity = (EditText) findViewById(R.id.d_city);
-        dRegion = (EditText) findViewById(R.id.d_region);
+//        dRegion = (EditText) findViewById(R.id.d_region);
         dUsername = (EditText) findViewById(R.id.d_username);
         dPassword = (EditText) findViewById(R.id.d_password);
     }
@@ -136,7 +136,7 @@ public class DriverInfo extends AppCompatActivity {
                         dPhone.setText(driver_model.getPhone());
                         dEmail.setText(driver_model.getEmail());
                         dCity.setText(driver_model.getD_city());
-                        dRegion.setText(driver_model.getD_region());
+//                        dRegion.setText(driver_model.getD_region());
                         dUsername.setText(driver_model.getUsernmae());
                         dPassword.setText(driver_model.getPassword());
 
@@ -195,7 +195,7 @@ public class DriverInfo extends AppCompatActivity {
         parameters.put("owner_city", txtD_Car_City);
         parameters.put("owner_region", txtD_Car_Region);
         parameters.put("driver_city", dCity.getText().toString());
-        parameters.put("driver_region", dRegion.getText().toString());
+//        parameters.put("driver_region", dRegion.getText().toString());
 
 
         Call<LoginDriverService> call = jsonPlaceHolderApi.CreateDriver(parameters);
@@ -255,7 +255,7 @@ public class DriverInfo extends AppCompatActivity {
         parameters.put("owner_city", txtD_Car_City);
         parameters.put("owner_region", txtD_Car_Region);
         parameters.put("driver_city", dCity.getText().toString());
-        parameters.put("driver_region", dRegion.getText().toString());
+//        parameters.put("driver_region", dRegion.getText().toString());
         parameters.put("old_driver_national_id", old_n_id);
 
 
@@ -355,7 +355,7 @@ public class DriverInfo extends AppCompatActivity {
         final EditText Car_Weight = user_Layout.findViewById(R.id.weight);
         final EditText D_Car_Name = user_Layout.findViewById(R.id.d_car_name);
         final EditText D_Car_City = user_Layout.findViewById(R.id.d_car_city);
-        final EditText D_Car_Region = user_Layout.findViewById(R.id.d_car_region);
+//        final EditText D_Car_Region = user_Layout.findViewById(R.id.d_car_region);
         final ImageView Car_image = user_Layout.findViewById(R.id.car_image);
 
 
@@ -400,7 +400,7 @@ public class DriverInfo extends AppCompatActivity {
         Car_Weight.setText(txtCar_Weight);
         D_Car_Name.setText(txtD_Car_Name);
         D_Car_City.setText(txtD_Car_City);
-        D_Car_Region.setText(txtD_Car_Region);
+//        D_Car_Region.setText(txtD_Car_Region);
 
 
         alertDialog.setPositiveButton("Submit", null);
@@ -435,10 +435,14 @@ public class DriverInfo extends AppCompatActivity {
                         } else if (D_Car_City.getText().toString().isEmpty()) {
                             D_Car_City.setError("Citr not entered");
                             D_Car_City.requestFocus();
-                        } else if (D_Car_Region.getText().toString().isEmpty()) {
-                            D_Car_Region.setError("Region not entered");
-                            D_Car_Region.requestFocus();
-                        } else {
+                        }
+
+//                        else if (D_Car_Region.getText().toString().isEmpty()) {
+//                            D_Car_Region.setError("Region not entered");
+//                            D_Car_Region.requestFocus();
+//                        }
+
+                        else {
 //
 //                            Car_Model car_model = new Car_Model();
 //                            car_model.setCar_type(Car_type.getText().toString());
@@ -455,7 +459,7 @@ public class DriverInfo extends AppCompatActivity {
                             txtCar_Weight=Car_Weight.getText().toString();
                             txtD_Car_Name=D_Car_Name.getText().toString();
                             txtD_Car_City=D_Car_City.getText().toString();
-                            txtD_Car_Region=D_Car_Region.getText().toString();
+//                            txtD_Car_Region=D_Car_Region.getText().toString();
 
 
                             if (sharedPreferences.getString("setting","null").equals("update")){

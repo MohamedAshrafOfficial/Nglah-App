@@ -69,7 +69,7 @@
                 android:background="#fff"
                 android:hint="    الاسم  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -109,7 +109,7 @@
                 android:background="#fff"
                 android:hint="  الاسم  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -150,7 +150,7 @@
                 android:background="#fff"
                 android:hint="  الرقم  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -190,7 +190,7 @@
                 android:background="#fff"
                 android:hint="  @gmail  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -231,7 +231,7 @@
                 android:background="#fff"
                 android:hint="  الاسم  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -271,7 +271,7 @@
                 android:background="#fff"
                 android:hint="  ****  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
