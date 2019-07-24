@@ -42,7 +42,7 @@ public class Driver_Profile extends AppCompatActivity {
     private TextView dPhone;
     private TextView dEmail;
     private TextView dCity;
-    private TextView dRegion;
+//    private TextView dRegion;
     private TextView dUsername;
     private TextView dPassword;
     private TextView carType;
@@ -50,7 +50,7 @@ public class Driver_Profile extends AppCompatActivity {
     private TextView weight;
     private TextView dCarName;
     private TextView dCarCity;
-    private TextView dCarRegion;
+//    private TextView dCarRegion;
     Retrofit retrofit;
     JsonPlaceHolderApi jsonPlaceHolderApi;
     SharedPreferences sharedPreferences;
@@ -86,7 +86,7 @@ public class Driver_Profile extends AppCompatActivity {
         dPhone = (TextView) findViewById(R.id.d_phone);
         dEmail = (TextView) findViewById(R.id.d_email);
         dCity = (TextView) findViewById(R.id.d_city);
-        dRegion = (TextView) findViewById(R.id.d_region);
+//        dRegion = (TextView) findViewById(R.id.d_region);
         dUsername = (TextView) findViewById(R.id.d_username);
         dPassword = (TextView) findViewById(R.id.d_password);
         carType = (TextView) findViewById(R.id.car_type);
@@ -94,7 +94,7 @@ public class Driver_Profile extends AppCompatActivity {
         weight = (TextView) findViewById(R.id.weight);
         dCarName = (TextView) findViewById(R.id.d_car_name);
         dCarCity = (TextView) findViewById(R.id.d_car_city);
-        dCarRegion = (TextView) findViewById(R.id.d_car_region);
+//        dCarRegion = (TextView) findViewById(R.id.d_car_region);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading...");
@@ -125,7 +125,7 @@ public class Driver_Profile extends AppCompatActivity {
                         dPhone.setText(driver_model.getPhone());
                         dEmail.setText(driver_model.getEmail());
                         dCity.setText(driver_model.getD_city());
-                        dRegion.setText(driver_model.getD_region());
+//                        dRegion.setText(driver_model.getD_region());
                         dUsername.setText(driver_model.getUsernmae());
                         //dPassword.setText(driver_model.getPassword());
 
@@ -168,7 +168,7 @@ public class Driver_Profile extends AppCompatActivity {
                         panalId.setText(car_model.getPanal_id());
                         weight.setText(car_model.getAllowed_weight());
                         dCarCity.setText(car_model.getDriver_car_city());
-                        dCarRegion.setText(car_model.getDriver_car_region());
+//                        dCarRegion.setText(car_model.getDriver_car_region());
                         dCarName.setText(name);
 
 

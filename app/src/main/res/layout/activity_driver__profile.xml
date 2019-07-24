@@ -79,7 +79,7 @@
                 android:gravity="center"
                 android:hint="  الجنسيه  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -117,7 +117,7 @@
                 android:gravity="center"
                 android:hint="000000"
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -154,7 +154,7 @@
                 android:background="#fff"
                 android:hint="    الاسم الاول  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -194,7 +194,7 @@
                 android:background="#fff"
                 android:hint="  اسم الاب  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -233,7 +233,7 @@
                 android:background="#fff"
                 android:hint="  اللقب  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -273,7 +273,7 @@
                 android:background="#fff"
                 android:hint="  0000  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -312,7 +312,7 @@
                 android:background="#fff"
                 android:hint="  الرقم  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -351,7 +351,7 @@
                 android:background="#fff"
                 android:hint="  @gmail  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -390,50 +390,50 @@
                 android:background="#fff"
                 android:hint="  المدينه  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
 
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal"
-            android:weightSum="2">
+            <!--android:layout_marginTop="30dp"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:weightSum="2">-->
 
-            <TextView
-                android:layout_width="40dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="@color/yello"
-                android:gravity="center"
-                android:text="  القطاع  "
-                android:textColor="#fff"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-
-
-            <TextView
-                android:id="@+id/d_region"
-                android:layout_width="80dp"
-                android:layout_height="50dp"
-                android:gravity="center"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="#fff"
-                android:hint="  القطاع  "
-                android:textColor="#000"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+            <!--<TextView-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@color/yello"-->
+                <!--android:gravity="center"-->
+                <!--android:text="  القطاع  "-->
+                <!--android:textColor="#fff"-->
+                <!--android:textSize="16dp"-->
+                <!--android:textStyle="bold" />-->
 
 
-        </LinearLayout>
+            <!--<TextView-->
+                <!--android:id="@+id/d_region"-->
+                <!--android:layout_width="80dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:gravity="center"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="#fff"-->
+                <!--android:hint="  القطاع  "-->
+                <!--android:textColor="#000"-->
+                <!--android:textSize="18dp"-->
+                <!--android:textStyle="bold" />-->
+
+
+        <!--</LinearLayout>-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -468,7 +468,7 @@
                 android:background="#fff"
                 android:hint="  اسم المستخدم  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -507,7 +507,7 @@
                 android:background="#fff"
                 android:hint="  **** "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -546,7 +546,7 @@
                 android:gravity="center"
                 android:text="  نوع السياره  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -560,7 +560,7 @@
                 android:gravity="center"
                 android:hint="  النوع  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -584,7 +584,7 @@
                 android:gravity="center"
                 android:text=" رقم اللوحه  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -598,7 +598,7 @@
                 android:gravity="center"
                 android:hint=" ####  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -621,7 +621,7 @@
                 android:gravity="center"
                 android:text="    اقصي وزن للحموله  "
                 android:textColor="#fff"
-                android:textSize="17dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -635,7 +635,7 @@
                 android:gravity="center"
                 android:hint="   الوزن  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -659,7 +659,7 @@
                 android:gravity="center"
                 android:text="  اسم السائق   "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
 
@@ -674,7 +674,7 @@
                 android:gravity="center"
                 android:hint="  اسم السائق  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
@@ -698,7 +698,7 @@
                 android:gravity="center"
                 android:text="  المدينه  "
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
 
@@ -713,50 +713,50 @@
                 android:gravity="center"
                 android:hint="  المدينه  "
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
 
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal"
-            android:weightSum="2">
+            <!--android:layout_marginTop="30dp"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:weightSum="2">-->
 
-            <TextView
-                android:layout_width="40dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="@color/yello"
-                android:gravity="center"
-                android:text="  القطاع  "
-                android:textColor="#fff"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-
-            <TextView
-                android:id="@+id/d_car_region"
-                android:layout_width="80dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="#fff"
-                android:gravity="center"
-                android:hint="  القطاع  "
-                android:textColor="#000"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+            <!--<TextView-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@color/yello"-->
+                <!--android:gravity="center"-->
+                <!--android:text="  القطاع  "-->
+                <!--android:textColor="#fff"-->
+                <!--android:textSize="16dp"-->
+                <!--android:textStyle="bold" />-->
 
 
-        </LinearLayout>
+            <!--<TextView-->
+                <!--android:id="@+id/d_car_region"-->
+                <!--android:layout_width="80dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="#fff"-->
+                <!--android:gravity="center"-->
+                <!--android:hint="  القطاع  "-->
+                <!--android:textColor="#000"-->
+                <!--android:textSize="18dp"-->
+                <!--android:textStyle="bold" />-->
+
+
+        <!--</LinearLayout>-->
 
 
 

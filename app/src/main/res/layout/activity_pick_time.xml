@@ -207,7 +207,7 @@
                     android:gravity="center"
                     android:hint=" نبذه عن الخدمه المطلوبه  "
                     android:textColor="#000"
-                    android:textSize="25sp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
 

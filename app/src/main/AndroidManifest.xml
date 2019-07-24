@@ -21,7 +21,6 @@
         <activity android:name=".View.Driver.AcceptedUserInfo" />
         <activity android:name=".View.User.UserInfo" />
         <activity android:name=".View.User.PickElement" />
-        <activity android:name=".View.Driver.TransportInfo_Notif" />
         <activity android:name=".View.User.DriversList">
 
         </activity>
