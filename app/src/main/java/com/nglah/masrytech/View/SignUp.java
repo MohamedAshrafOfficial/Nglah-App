@@ -206,7 +206,7 @@ public class SignUp extends AppCompatActivity {
     /////////////////////////////////////////////////////////////////////////////////////////////////
     private void checkCodeAliart(final int code) {
         final EditText txt = new EditText(SignUp.this);
-        txt.setHint("Verification Code");
+        txt.setHint("تم ارسال الكود الى البريد");
         txt.setTextColor(Color.BLACK);
         alertDialog.setView(txt);
         alertDialog.setCancelable(false);
@@ -222,35 +222,41 @@ public class SignUp extends AppCompatActivity {
                 Positive.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        int numberCode = Integer.parseInt(txt.getText().toString());
-                        if (numberCode == code) {
-
-                            editor.putString("username",edtname.getText().toString());
-                            editor.putString("phone",edtphone.getText().toString());
-                            editor.putString("email",edtemail.getText().toString());
-                            editor.putString("password",edtpass.getText().toString());
-                            editor.commit();
-
-                            if (spinner.getSelectedItemPosition() == 1) {
-
-                                // CreateUser();
-
-                                editor.putInt("user_type",1);
-                                editor.commit();
-                                startActivity(new Intent(SignUp.this, UserInfo.class));
-                                finish();
-
-                            } else if (spinner.getSelectedItemPosition() == 2) {
-                                editor.putInt("user_type",2);
-                                editor.commit();
-                                startActivity(new Intent(SignUp.this, DriverInfo.class));
-                                finish();
-                                //  CreateDriver();
-                            }
-
-                        } else {
-                            txt.setError("الرقم غير صحيح !");
+                        if (txt.getText().toString().isEmpty()) {
+                            txt.setError("ادخل الكود");
                             txt.requestFocus();
+                        } else {
+
+                            int numberCode = Integer.parseInt(txt.getText().toString());
+                            if (numberCode == code) {
+
+                                editor.putString("username", edtname.getText().toString());
+                                editor.putString("phone", edtphone.getText().toString());
+                                editor.putString("email", edtemail.getText().toString());
+                                editor.putString("password", edtpass.getText().toString());
+                                editor.commit();
+
+                                if (spinner.getSelectedItemPosition() == 1) {
+
+                                    // CreateUser();
+
+                                    editor.putInt("user_type", 1);
+                                    editor.commit();
+                                    startActivity(new Intent(SignUp.this, UserInfo.class));
+                                    finish();
+
+                                } else if (spinner.getSelectedItemPosition() == 2) {
+                                    editor.putInt("user_type", 2);
+                                    editor.commit();
+                                    startActivity(new Intent(SignUp.this, DriverInfo.class));
+                                    finish();
+                                    //  CreateDriver();
+                                }
+
+                            } else {
+                                txt.setError("الرقم غير صحيح !");
+                                txt.requestFocus();
+                            }
                         }
                     }
                 });
